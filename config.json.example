@@ -1,0 +1,51 @@
+{
+  "openai_api_key": "your-api-key",
+  "model": "gpt-4o",
+  "complexity_threshold": 5,
+  "log_level": "INFO",
+  "file_filters": {
+    "exclude_dirs": [
+      "node_modules/",
+      ".git/",
+      "__pycache__/",
+      "venv/",
+      "env/",
+      ".venv/",
+      "dist/",
+      "build/",
+      ".next/",
+      "out/",
+      "coverage/",
+      "logs/"
+    ],
+    "include_dirs": [
+      "src/",
+      "app/",
+      "backend/",
+      "frontend/",
+      "lib/",
+      "utils/",
+      "components/",
+      "services/",
+      "api/",
+      "tests/",
+      "pages/",
+      "server/",
+      "config/"
+    ],
+    "exclude_files": [
+      "*.min.js",
+      "*.bundle.js",
+      "*.map",
+      "*.lock",
+      "package-lock.json",
+      "yarn.lock",
+      "*.pyc",
+      "*.pyo",
+      "*.pyd",
+      "*.so",
+      "*.dll",
+      "*.exe"
+    ]
+  }
+} 
