@@ -114,10 +114,16 @@ class ConfigManager:
         """Add a new project to the list."""
         projects = self.get_projects()
         
-        # Check if project already exists
+        # Check if project already exists by name
         for project in projects:
             if project["name"] == project_name:
                 logger.warning(f"Project '{project_name}' already exists")
+                return False
+        
+        # Check if project already exists by path
+        for project in projects:
+            if os.path.abspath(project["path"]) == os.path.abspath(project_path):
+                logger.warning(f"Project at path '{project_path}' already exists with name '{project['name']}'")
                 return False
         
         # Add new project
@@ -127,7 +133,22 @@ class ConfigManager:
         })
         
         self.projects["projects"] = projects
-        return self._save_projects()
+        success = self._save_projects()
+        
+        if success:
+            logger.info(f"Project '{project_name}' added successfully")
+            
+            # Create project logs directory
+            project_logs_dir = os.path.join(project_path, "logs")
+            os.makedirs(project_logs_dir, exist_ok=True)
+            logger.debug(f"Created project logs directory: {project_logs_dir}")
+            
+            # Create project reports directory
+            project_reports_dir = os.path.join(project_path, "reports")
+            os.makedirs(project_reports_dir, exist_ok=True)
+            logger.debug(f"Created project reports directory: {project_reports_dir}")
+        
+        return success
     
     def get_project(self, project_name):
         """Get a project by name."""
@@ -143,17 +164,24 @@ class ConfigManager:
             logger.error(f"Project '{project_name}' not found")
             return False
         
-        self.current_project = project
+        self.current_project = project_name
         self.project_config_file = os.path.join(project["path"], "config.json")
         
         # Load project-specific configuration
         self._load_project_config()
+        logger.info(f"Current project set to '{project_name}'")
         return True
     
     def _load_project_config(self):
         """Load project-specific configuration."""
         if not self.current_project:
             logger.warning("No current project set")
+            return
+        
+        # Get the project by name
+        project = self.get_project(self.current_project)
+        if not project:
+            logger.warning(f"Project '{self.current_project}' not found")
             return
         
         # Reset to default configuration
@@ -168,6 +196,9 @@ class ConfigManager:
                     logger.debug(f"Loaded global configuration from {self.config_file}")
             except Exception as e:
                 logger.error(f"Error loading global config file: {str(e)}")
+        
+        # Set project config file path
+        self.project_config_file = os.path.join(project["path"], "config.json")
         
         # Load project-specific configuration
         if os.path.exists(self.project_config_file):
@@ -250,10 +281,19 @@ class ConfigManager:
             logger.warning("No current project set")
             return False
         
+        # Get the project by name
+        project = self.get_project(self.current_project)
+        if not project:
+            logger.warning(f"Project '{self.current_project}' not found")
+            return False
+        
         try:
             # Create project directory if it doesn't exist
-            project_dir = self.current_project["path"]
+            project_dir = project["path"]
             os.makedirs(project_dir, exist_ok=True)
+            
+            # Ensure project_config_file is set correctly
+            self.project_config_file = os.path.join(project_dir, "config.json")
             
             with open(self.project_config_file, 'w') as f:
                 json.dump(self.config, f, indent=2)
@@ -265,26 +305,34 @@ class ConfigManager:
     
     def get_project_logs_dir(self):
         """Get the logs directory for the current project."""
-        if not self.current_project:
-            logger.warning("No current project set")
-            return None
+        if self.current_project:
+            project = self.get_project(self.current_project)
+            if project:
+                logs_dir = os.path.join(project["path"], "logs")
+                os.makedirs(logs_dir, exist_ok=True)
+                logger.debug(f"Using project logs directory: {logs_dir}")
+                return logs_dir
         
-        logs_dir = os.path.join(self.current_project["path"], "logs")
+        # Fallback to default logs directory
+        logs_dir = os.path.join(os.path.dirname(self.config_file), "logs")
         os.makedirs(logs_dir, exist_ok=True)
+        logger.debug(f"Using default logs directory: {logs_dir}")
         return logs_dir
     
     def get_project_reports_dir(self):
         """Get the reports directory for the current project."""
-        if not self.current_project:
-            logger.warning("No current project set")
-            return None
+        if self.current_project:
+            project = self.get_project(self.current_project)
+            if project:
+                reports_dir = os.path.join(project["path"], "reports")
+                os.makedirs(reports_dir, exist_ok=True)
+                logger.debug(f"Using project reports directory: {reports_dir}")
+                return reports_dir
         
-        logs_dir = self.get_project_logs_dir()
-        if not logs_dir:
-            return None
-        
-        reports_dir = os.path.join(logs_dir, "reports")
+        # Fallback to default reports directory
+        reports_dir = os.path.join(os.path.dirname(self.config_file), "reports")
         os.makedirs(reports_dir, exist_ok=True)
+        logger.debug(f"Using default reports directory: {reports_dir}")
         return reports_dir
     
     def should_exclude_path(self, path):
