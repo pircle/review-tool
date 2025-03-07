@@ -14,6 +14,8 @@ A command-line tool for analyzing code complexity and generating AI-powered code
 - **Plugin System**: Extensible architecture allowing custom analyzers and integrations.
 - **Robust Logging and Error Handling**: Comprehensive logging system for debugging and error tracking.
 - **UI Validation with ChatGPT Vision**: Automated screenshot capturing and AI-powered UI validation.
+- **Multi-Project Support**: Manage multiple projects with isolated configurations and virtual environments.
+- **Interactive Fix Confirmation**: Review and approve/reject AI-suggested fixes before they're applied.
 
 ## Automated Security Scanning
 
@@ -706,3 +708,138 @@ When running the test suite, you'll see output indicating the success or failure
 - ❌ Failure messages provide details about what went wrong
 
 If all tests pass, your local MVP is ready for real-world testing. If any tests fail, check the error messages for details on what needs to be fixed.
+
+## Multi-Project Support
+
+The AI Code Review Tool now supports managing multiple projects with isolated configurations, logs, and virtual environments.
+
+### Creating a New Project
+
+```bash
+ai-review review path/to/code --project my-project --create-project
+```
+
+This will:
+1. Create a new project named "my-project"
+2. Set up a dedicated virtual environment for the project
+3. Install the AI Code Review Tool in the project's virtual environment
+4. Create project-specific configuration and log directories
+
+### Listing Available Projects
+
+```bash
+ai-review --list-projects
+```
+
+Example output:
+```
+Available projects:
+================================================================================
+#    Project Name                    Project Path                               
+--------------------------------------------------------------------------------
+1    my-project                      /path/to/my-project                        
+2    another-project                 /path/to/another-project                   
+================================================================================
+```
+
+### Using an Existing Project
+
+```bash
+ai-review review path/to/code --project my-project
+```
+
+This will:
+1. Use the configuration and logs from the specified project
+2. Activate the project's virtual environment automatically
+
+### Default Project Name
+
+If you don't specify a project name, the tool will use the current directory name as the project name:
+
+```bash
+# When run from /path/to/my-project
+ai-review review src/
+# Equivalent to:
+ai-review review src/ --project my-project
+```
+
+## Interactive AI Fix Confirmation
+
+When applying AI-suggested fixes, the tool now prompts for confirmation before making changes:
+
+```
+================================================================================
+🔍 AI-Suggested Fix:
+
+File: path/to/file.py
+--------------------------------------------------------------------------------
+Issue: Potential SQL injection vulnerability in query construction
+--------------------------------------------------------------------------------
+Before:
+--------------------------------------------------------------------------------
+> 45   | query = "SELECT * FROM users WHERE username = '" + username + "'"
+  46   | cursor.execute(query)
+  47   | 
+  48   | # Fetch results
+  49   | results = cursor.fetchall()
+--------------------------------------------------------------------------------
+After:
+--------------------------------------------------------------------------------
+  45   | query = "SELECT * FROM users WHERE username = %s"
+  46   | cursor.execute(query, (username,))
+  47   | 
+  48   | # Fetch results
+  49   | results = cursor.fetchall()
+================================================================================
+
+Apply this fix? (Y/N): 
+```
+
+- Type `Y` to apply the fix (a backup of the original file will be created)
+- Type `N` to skip the fix
+
+All fix approvals and rejections are logged for future reference in:
+- `logs/validation_log.md` - Human-readable log of all interactions
+- `logs/fix_log.json` - Structured JSON log of all fix attempts
+
+## Automatic Virtual Environment Setup
+
+The AI Code Review Tool automatically creates and manages virtual environments for each project:
+
+```bash
+ai-review review path/to/code --project my-project --create-project
+```
+
+This will:
+1. Create a virtual environment at `my-project/venv/`
+2. Install the AI Code Review Tool and its dependencies
+3. Activate the virtual environment for the current session
+
+The tool handles virtual environment activation differently based on your operating system:
+- Windows: Uses `Scripts/activate.bat`
+- macOS/Linux: Uses `bin/activate` with the appropriate shell
+
+### Troubleshooting Virtual Environment Issues
+
+If you encounter issues with virtual environments:
+
+1. **Virtual environment not found**:
+   - The tool will automatically create a new one if it doesn't exist
+   - You can manually create it with `python -m venv my-project/venv`
+
+2. **Activation fails**:
+   - The tool will continue without activation but log a warning
+   - You can manually activate with:
+     - Windows: `my-project\venv\Scripts\activate.bat`
+     - macOS/Linux: `source my-project/venv/bin/activate`
+
+3. **Permission issues**:
+   - Ensure you have write permissions to the project directory
+   - Try running with elevated privileges if needed
+
+4. **Python version compatibility**:
+   - The tool requires Python 3.8 or higher
+   - If multiple Python versions are installed, specify the version:
+     ```bash
+     python3.9 -m ai_review review path/to/code --project my-project
+     ```

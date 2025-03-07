@@ -1468,12 +1468,31 @@ def handle_review_command(args):
                 else:
                     # On Unix/Linux/Mac, we need to source the activate script
                     # This is a bit tricky because 'source' is a shell builtin, not a command
-                    # We'll use a workaround by running it through the shell
-                    subprocess.run(f"source {activate_script}", shell=True, executable="/bin/bash", check=True)
+                    # First, try to determine the user's shell
+                    shell = os.environ.get('SHELL', '/bin/bash')
+                    
+                    # Check if the shell exists
+                    if not os.path.exists(shell):
+                        # Try common shells in order of preference
+                        for possible_shell in ['/bin/bash', '/bin/zsh', '/bin/sh']:
+                            if os.path.exists(possible_shell):
+                                shell = possible_shell
+                                break
+                    
+                    # Use the appropriate source command based on the shell
+                    source_cmd = "source"
+                    if shell.endswith('csh') or shell.endswith('tcsh'):
+                        source_cmd = "."
+                        
+                    # Run the activation command
+                    subprocess.run(f"{source_cmd} {activate_script}", shell=True, executable=shell, check=True)
                 
                 logger.info(f"Virtual environment activated successfully")
             except subprocess.CalledProcessError as e:
                 logger.warning(f"Failed to activate virtual environment: {str(e)}")
+                print(f"⚠ Warning: Failed to activate virtual environment. Continuing anyway.")
+            except Exception as e:
+                logger.warning(f"Unexpected error activating virtual environment: {str(e)}")
                 print(f"⚠ Warning: Failed to activate virtual environment. Continuing anyway.")
         else:
             logger.warning(f"Virtual environment not found at {venv_path}")
@@ -1526,18 +1545,32 @@ def handle_review_command(args):
                     else:
                         # On Unix/Linux/Mac, we need to source the activate script
                         # This is a bit tricky because 'source' is a shell builtin, not a command
-                        # We'll use a workaround by running it through the shell
-                        subprocess.run(f"source {activate_script}", shell=True, executable="/bin/bash", check=True)
-                    
-                    logger.info(f"Virtual environment activated successfully")
-                except subprocess.CalledProcessError as e:
-                    logger.warning(f"Failed to activate virtual environment: {str(e)}")
-                    print(f"⚠ Warning: Failed to activate virtual environment. Continuing anyway.")
+                        # First, try to determine the user's shell
+                        shell = os.environ.get('SHELL', '/bin/bash')
+                        
+                        # Check if the shell exists
+                        if not os.path.exists(shell):
+                            # Try common shells in order of preference
+                            for possible_shell in ['/bin/bash', '/bin/zsh', '/bin/sh']:
+                                if os.path.exists(possible_shell):
+                                    shell = possible_shell
+                                    break
+                        
+                        # Use the appropriate source command based on the shell
+                        source_cmd = "source"
+                        if shell.endswith('csh') or shell.endswith('tcsh'):
+                            source_cmd = "."
+                            
+                        # Run the activation command
+                        subprocess.run(f"{source_cmd} {activate_script}", shell=True, executable=shell, check=True)
                 
-                logger.info(f"AI Code Review Tool installed in virtual environment")
+                logger.info(f"Virtual environment activated successfully")
             except subprocess.CalledProcessError as e:
-                logger.error(f"Error setting up virtual environment: {str(e)}")
-                print(f"⚠ Warning: Failed to set up virtual environment. Continuing without it.")
+                logger.warning(f"Failed to activate virtual environment: {str(e)}")
+                print(f"⚠ Warning: Failed to activate virtual environment. Continuing anyway.")
+            except Exception as e:
+                logger.warning(f"Unexpected error activating virtual environment: {str(e)}")
+                print(f"⚠ Warning: Failed to activate virtual environment. Continuing anyway.")
         
         logger.info(f"Using project '{project_name}' for configuration and logs")
         print(f"Using project '{project_name}' for configuration and logs")

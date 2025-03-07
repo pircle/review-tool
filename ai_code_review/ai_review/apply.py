@@ -7,10 +7,12 @@ import re
 import json
 import shutil
 import traceback
+import datetime
 from typing import Dict, List, Any, Optional
 from openai import OpenAI
 
 from ai_review.logger import logger
+from ai_review.interaction_logger import interaction_logger
 
 
 class FixApplier:
@@ -97,6 +99,110 @@ class FixApplier:
                     "message": "No changes were made to the code"
                 }
             
+            # Create a fix log entry
+            fix_log = {
+                "timestamp": datetime.datetime.now().isoformat(),
+                "file": file_path,
+                "before": original_code,
+                "after": fixed_code,
+                "suggested_fix": suggestion.get("description", "AI-suggested fix")
+            }
+            
+            # Display the fix to the user and ask for confirmation
+            print("\n" + "="*80)
+            print("🔍 AI-Suggested Fix:\n")
+            print(f"File: {file_path}")
+            print("-"*80)
+            print(f"Issue: {suggestion.get('description', 'No description provided')}")
+            print("-"*80)
+            print("Before:")
+            print("-"*80)
+            
+            # Display a snippet of the original code around the issue
+            if "line" in suggestion and suggestion["line"] > 0:
+                lines = original_code.split("\n")
+                start_line = max(0, suggestion["line"] - 5)
+                end_line = min(len(lines), suggestion["line"] + 5)
+                for i in range(start_line, end_line):
+                    prefix = ">" if i + 1 == suggestion["line"] else " "
+                    print(f"{prefix} {i+1:4d} | {lines[i]}")
+            else:
+                # If no line number, show a limited preview
+                preview_lines = original_code.split("\n")[:10]
+                for i, line in enumerate(preview_lines):
+                    print(f"  {i+1:4d} | {line}")
+                if len(original_code.split("\n")) > 10:
+                    print("  ... (more lines) ...")
+            
+            print("-"*80)
+            print("After:")
+            print("-"*80)
+            
+            # Display a snippet of the fixed code
+            if "line" in suggestion and suggestion["line"] > 0:
+                lines = fixed_code.split("\n")
+                start_line = max(0, suggestion["line"] - 5)
+                end_line = min(len(lines), suggestion["line"] + 5)
+                for i in range(start_line, end_line):
+                    print(f"  {i+1:4d} | {lines[i]}")
+            else:
+                # If no line number, show a limited preview
+                preview_lines = fixed_code.split("\n")[:10]
+                for i, line in enumerate(preview_lines):
+                    print(f"  {i+1:4d} | {line}")
+                if len(fixed_code.split("\n")) > 10:
+                    print("  ... (more lines) ...")
+            
+            print("="*80)
+            
+            # Ask for confirmation
+            confirm = input("\nApply this fix? (Y/N): ")
+            
+            # Log the fix approval/rejection
+            logs_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
+            os.makedirs(logs_dir, exist_ok=True)
+            fix_log_path = os.path.join(logs_dir, "fix_log.json")
+            
+            if confirm.lower() != "y":
+                print(f"❌ Skipping fix for {file_path}")
+                logger.info(f"User rejected fix for {file_path}")
+                
+                # Log the rejection
+                fix_log["applied"] = False
+                fix_log["user_response"] = "rejected"
+                
+                # Use the interaction logger to log the rejection
+                interaction_logger.log_rejection(
+                    item="AI-suggested fix",
+                    reason="User rejected the fix",
+                    file=file_path,
+                    description=suggestion.get("description", "No description provided"),
+                    additional_details={"before": original_code[:500] + "..." if len(original_code) > 500 else original_code,
+                                       "after": fixed_code[:500] + "..." if len(fixed_code) > 500 else fixed_code}
+                )
+                
+                # Append to the fix log file
+                try:
+                    existing_logs = []
+                    if os.path.exists(fix_log_path):
+                        with open(fix_log_path, 'r', encoding='utf-8') as f:
+                            existing_logs = json.load(f)
+                    
+                    if not isinstance(existing_logs, list):
+                        existing_logs = []
+                    
+                    existing_logs.append(fix_log)
+                    
+                    with open(fix_log_path, 'w', encoding='utf-8') as f:
+                        json.dump(existing_logs, f, indent=2)
+                except Exception as e:
+                    logger.error(f"Error writing to fix log: {str(e)}")
+                
+                return {
+                    "success": False,
+                    "message": "Fix rejected by user"
+                }
+            
             # Create a backup of the original file
             backup_path = f"{file_path}.bak"
             try:
@@ -131,6 +237,36 @@ class FixApplier:
                     "success": False,
                     "message": error_msg
                 }
+            
+            # Log the approval
+            fix_log["applied"] = True
+            fix_log["user_response"] = "approved"
+            
+            # Use the interaction logger to log the approval
+            interaction_logger.log_approval(
+                item="AI-suggested fix",
+                file=file_path,
+                description=suggestion.get("description", "No description provided"),
+                additional_details={"before": original_code[:500] + "..." if len(original_code) > 500 else original_code,
+                                   "after": fixed_code[:500] + "..." if len(fixed_code) > 500 else fixed_code}
+            )
+            
+            # Append to the fix log file
+            try:
+                existing_logs = []
+                if os.path.exists(fix_log_path):
+                    with open(fix_log_path, 'r', encoding='utf-8') as f:
+                        existing_logs = json.load(f)
+                
+                if not isinstance(existing_logs, list):
+                    existing_logs = []
+                
+                existing_logs.append(fix_log)
+                
+                with open(fix_log_path, 'w', encoding='utf-8') as f:
+                    json.dump(existing_logs, f, indent=2)
+            except Exception as e:
+                logger.error(f"Error writing to fix log: {str(e)}")
             
             logger.info(f"Fix applied successfully to {file_path}")
             return {
