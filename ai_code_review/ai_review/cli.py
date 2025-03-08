@@ -25,16 +25,34 @@ from .report_generator import ReportGenerator
 from .security_scanner import scan_code
 from .dependency_scanner import DependencyScanner
 from .ui_validator import UIValidator
-from .config_manager import config_manager
+from .config_manager import config_manager, ConfigManager
 from .interaction_logger import InteractionLogger
 from .constants import (
     LOGS_DIR, SCREENSHOTS_DIR, UI_REPORTS_DIR, REPORTS_DIR,
     CLI_LOG_PATH
 )
 from .models import ReviewResults, FileReviewResult
+from .api import get_project_data
 
 # Initialize the interaction logger
 interaction_logger = InteractionLogger()
+
+# Configure logging
+LOG_DIR = os.path.expanduser("~/.ai-code-review/logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+LOG_PATH = os.path.join(LOG_DIR, "system.log")
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_PATH),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
+config_manager = ConfigManager()
 
 def parse_args():
     """Parse command line arguments."""
@@ -1285,117 +1303,57 @@ def scan_security(code: str, file_path: str) -> Dict[str, Any]:
 
 
 @click.group()
-def cli():
-    """AI Code Review Tool CLI."""
-    pass
+@click.option('--debug/--no-debug', default=False, help='Enable debug mode')
+def cli(debug):
+    """AI Code Review Tool - Analyze and improve your code with AI."""
+    if debug:
+        logger.setLevel(logging.DEBUG)
+        logger.debug("Debug mode enabled")
 
 @cli.command()
-@click.argument('path', type=click.Path(exists=True), required=False)
-@click.option('--complexity-threshold', '-c', default=5, help='Complexity threshold for flagging functions')
-@click.option('--ai', '-a', is_flag=True, help='Use AI to analyze code')
-@click.option('--api-key', '-k', help='OpenAI API key')
-@click.option('--model', '-m', default='gpt-4o', help='OpenAI model to use')
-@click.option('--apply-fixes', '-f', is_flag=True, help='Automatically apply AI-suggested fixes')
-@click.option('--security-scan', '-s', is_flag=True, help='Perform security vulnerability scan')
-@click.option('--dependency-scan', '-d', is_flag=True, help='Scan dependencies for vulnerabilities')
-@click.option('--generate-report', '-r', is_flag=True, help='Generate a unified report')
-@click.option('--report-format', type=click.Choice(['json', 'markdown']), default='json', help='Report format')
-@click.option('--project', '-p', help='Project name')
-@click.option('--debug', is_flag=True, help='Enable debug mode')
-def review(path, complexity_threshold, ai, api_key, model, apply_fixes, security_scan, 
-          dependency_scan, generate_report, report_format, project, debug):
-    """Review code and generate analysis."""
+@click.argument('path', type=click.Path(exists=True))
+@click.option('--verbose', is_flag=True, help='Enable verbose output')
+@click.option('--apply-fixes', is_flag=True, help='Automatically apply suggested fixes')
+def review(path, verbose, apply_fixes):
+    """Run AI code review on the specified path."""
     try:
-        # Set up logging
-        if debug:
-            set_log_level('DEBUG')
+        # Convert path to absolute path
+        abs_path = os.path.abspath(path)
+        logger.debug(f"Reviewing path: {abs_path}")
         
-        # Handle project
-        if path and not project:
-            project = os.path.basename(os.path.abspath(path))
-            click.echo(f"Using directory name as project name: {project}")
-        
-        if project:
-            # Check if project exists
-            if not config_manager.get_project(project):
-                if click.confirm(f"Project '{project}' does not exist. Create it?"):
-                    if config_manager.add_project(project, os.path.abspath(path)):
-                        click.echo(f"Created project: {project}")
-                    else:
-                        click.echo("Failed to create project", err=True)
-                        return
-                else:
-                    return
-            
-            # Set project context
-            config_manager.set_current_project(project)
+        # Check if this path belongs to an existing project
+        for project in config_manager.get_projects():
+            if os.path.commonpath([abs_path, project['path']]) == project['path']:
+                logger.info(f"Found existing project: {project['name']}")
+                config_manager.set_current_project(project['name'])
+                break
         
         # Run the review
-        result = review_code(
-            path=path,
-            complexity_threshold=complexity_threshold,
-            ai=ai,
-            api_key=api_key,
-            model=model,
-            apply_fixes=apply_fixes,
-            security_scan=security_scan,
-            dependency_scan=dependency_scan,
-            generate_report=generate_report,
-            report_format=report_format,
-            debug=debug
-        )
-        
-        # Update project review timestamp
-        if project:
-            config_manager.update_project_review(project)
-        
-        # Display results summary
-        if isinstance(result, dict):
-            if "error" in result:
-                click.echo(f"Error: {result['error']}", err=True)
-            else:
-                click.echo("\nReview Summary:")
-                click.echo("-" * 40)
-                click.echo(f"Total files analyzed: {len(result.get('files', []))}")
-                click.echo(f"Issues found: {result.get('total_issues', 0)}")
-                if apply_fixes:
-                    click.echo(f"Fixes applied: {result.get('applied_fixes', 0)}")
-                click.echo("-" * 40)
+        review_code(abs_path, verbose=verbose, apply_fixes=apply_fixes)
         
     except Exception as e:
-        click.echo(f"Error: {str(e)}", err=True)
-        if debug:
-            click.echo(traceback.format_exc(), err=True)
+        logger.error(f"Error during review: {str(e)}")
+        raise click.ClickException(str(e))
 
 @cli.command()
-@click.option('--host', default='localhost', help='Host to bind the dashboard server to')
-@click.option('--port', default=5050, type=int, help='Port to run the dashboard server on')
-@click.option('--debug', is_flag=True, help='Run the server in debug mode')
-def dashboard(host, port, debug):
-    """Start the web dashboard to view code review results."""
+def dashboard():
+    """Start the dashboard server."""
     try:
-        click.echo(f"Starting dashboard server on http://{host}:{port}")
-        
-        # Configure logging
-        log_level = "debug" if debug else "info"
-        click.echo(f"Log level: {log_level}")
-        
-        # Start the server
-        uvicorn.run("ai_review.test_api:app", host=host, port=port, log_level=log_level, reload=debug)
+        import uvicorn
+        from .test19_api import app
+        logger.info("Starting dashboard server...")
+        uvicorn.run(app, host="127.0.0.1", port=5050)
     except Exception as e:
-        click.echo(f"Error starting dashboard: {str(e)}", err=True)
-        if debug:
-            click.echo(traceback.format_exc(), err=True)
+        logger.error(f"Error starting dashboard: {str(e)}")
+        raise click.ClickException(str(e))
 
 def main():
     """Main entry point for the CLI."""
     try:
         cli()
     except Exception as e:
-        click.echo(f"Error: {str(e)}", err=True)
-        if "--debug" in sys.argv:
-            click.echo(traceback.format_exc(), err=True)
-        sys.exit(1)
+        logger.error(f"Unhandled error: {str(e)}")
+        raise
 
 if __name__ == "__main__":
     main() 

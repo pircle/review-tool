@@ -1,0 +1,4 @@
+2025-03-08 07:43:53 - ai_review.config_manager - ERROR - Missing required configuration fields: openai_api_key
+2025-03-08 07:43:53 - ai_review.config_manager - ERROR - Please update your configuration file at /Users/ali/.ai-code-review/config.json
+2025-03-08 07:44:19 - ai_review.config_manager - ERROR - Missing required configuration fields: openai_api_key
+2025-03-08 07:44:19 - ai_review.config_manager - ERROR - Please update your configuration file at /Users/ali/.ai-code-review/config.json

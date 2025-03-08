@@ -4,6 +4,19 @@ import logging
 from pathlib import Path
 import datetime
 
+# Configure logging
+LOG_DIR = os.path.expanduser("~/.ai-code-review/logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+LOG_PATH = os.path.join(LOG_DIR, "system.log")
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(LOG_PATH),
+        logging.StreamHandler()
+    ]
+)
 logger = logging.getLogger(__name__)
 
 class ConfigManager:
@@ -15,7 +28,7 @@ class ConfigManager:
     
     DEFAULT_CONFIG = {
         "openai_api_key": "",
-        "model": "gpt-4o",
+        "model": "gpt-4",
         "complexity_threshold": 5,
         "log_level": "INFO",
         "file_filters": {
@@ -65,6 +78,8 @@ class ConfigManager:
         }
     }
     
+    REQUIRED_FIELDS = ["openai_api_key", "model", "complexity_threshold", "log_level"]
+    
     def __init__(self):
         """Initialize the configuration manager."""
         self.config = self.DEFAULT_CONFIG.copy()
@@ -83,6 +98,33 @@ class ConfigManager:
         
         # Load global configuration
         self._load_config()
+        
+        # Validate configuration
+        self._validate_config()
+    
+    def _validate_config(self):
+        """Validate the configuration and ensure all required fields are present."""
+        missing_fields = []
+        for field in self.REQUIRED_FIELDS:
+            if not self.config.get(field):
+                missing_fields.append(field)
+        
+        if missing_fields:
+            logger.error(f"Missing required configuration fields: {', '.join(missing_fields)}")
+            logger.error(f"Please update your configuration file at {self.config_file}")
+            self._create_example_config()
+            raise ValueError(f"Missing required configuration fields: {', '.join(missing_fields)}")
+    
+    def _create_example_config(self):
+        """Create an example configuration file if it doesn't exist."""
+        example_file = os.path.join(os.path.dirname(self.config_file), "config.json.example")
+        if not os.path.exists(example_file):
+            try:
+                with open(example_file, 'w') as f:
+                    json.dump(self.DEFAULT_CONFIG, f, indent=2)
+                logger.info(f"Created example configuration file at {example_file}")
+            except Exception as e:
+                logger.error(f"Error creating example config file: {str(e)}")
     
     def _load_projects(self):
         """Load the list of projects."""
@@ -111,8 +153,16 @@ class ConfigManager:
             except Exception as e:
                 logger.error(f"Error loading projects file: {str(e)}")
         
-        # Return empty projects list if file doesn't exist or there's an error
-        return {"projects": []}
+        # Create default projects file if it doesn't exist
+        default_projects = {"projects": []}
+        try:
+            with open(self.projects_file, 'w') as f:
+                json.dump(default_projects, f, indent=2)
+            logger.info(f"Created default projects file at {self.projects_file}")
+        except Exception as e:
+            logger.error(f"Error creating default projects file: {str(e)}")
+        
+        return default_projects
     
     def _save_projects(self):
         """Save the list of projects."""
@@ -174,11 +224,11 @@ class ConfigManager:
     
     def get_project(self, project_name):
         """Get a project by name."""
-        logger.info(f"Looking for project: {project_name}")
-        logger.info(f"All projects: {self.get_projects()}")
+        logger.debug(f"Looking for project: {project_name}")
+        logger.debug(f"All projects: {self.get_projects()}")
         for project in self.get_projects():
             if project["name"] == project_name:
-                logger.info(f"Found project: {project}")
+                logger.debug(f"Found project: {project}")
                 return project
         logger.warning(f"Project not found: {project_name}")
         return None
@@ -238,6 +288,16 @@ class ConfigManager:
     
     def _load_config(self):
         """Load configuration from global and local config files."""
+        # Create default config if it doesn't exist
+        if not os.path.exists(self.config_file):
+            try:
+                with open(self.config_file, 'w') as f:
+                    json.dump(self.DEFAULT_CONFIG, f, indent=2)
+                logger.info(f"Created default configuration file at {self.config_file}")
+                self._create_example_config()
+            except Exception as e:
+                logger.error(f"Error creating default config file: {str(e)}")
+        
         # Load global config if it exists
         if os.path.exists(self.config_file):
             try:
@@ -247,26 +307,21 @@ class ConfigManager:
                     logger.debug(f"Loaded global configuration from {self.config_file}")
             except Exception as e:
                 logger.error(f"Error loading global config file: {str(e)}")
-        
-        # Load local config if it exists (overrides global)
-        if os.path.exists(self.local_config_file):
-            try:
-                with open(self.local_config_file, 'r') as f:
-                    local_config = json.load(f)
-                    self._merge_config(local_config)
-                    logger.debug(f"Loaded local configuration from {self.local_config_file}")
-            except Exception as e:
-                logger.error(f"Error loading local config file: {str(e)}")
     
     def _merge_config(self, new_config):
         """Merge new configuration with existing configuration."""
-        for key, value in new_config.items():
-            if key in self.config and isinstance(self.config[key], dict) and isinstance(value, dict):
-                # If both are dictionaries, merge them
-                self.config[key].update(value)
-            else:
-                # Otherwise, replace the value
-                self.config[key] = value
+        try:
+            for key, value in new_config.items():
+                if isinstance(value, dict) and key in self.config and isinstance(self.config[key], dict):
+                    self.config[key].update(value)
+                else:
+                    self.config[key] = value
+        except Exception as e:
+            logger.error(f"Error merging configurations: {str(e)}")
+    
+    def get_config(self):
+        """Get the current configuration."""
+        return self.config
     
     def get(self, key, default=None):
         """Get a configuration value."""
