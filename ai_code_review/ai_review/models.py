@@ -7,7 +7,7 @@ class FileReviewResult(BaseModel):
     path: str
     issues: int
     status: str  # 'fixed', 'pending', or 'error'
-    details: Optional[str] = None
+    details: Optional[dict] = None
 
 class AppliedFix(BaseModel):
     """Model for storing applied fix details."""

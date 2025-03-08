@@ -17,11 +17,30 @@ from .logger import logger
 from .config_manager import config_manager
 from .constants import LOGS_DIR, get_project_logs_dir
 
-app = FastAPI(
-    title="AI Code Review API",
-    description="API for automated code review and UI validation",
-    version="1.0.0"
-)
+# Create FastAPI app
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    """Root endpoint to verify FastAPI is working."""
+    return {"status": "ok", "message": "API is working"}
+
+@app.get("/api/test")
+async def test_route():
+    """Test route to verify FastAPI is working."""
+    return {"status": "ok", "message": "API is working"}
+
+@app.get("/api/routes")
+async def list_routes():
+    """List all available API routes."""
+    routes = []
+    for route in app.routes:
+        routes.append({
+            "path": route.path,
+            "methods": route.methods,
+            "name": route.name
+        })
+    return {"routes": routes}
 
 # Models for request validation
 class ProjectInfo(BaseModel):
@@ -276,14 +295,19 @@ async def trigger_ui_validation(request: UIValidationRequest, background_tasks: 
 
 def get_project_data(project_name):
     """Get all review data for a specific project."""
+    logger.info(f"Getting project data for: {project_name}")
+    
     # First verify this is a registered project
     project_info = config_manager.get_project(project_name)
+    logger.info(f"Project info from config_manager: {project_info}")
+    
     if not project_info:
         logger.error(f"Project {project_name} not found in projects.json")
         return None
         
     # Get last_review with default value
     last_review = project_info.get("last_review", "No reviews yet")
+    logger.info(f"Last review: {last_review}")
         
     # Initialize empty data structure
     data = {
@@ -307,9 +331,21 @@ def get_project_data(project_name):
     }
     
     # Get logs directory path
-    project_dir = Path(LOGS_DIR) / project_name
+    project_path = project_info.get("path", "")
+    if not project_path:
+        logger.error(f"Project {project_name} has no path specified")
+        return data
+        
+    project_dir = Path(project_path) / "logs"
     if not project_dir.exists():
         logger.warning(f"Logs directory not found for project {project_name}: {project_dir}")
+        # Create logs directory
+        try:
+            project_dir.mkdir(parents=True, exist_ok=True)
+            logger.info(f"Created logs directory for project {project_name}: {project_dir}")
+        except Exception as e:
+            logger.error(f"Failed to create logs directory for project {project_name}: {str(e)}")
+        # Return basic project data without logs
         return data
     
     # Read review results
@@ -349,7 +385,7 @@ def get_project_data(project_name):
     
     return data
 
-@app.get("/status/{project}")
+@app.get("/api/status/{project}")
 async def get_status(project: str) -> Dict[str, Any]:
     """
     Get the status of reviews and validations for a project.
@@ -377,4 +413,4 @@ def start_server(host: str = "0.0.0.0", port: int = 8000):
 
 def serve_dashboard(host='localhost', port=5000, debug=False):
     """Start the dashboard server."""
-    app.run(host=host, port=port, debug=debug) 
+    uvicorn.run(app, host=host, port=port, log_level="debug" if debug else "info") 

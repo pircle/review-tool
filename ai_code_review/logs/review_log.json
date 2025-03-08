@@ -1,0 +1,349 @@
+{
+  "total_reviews": 7,
+  "applied_fixes": 0,
+  "pending_fixes": 3,
+  "files": [
+    {
+      "path": "./next-env.d.ts",
+      "issues": 0,
+      "status": "pending",
+      "details": {
+        "file_path": "./next-env.d.ts",
+        "functions": [],
+        "classes": [],
+        "loc": 5,
+        "language": "TypeScript"
+      }
+    },
+    {
+      "path": "./next.config.ts",
+      "issues": 0,
+      "status": "pending",
+      "details": {
+        "file_path": "./next.config.ts",
+        "functions": [],
+        "classes": [],
+        "loc": 7,
+        "language": "TypeScript"
+      }
+    },
+    {
+      "path": "./src/app/layout.tsx",
+      "issues": 0,
+      "status": "pending",
+      "details": {
+        "file_path": "./src/app/layout.tsx",
+        "functions": [
+          {
+            "name": "RootLayout",
+            "line_number": 20,
+            "args": [
+              "{\n  children",
+              "}: Readonly<{\n  children: React.ReactNode;\n}>"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "RootLayout",
+            "line_number": 20,
+            "args": [
+              "{\n  children",
+              "}: Readonly<{\n  children: React.ReactNode;\n}>"
+            ],
+            "complexity": 1
+          }
+        ],
+        "classes": [],
+        "loc": 34,
+        "language": "TypeScript"
+      }
+    },
+    {
+      "path": "./src/app/page.tsx",
+      "issues": 0,
+      "status": "pending",
+      "details": {
+        "file_path": "./src/app/page.tsx",
+        "functions": [
+          {
+            "name": "Home",
+            "line_number": 4,
+            "args": [],
+            "complexity": 1
+          },
+          {
+            "name": "Home",
+            "line_number": 4,
+            "args": [],
+            "complexity": 1
+          }
+        ],
+        "classes": [],
+        "loc": 17,
+        "language": "TypeScript"
+      }
+    },
+    {
+      "path": "./src/components/TeamList.tsx",
+      "issues": 1,
+      "status": "pending",
+      "details": {
+        "file_path": "./src/components/TeamList.tsx",
+        "functions": [
+          {
+            "name": "TeamList",
+            "line_number": 14,
+            "args": [],
+            "complexity": 3
+          },
+          {
+            "name": "handleAddTeam",
+            "line_number": 19,
+            "args": [],
+            "complexity": 2
+          },
+          {
+            "name": "TeamList",
+            "line_number": 14,
+            "args": [],
+            "complexity": 1
+          }
+        ],
+        "classes": [
+          {
+            "name": "interface",
+            "line_number": 6,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "id",
+              "name",
+              "color",
+              "players"
+            ],
+            "complexity": 1
+          }
+        ],
+        "loc": 92,
+        "language": "TypeScript",
+        "typescript_types_analysis": {
+          "interfaces_detected": true,
+          "types_detected": false,
+          "issues": [
+            "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+          ],
+          "recommendations": [],
+          "interfaces": [
+            "interface"
+          ]
+        },
+        "issues": [
+          "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+        ],
+        "recommendations": []
+      }
+    },
+    {
+      "path": "./src/components/GameList.tsx",
+      "issues": 1,
+      "status": "pending",
+      "details": {
+        "file_path": "./src/components/GameList.tsx",
+        "functions": [
+          {
+            "name": "GameList",
+            "line_number": 23,
+            "args": [],
+            "complexity": 9
+          },
+          {
+            "name": "handleAddGame",
+            "line_number": 29,
+            "args": [],
+            "complexity": 5
+          },
+          {
+            "name": "formatDate",
+            "line_number": 51,
+            "args": [
+              "dateString: string"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "GameList",
+            "line_number": 23,
+            "args": [],
+            "complexity": 1
+          },
+          {
+            "name": "if",
+            "line_number": 30,
+            "args": [
+              "selectedTeamId && gameDate"
+            ],
+            "complexity": 2
+          },
+          {
+            "name": "if",
+            "line_number": 33,
+            "args": [
+              "selectedTeam"
+            ],
+            "complexity": 2
+          }
+        ],
+        "classes": [
+          {
+            "name": "Team",
+            "line_number": 7,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "id",
+              "name",
+              "color",
+              "players"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "Game",
+            "line_number": 14,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "id",
+              "teamId",
+              "teamName",
+              "teamColor",
+              "date",
+              "location"
+            ],
+            "complexity": 1
+          }
+        ],
+        "loc": 146,
+        "language": "TypeScript",
+        "typescript_types_analysis": {
+          "interfaces_detected": true,
+          "types_detected": false,
+          "issues": [
+            "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+          ],
+          "recommendations": [],
+          "interfaces": [
+            "Team",
+            "Game"
+          ]
+        },
+        "issues": [
+          "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+        ],
+        "recommendations": []
+      }
+    },
+    {
+      "path": "./src/store/useStore.ts",
+      "issues": 1,
+      "status": "pending",
+      "details": {
+        "file_path": "./src/store/useStore.ts",
+        "functions": [
+          {
+            "name": "if",
+            "line_number": 37,
+            "args": [
+              "isClient"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "if",
+            "line_number": 46,
+            "args": [
+              "isClient"
+            ],
+            "complexity": 1
+          }
+        ],
+        "classes": [
+          {
+            "name": "Team",
+            "line_number": 4,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "id",
+              "name",
+              "color",
+              "players"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "Game",
+            "line_number": 11,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "id",
+              "teamId",
+              "teamName",
+              "teamColor",
+              "date",
+              "location"
+            ],
+            "complexity": 1
+          },
+          {
+            "name": "StoreState",
+            "line_number": 20,
+            "type": "interface",
+            "extends": null,
+            "methods": [
+              "teams",
+              "games",
+              "addTeam",
+              "addGame"
+            ],
+            "complexity": 1
+          }
+        ],
+        "loc": 53,
+        "language": "TypeScript",
+        "zustand_analysis": {
+          "zustand_store_detected": true,
+          "issues": [],
+          "recommendations": [
+            "\u26a0\ufe0f Zustand store detected. Ensure state updates are optimized."
+          ]
+        },
+        "issues": [
+          "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+        ],
+        "recommendations": [
+          "\u26a0\ufe0f Zustand store detected. Ensure state updates are optimized.",
+          "Generic types detected. Ensure they have appropriate constraints."
+        ],
+        "typescript_types_analysis": {
+          "interfaces_detected": true,
+          "types_detected": false,
+          "issues": [
+            "Non-null assertions (!) detected. These can lead to runtime errors - consider safer alternatives."
+          ],
+          "recommendations": [
+            "Generic types detected. Ensure they have appropriate constraints."
+          ],
+          "interfaces": [
+            "Team",
+            "Game",
+            "StoreState"
+          ]
+        }
+      }
+    }
+  ],
+  "applied_fixes_details": [],
+  "timestamp": "2025-03-07T20:23:17.446852"
+}

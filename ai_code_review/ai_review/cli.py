@@ -796,6 +796,7 @@ def review_code(
     ui_validate: bool = False,
     url: Optional[str] = None,
     ui_report_format: str = "markdown",
+    skip_code_review: bool = False,
     debug: bool = False
 ) -> Dict[str, Any]:
     """Review code and generate analysis."""
@@ -827,7 +828,8 @@ def review_code(
             logger.info(f"Analyzing directory: {path}")
             try:
                 files = analyze_directory(path)
-                for file_path, analysis in files.items():
+                for analysis in files:
+                    file_path = analysis.get("file_path", "unknown")
                     file_result = FileReviewResult(
                         path=file_path,
                         issues=len(analysis.get("issues", [])),
@@ -922,7 +924,7 @@ def review_code(
         
         # Save results
         try:
-            data = results.dict()
+            data = results.model_dump()
             data["timestamp"] = data["timestamp"].isoformat()
             with open(review_log_path, "w") as f:
                 json.dump(data, f, indent=2)
@@ -932,7 +934,7 @@ def review_code(
             if debug:
                 logger.error(traceback.format_exc())
         
-        return results.dict()
+        return results.model_dump()
         
     except Exception as e:
         error_msg = f"Unexpected error during code review: {str(e)}"
@@ -1148,8 +1150,7 @@ def handle_review_command(args):
         url=args.url,
         ui_report_format=args.ui_report_format,
         skip_code_review=args.skip_code_review if hasattr(args, 'skip_code_review') else False,
-        debug=args.debug,
-        project=args.project
+        debug=args.debug
     )
     
     # Log the execution result
@@ -1289,25 +1290,111 @@ def cli():
     pass
 
 @cli.command()
+@click.argument('path', type=click.Path(exists=True), required=False)
+@click.option('--complexity-threshold', '-c', default=5, help='Complexity threshold for flagging functions')
+@click.option('--ai', '-a', is_flag=True, help='Use AI to analyze code')
+@click.option('--api-key', '-k', help='OpenAI API key')
+@click.option('--model', '-m', default='gpt-4o', help='OpenAI model to use')
+@click.option('--apply-fixes', '-f', is_flag=True, help='Automatically apply AI-suggested fixes')
+@click.option('--security-scan', '-s', is_flag=True, help='Perform security vulnerability scan')
+@click.option('--dependency-scan', '-d', is_flag=True, help='Scan dependencies for vulnerabilities')
+@click.option('--generate-report', '-r', is_flag=True, help='Generate a unified report')
+@click.option('--report-format', type=click.Choice(['json', 'markdown']), default='json', help='Report format')
+@click.option('--project', '-p', help='Project name')
+@click.option('--debug', is_flag=True, help='Enable debug mode')
+def review(path, complexity_threshold, ai, api_key, model, apply_fixes, security_scan, 
+          dependency_scan, generate_report, report_format, project, debug):
+    """Review code and generate analysis."""
+    try:
+        # Set up logging
+        if debug:
+            set_log_level('DEBUG')
+        
+        # Handle project
+        if path and not project:
+            project = os.path.basename(os.path.abspath(path))
+            click.echo(f"Using directory name as project name: {project}")
+        
+        if project:
+            # Check if project exists
+            if not config_manager.get_project(project):
+                if click.confirm(f"Project '{project}' does not exist. Create it?"):
+                    if config_manager.add_project(project, os.path.abspath(path)):
+                        click.echo(f"Created project: {project}")
+                    else:
+                        click.echo("Failed to create project", err=True)
+                        return
+                else:
+                    return
+            
+            # Set project context
+            config_manager.set_current_project(project)
+        
+        # Run the review
+        result = review_code(
+            path=path,
+            complexity_threshold=complexity_threshold,
+            ai=ai,
+            api_key=api_key,
+            model=model,
+            apply_fixes=apply_fixes,
+            security_scan=security_scan,
+            dependency_scan=dependency_scan,
+            generate_report=generate_report,
+            report_format=report_format,
+            debug=debug
+        )
+        
+        # Update project review timestamp
+        if project:
+            config_manager.update_project_review(project)
+        
+        # Display results summary
+        if isinstance(result, dict):
+            if "error" in result:
+                click.echo(f"Error: {result['error']}", err=True)
+            else:
+                click.echo("\nReview Summary:")
+                click.echo("-" * 40)
+                click.echo(f"Total files analyzed: {len(result.get('files', []))}")
+                click.echo(f"Issues found: {result.get('total_issues', 0)}")
+                if apply_fixes:
+                    click.echo(f"Fixes applied: {result.get('applied_fixes', 0)}")
+                click.echo("-" * 40)
+        
+    except Exception as e:
+        click.echo(f"Error: {str(e)}", err=True)
+        if debug:
+            click.echo(traceback.format_exc(), err=True)
+
+@cli.command()
 @click.option('--host', default='localhost', help='Host to bind the dashboard server to')
-@click.option('--port', default=5000, type=int, help='Port to run the dashboard server on')
+@click.option('--port', default=5050, type=int, help='Port to run the dashboard server on')
 @click.option('--debug', is_flag=True, help='Run the server in debug mode')
 def dashboard(host, port, debug):
     """Start the web dashboard to view code review results."""
-    click.echo(f"Starting dashboard server on http://{host}:{port}")
-    from .dashboard import serve_dashboard  # Lazy import to avoid circular dependency
-    serve_dashboard(host=host, port=port, debug=debug)
-
-cli.add_command(dashboard)
+    try:
+        click.echo(f"Starting dashboard server on http://{host}:{port}")
+        
+        # Configure logging
+        log_level = "debug" if debug else "info"
+        click.echo(f"Log level: {log_level}")
+        
+        # Start the server
+        uvicorn.run("ai_review.test_api:app", host=host, port=port, log_level=log_level, reload=debug)
+    except Exception as e:
+        click.echo(f"Error starting dashboard: {str(e)}", err=True)
+        if debug:
+            click.echo(traceback.format_exc(), err=True)
 
 def main():
     """Main entry point for the CLI."""
     try:
         cli()
     except Exception as e:
-        logger.error(f"Error: {str(e)}")
+        click.echo(f"Error: {str(e)}", err=True)
         if "--debug" in sys.argv:
-            logger.error(traceback.format_exc())
+            click.echo(traceback.format_exc(), err=True)
         sys.exit(1)
 
 if __name__ == "__main__":

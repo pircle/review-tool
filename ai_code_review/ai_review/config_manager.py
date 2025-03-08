@@ -129,56 +129,58 @@ class ConfigManager:
         """Get the list of projects."""
         return self.projects.get("projects", [])
     
-    def add_project(self, project_name, project_path):
-        """Add a new project to the list."""
-        projects = self.get_projects()
-        
-        # Check if project already exists by name
-        for project in projects:
-            if project["name"] == project_name:
-                logger.warning(f"Project '{project_name}' already exists")
-                return False
-        
-        # Check if project already exists by path
-        for project in projects:
-            if os.path.abspath(project["path"]) == os.path.abspath(project_path):
-                logger.warning(f"Project at path '{project_path}' already exists with name '{project['name']}'")
-                return False
-        
-        # Get current timestamp
-        current_time = datetime.datetime.now().isoformat()
-        
-        # Add new project with timestamps
-        projects.append({
-            "name": project_name,
-            "path": project_path,
-            "created_at": current_time,
-            "updated_at": current_time
-        })
-        
-        self.projects["projects"] = projects
-        success = self._save_projects()
-        
-        if success:
-            logger.info(f"Project '{project_name}' added successfully")
+    def add_project(self, name: str, path: str) -> bool:
+        """Add a new project."""
+        try:
+            # Normalize path
+            path = os.path.abspath(path)
             
-            # Create project logs directory
-            project_logs_dir = os.path.join(project_path, "logs")
-            os.makedirs(project_logs_dir, exist_ok=True)
-            logger.debug(f"Created project logs directory: {project_logs_dir}")
+            # Check if project already exists
+            if self.get_project(name):
+                logger.warning(f"Project '{name}' already exists")
+                return False
             
-            # Create project reports directory
-            project_reports_dir = os.path.join(project_path, "reports")
-            os.makedirs(project_reports_dir, exist_ok=True)
-            logger.debug(f"Created project reports directory: {project_reports_dir}")
-        
-        return success
+            # Check if path is already registered
+            for project in self.get_projects():
+                if os.path.abspath(project["path"]) == path:
+                    logger.warning(f"Path '{path}' is already registered to project '{project['name']}'")
+                    return False
+            
+            # Create project entry with timestamps
+            current_time = datetime.datetime.now().isoformat()
+            project = {
+                "name": name,
+                "path": path,
+                "created_at": current_time,
+                "updated_at": current_time,
+                "last_review": current_time
+            }
+            
+            # Add to projects list
+            if "projects" not in self.projects:
+                self.projects["projects"] = []
+            self.projects["projects"].append(project)
+            
+            # Save changes
+            if self._save_projects():
+                logger.info(f"Added project '{name}' at path '{path}'")
+                return True
+            
+            logger.error(f"Failed to save project '{name}'")
+            return False
+        except Exception as e:
+            logger.error(f"Error adding project: {str(e)}")
+            return False
     
     def get_project(self, project_name):
         """Get a project by name."""
+        logger.info(f"Looking for project: {project_name}")
+        logger.info(f"All projects: {self.get_projects()}")
         for project in self.get_projects():
             if project["name"] == project_name:
+                logger.info(f"Found project: {project}")
                 return project
+        logger.warning(f"Project not found: {project_name}")
         return None
     
     def set_current_project(self, project_name):
@@ -428,28 +430,31 @@ class ConfigManager:
         logger.warning(f"Project '{project_name}' not found")
         return False
 
-    def update_project_review(self, project_name):
+    def update_project_review(self, project_name: str) -> bool:
         """Update a project's last review timestamp."""
-        projects = self.get_projects()
-        
-        for project in projects:
-            if project["name"] == project_name:
-                # Update last_review timestamp
-                current_time = datetime.datetime.now().isoformat()
-                project["last_review"] = current_time
-                project["updated_at"] = current_time
-                
-                # Save changes
-                self.projects["projects"] = projects
-                if self._save_projects():
-                    logger.info(f"Updated last review timestamp for project '{project_name}'")
-                    return True
-                
-                logger.error(f"Failed to save review timestamp for '{project_name}'")
-                return False
-        
-        logger.warning(f"Project '{project_name}' not found")
-        return False
+        try:
+            projects = self.get_projects()
+            for project in projects:
+                if project["name"] == project_name:
+                    # Update timestamps
+                    current_time = datetime.now().isoformat()
+                    project["last_review"] = current_time
+                    project["updated_at"] = current_time
+                    
+                    # Save changes
+                    self.projects["projects"] = projects
+                    if self._save_projects():
+                        logger.info(f"Updated last review timestamp for project '{project_name}'")
+                        return True
+                    
+                    logger.error(f"Failed to save review timestamp for '{project_name}'")
+                    return False
+            
+            logger.warning(f"Project '{project_name}' not found")
+            return False
+        except Exception as e:
+            logger.error(f"Error updating project review timestamp: {str(e)}")
+            return False
 
 # Create a singleton instance
 config_manager = ConfigManager() 

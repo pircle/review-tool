@@ -81,6 +81,31 @@
             </div>
         </div>
 
+        <!-- Project Info Card -->
+        <div class="bg-white shadow rounded-lg mb-6">
+            <div class="px-4 py-5 sm:p-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Project Information</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Project Name</dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="projectName">-</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Created At</dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="createdAt">-</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Last Updated</dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="updatedAt">-</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm font-medium text-gray-500">Last Review</dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="lastReview">-</dd>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Main Content -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Code Review Results -->
@@ -139,117 +164,128 @@
     </main>
 
     <script>
-        // Fetch projects and populate select
-        async function fetchProjects() {
-            try {
-                const response = await fetch('/api/projects');
-                const projects = await response.json();
+        // Function to format timestamps
+        function formatTimestamp(timestamp) {
+            if (!timestamp) return 'Never';
+            const date = new Date(timestamp);
+            return date.toLocaleString();
+        }
+
+        // Function to update project data
+        function updateProjectData(projectName) {
+            fetch(`/api/status/${projectName}`)
+                .then(response => response.json())
+                .then(data => {
+                    const projectInfo = data.project_info;
+                    
+                    // Update project info
+                    document.getElementById('projectName').textContent = projectInfo.name || '-';
+                    document.getElementById('createdAt').textContent = formatTimestamp(projectInfo.created_at);
+                    document.getElementById('updatedAt').textContent = formatTimestamp(projectInfo.updated_at);
+                    document.getElementById('lastReview').textContent = projectInfo.last_review === 'No reviews yet' ? 
+                        'No reviews yet' : formatTimestamp(projectInfo.last_review);
+                    
+                    // Update review results
+                    const reviewResults = data.review_results;
+                    document.getElementById('totalReviews').textContent = reviewResults.total_reviews || 0;
+                    
+                    // Update review results table
+                    const reviewTable = document.getElementById('reviewResults');
+                    reviewTable.innerHTML = '';
+                    
+                    if (reviewResults.files && reviewResults.files.length > 0) {
+                        reviewResults.files.forEach(file => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${file.path}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${file.issues || 0}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                        file.status === 'fixed' ? 'bg-green-100 text-green-800' : 
+                                        file.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 
+                                        'bg-gray-100 text-gray-800'
+                                    }">
+                                        ${file.status || 'unknown'}
+                                    </span>
+                                </td>
+                            `;
+                            reviewTable.appendChild(row);
+                        });
+                    } else {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td colspan="3" class="px-6 py-4 text-sm text-gray-500 text-center">
+                                No review results available
+                            </td>
+                        `;
+                        reviewTable.appendChild(row);
+                    }
+                    
+                    // Update UI validation results
+                    const uiResults = document.getElementById('uiResults');
+                    uiResults.innerHTML = '';
+                    
+                    if (data.ui_validation_results.validations && data.ui_validation_results.validations.length > 0) {
+                        data.ui_validation_results.validations.forEach(validation => {
+                            const div = document.createElement('div');
+                            div.className = 'bg-white shadow overflow-hidden sm:rounded-lg';
+                            div.innerHTML = `
+                                <div class="px-4 py-5 sm:p-6">
+                                    <h4 class="text-lg font-medium text-gray-900">${validation.timestamp}</h4>
+                                    <p class="mt-1 text-sm text-gray-600">${validation.summary}</p>
+                                    ${validation.changes ? `
+                                        <div class="mt-3">
+                                            <h5 class="text-sm font-medium text-gray-700">Changes Detected:</h5>
+                                            <ul class="mt-2 list-disc pl-5 text-sm text-gray-600">
+                                                ${validation.changes.map(change => `<li>${change}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            `;
+                            uiResults.appendChild(div);
+                        });
+                    } else {
+                        uiResults.innerHTML = `
+                            <div class="text-sm text-gray-500 text-center">
+                                No UI validation results available
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching project data:', error);
+                    // Show error message in the UI
+                    document.getElementById('projectName').textContent = 'Error loading project data';
+                });
+        }
+
+        // Load projects into dropdown
+        fetch('/api/projects')
+            .then(response => response.json())
+            .then(projects => {
                 const select = document.getElementById('projectSelect');
+                select.innerHTML = '<option value="">Select Project</option>';
+                
                 projects.forEach(project => {
                     const option = document.createElement('option');
                     option.value = project.name;
                     option.textContent = project.name;
                     select.appendChild(option);
                 });
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-            }
-        }
+            })
+            .catch(error => {
+                console.error('Error loading projects:', error);
+                document.getElementById('projectSelect').innerHTML = '<option>Error loading projects</option>';
+            });
 
-        // Fetch and display project status
-        async function fetchProjectStatus(projectName) {
-            try {
-                const response = await fetch(`/api/status/${projectName}`);
-                const data = await response.json();
-                updateDashboard(data);
-            } catch (error) {
-                console.error('Error fetching project status:', error);
-            }
-        }
-
-        // Update dashboard with project data
-        function updateDashboard(data) {
-            // Update overview cards
-            document.getElementById('totalReviews').textContent = data.review_results.total_reviews || 0;
-            document.getElementById('appliedFixes').textContent = data.review_results.applied_fixes || 0;
-            document.getElementById('pendingFixes').textContent = data.review_results.pending_fixes || 0;
-
-            // Update review results table
-            const reviewResults = document.getElementById('reviewResults');
-            reviewResults.innerHTML = '';
-            if (data.review_results.files) {
-                data.review_results.files.forEach(file => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${file.path}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${file.issues}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                                file.status === 'fixed' ? 'bg-green-100 text-green-800' :
-                                file.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                                'bg-red-100 text-red-800'
-                            }">
-                                ${file.status}
-                            </span>
-                        </td>
-                    `;
-                    reviewResults.appendChild(row);
-                });
-            }
-
-            // Update UI validation results
-            const uiResults = document.getElementById('uiResults');
-            uiResults.innerHTML = '';
-            if (data.ui_validation_results.validations) {
-                data.ui_validation_results.validations.forEach(validation => {
-                    const div = document.createElement('div');
-                    div.className = 'bg-gray-50 p-4 rounded-lg';
-                    div.innerHTML = `
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="text-sm font-medium text-gray-900">${validation.url}</h4>
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                                validation.status === 'passed' ? 'bg-green-100 text-green-800' :
-                                'bg-red-100 text-red-800'
-                            }">
-                                ${validation.status}
-                            </span>
-                        </div>
-                        <p class="text-sm text-gray-500">${validation.summary}</p>
-                    `;
-                    uiResults.appendChild(div);
-                });
-            }
-
-            // Update applied fixes table
-            const appliedFixesTable = document.getElementById('appliedFixesTable');
-            appliedFixesTable.innerHTML = '';
-            if (data.review_results.applied_fixes_details) {
-                data.review_results.applied_fixes_details.forEach(fix => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${fix.file}</td>
-                        <td class="px-6 py-4 text-sm text-gray-500">${fix.description}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${fix.category}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                Applied
-                            </span>
-                        </td>
-                    `;
-                    appliedFixesTable.appendChild(row);
-                });
-            }
-        }
-
-        // Event listener for project selection
-        document.getElementById('projectSelect').addEventListener('change', (e) => {
-            if (e.target.value) {
-                fetchProjectStatus(e.target.value);
+        // Handle project selection
+        document.getElementById('projectSelect').addEventListener('change', function(e) {
+            const projectName = e.target.value;
+            if (projectName) {
+                updateProjectData(projectName);
             }
         });
-
-        // Initialize dashboard
-        fetchProjects();
     </script>
 </body>
 </html> 
