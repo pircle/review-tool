@@ -16,6 +16,7 @@ import re
 from datetime import datetime
 from typing import Optional, Dict, Any, List, Tuple, Union
 import traceback
+from pathlib import Path
 
 # Third-party imports
 from selenium import webdriver
@@ -23,32 +24,49 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.common.exceptions import WebDriverException
 import openai
+from openai import OpenAI
+from openai.types.chat import ChatCompletionMessage
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Local imports
-from .logger import get_logger
-
-# Set up logging
-logger = get_logger()
+from .logger import logger  # Import the logger directly
+from .constants import SCREENSHOTS_DIR, UI_REPORTS_DIR, get_project_screenshots_dir, get_project_ui_reports_dir, LOGS_DIR
+from .config_manager import config_manager
+from .models import UIValidationResult, UIValidationResults
 
 class UIScreenCapture:
     """Class for capturing screenshots of web UIs."""
     
-    def __init__(self, url: str, output_dir: str = "logs/screenshots"):
+    def __init__(self, url: str, output_dir: Optional[str] = None):
         """
         Initialize the UI screen capture.
         
         Args:
             url: URL of the web page to capture
-            output_dir: Directory to save screenshots
+            output_dir: Directory to save screenshots (defaults to project screenshots directory)
         """
         self.url = url
+        
+        # Use the provided output_dir or get it from the project config
+        if output_dir is None:
+            if config_manager.current_project:
+                project = config_manager.get_project(config_manager.current_project)
+                if project:
+                    # Use project-specific screenshots directory
+                    output_dir = get_project_screenshots_dir(project["path"])
+                    logger.info(f"Using project screenshots directory: {output_dir}")
+                else:
+                    logger.warning("Current project not found in config, using default screenshots directory")
+                    output_dir = SCREENSHOTS_DIR
+            else:
+                logger.warning("No current project set, using default screenshots directory")
+                output_dir = SCREENSHOTS_DIR
+        
         self.output_dir = output_dir
+        os.makedirs(self.output_dir, exist_ok=True)
+        logger.info(f"Screenshots will be saved to: {self.output_dir}")
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         
-        # Create output directory if it doesn't exist
-        if not os.path.exists(self.output_dir):
-            os.makedirs(self.output_dir)
-            
         # Initialize Chrome options
         chrome_options = Options()
         chrome_options.add_argument("--headless")  # Run in headless mode
@@ -102,28 +120,242 @@ class UIScreenCapture:
 class UIValidator:
     """Class for validating UI changes using ChatGPT Vision."""
     
-    def __init__(self, api_key: Optional[str] = None):
+    def __init__(self, project_name: str, api_key: Optional[str] = None):
+        self.project_name = project_name
+        self.log_dir = Path(LOGS_DIR) / project_name
+        self.log_dir.mkdir(parents=True, exist_ok=True)
+        self.ui_log_path = self.log_dir / "ui_validation_log.json"
+        self.validation_results = UIValidationResults()
+        self._load_existing_results()
+        
+        self.client = OpenAI(api_key=api_key) if api_key else None
+
+    def _load_existing_results(self):
+        """Load existing validation results from the log file."""
+        if self.ui_log_path.exists():
+            with open(self.ui_log_path) as f:
+                data = json.load(f)
+                for validation in data.get("validations", []):
+                    validation['timestamp'] = datetime.fromisoformat(validation['timestamp'])
+                    self.validation_results.validations.append(UIValidationResult(**validation))
+
+    def _save_results(self):
+        """Save validation results to the log file."""
+        data = self.validation_results.dict()
+        data['timestamp'] = data['timestamp'].isoformat()
+        for validation in data['validations']:
+            validation['timestamp'] = validation['timestamp'].isoformat()
+        
+        with open(self.ui_log_path, 'w') as f:
+            json.dump(data, f, indent=2)
+
+    def compare_screenshots(self, before_image: str, after_image: str) -> UIValidationResult:
+        """Compare two screenshots and analyze the differences."""
+        try:
+            # Read and encode images
+            with open(before_image, 'rb') as f:
+                before_base64 = base64.b64encode(f.read()).decode('utf-8')
+            with open(after_image, 'rb') as f:
+                after_base64 = base64.b64encode(f.read()).decode('utf-8')
+
+            # Prepare messages for the API
+            messages = [
+                {
+                    "role": "system",
+                    "content": self._get_analysis_prompt()
+                },
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "text",
+                            "text": "Compare these two UI screenshots and identify any visual changes:"
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{before_base64}",
+                                "detail": "high"
+                            }
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"data:image/png;base64,{after_base64}",
+                                "detail": "high"
+                            }
+                        }
+                    ]
+                }
+            ]
+
+            # Make API call
+            response = self.client.chat.completions.create(
+                model="gpt-4-vision-preview",
+                messages=messages,
+                max_tokens=1000,
+                temperature=0
+            )
+
+            # Parse response
+            analysis = response.choices[0].message.content
+            changes = self._parse_changes(analysis)
+
+            # Create validation result
+            result = UIValidationResult(
+                url=before_image,  # Using image path as URL for now
+                status="passed" if not changes else "failed",
+                summary=analysis,
+                changes=changes,
+                timestamp=datetime.now()
+            )
+
+            # Add to results and save
+            self.validation_results.validations.append(result)
+            self._save_results()
+
+            return result
+
+        except Exception as e:
+            logger.error(f"Error comparing screenshots: {str(e)}")
+            raise
+
+    def _get_analysis_prompt(self) -> str:
+        """Get the prompt for UI analysis."""
+        return """You are a UI/UX expert analyzing visual changes between two versions of a user interface.
+        Please analyze the following aspects and provide a structured response:
+        1. Layout changes (position, size, alignment)
+        2. Color changes (background, text, borders)
+        3. Element changes (added, removed, modified)
+        4. Text content changes
+        
+        Format your response as a clear summary followed by specific changes in each category.
+        Focus on user impact and potential issues. Be precise in describing locations and changes."""
+
+    def _parse_changes(self, analysis: str) -> List[Dict[str, Any]]:
+        """Parse the analysis text into structured changes."""
+        changes = []
+        
+        # Simple parsing - can be enhanced based on actual API response format
+        categories = ["Layout changes", "Color changes", "Element changes", "Text content changes"]
+        current_category = None
+        
+        for line in analysis.split('\n'):
+            line = line.strip()
+            if not line:
+                continue
+                
+            # Check if line is a category header
+            for category in categories:
+                if category in line:
+                    current_category = category
+                    break
+            
+            # If we have a category and this isn't a header, it's a change
+            if current_category and not any(category in line for category in categories):
+                changes.append({
+                    "category": current_category,
+                    "description": line
+                })
+        
+        return changes
+
+    def get_results(self) -> UIValidationResults:
+        """Get all validation results."""
+        return self.validation_results
+
+    def _get_vision_model(self) -> str:
         """
-        Initialize the UI validator.
+        Get an available vision-capable model.
+        
+        Returns:
+            Name of an available vision model
+        
+        Raises:
+            ValueError: If no suitable vision model is available
+        """
+        # Preferred models in order of preference (latest to oldest)
+        preferred_models = [
+            "gpt-4-vision",         # Latest stable vision model
+            "gpt-4.5-vision",       # Future model (if available)
+            "gpt-4-turbo-vision",   # Alternative name
+            "gpt-4o"                # Fallback option
+        ]
+        
+        try:
+            # Get available models if not already cached
+            if self._available_models is None:
+                logger.info("Fetching available models from OpenAI")
+                response = self.client.models.list()
+                self._available_models = [model.id for model in response.data]
+                logger.debug(f"Available models: {', '.join(self._available_models)}")
+            
+            # First try to find vision-specific models
+            vision_models = [model for model in self._available_models if any(
+                keyword in model.lower() for keyword in ["vision", "gpt-4o"]
+            )]
+            logger.debug(f"Found vision-capable models: {', '.join(vision_models)}")
+            
+            # Check preferred models first
+            for model in preferred_models:
+                if model in self._available_models:
+                    logger.info(f"Using preferred vision model: {model}")
+                    return model
+            
+            # If no preferred models are available, try any vision-capable model
+            if vision_models:
+                # Sort by version number to get the latest
+                sorted_models = sorted(vision_models, reverse=True)
+                selected_model = sorted_models[0]
+                logger.info(f"Using available vision model: {selected_model}")
+                return selected_model
+            
+            # If no vision models are found, try GPT-4 models as they might support vision
+            gpt4_models = [model for model in self._available_models if "gpt-4" in model.lower()]
+            if gpt4_models:
+                selected_model = sorted(gpt4_models, reverse=True)[0]
+                logger.warning(f"No dedicated vision models found. Trying GPT-4 model: {selected_model}")
+                return selected_model
+            
+            # If no suitable models are found, raise an error
+            raise ValueError("No suitable vision-capable models available")
+            
+        except Exception as e:
+            error_msg = f"Error getting available models: {str(e)}"
+            logger.error(error_msg)
+            logger.error(f"Available models: {self._available_models}")
+            raise ValueError(f"Failed to find a suitable vision model: {str(e)}")
+
+    def _prepare_vision_request(self, messages: List[Dict[str, Any]], model: str) -> Dict[str, Any]:
+        """
+        Prepare the vision request based on the selected model.
         
         Args:
-            api_key: OpenAI API key
+            messages: List of message dictionaries
+            model: Selected model name
+            
+        Returns:
+            Dictionary containing the request parameters
         """
-        self.api_key = api_key or os.environ.get("OPENAI_API_KEY")
-        if not self.api_key:
-            logger.error("No OpenAI API key provided")
-            raise ValueError("OpenAI API key is required for UI validation")
+        request = {
+            "model": model,
+            "messages": messages,
+            "max_tokens": 4096
+        }
         
-        # Set OpenAI API key
-        openai.api_key = self.api_key
-        logger.info("UIValidator initialized")
+        # Add model-specific parameters
+        if "gpt-4" in model.lower():
+            request["temperature"] = 0.2  # Lower temperature for more consistent analysis
+        
+        logger.debug(f"Prepared vision request for model {model}")
+        return request
 
     def _encode_image(self, image_path: str) -> str:
         """
-        Encode an image file as base64.
+        Encode an image to base64.
         
         Args:
-            image_path: Path to the image file
+            image_path: Path to the image
             
         Returns:
             Base64-encoded image
@@ -131,185 +363,118 @@ class UIValidator:
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
 
-    def compare_screenshots(self, before_image: str, after_image: str) -> Dict[str, Any]:
+    def _normalize_analysis_json(self, analysis_json: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Compare two screenshots using ChatGPT Vision API.
+        Normalize and validate the analysis JSON.
         
         Args:
-            before_image: Path to the before screenshot
-            after_image: Path to the after screenshot
+            analysis_json: Raw analysis JSON from the API
             
         Returns:
-            Dictionary containing analysis results
+            Normalized analysis JSON
         """
-        logger.info(f"Comparing screenshots: {before_image} and {after_image}")
+        # Define required fields and their default values
+        required_fields = {
+            "layout_changes": [],
+            "color_changes": [],
+            "element_changes": [],
+            "text_changes": [],
+            "critical_issues": [],
+            "comparison_confidence": 0
+        }
         
-        try:
-            # Encode images to base64
-            try:
-                with open(before_image, "rb") as f:
-                    before_base64 = base64.b64encode(f.read()).decode("utf-8")
-                
-                with open(after_image, "rb") as f:
-                    after_base64 = base64.b64encode(f.read()).decode("utf-8")
-            except (IOError, FileNotFoundError) as e:
-                error_msg = f"Failed to read image files: {str(e)}"
-                logger.error(error_msg)
-                return {
-                    "before_image": before_image,
-                    "after_image": after_image,
-                    "analysis_json": {"error": error_msg},
-                    "formatted_analysis": f"❌ Error: {error_msg}. Please verify the screenshot files exist and are accessible.",
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-            
-            # Prepare prompt
-            prompt = """
-            Analyze these two UI screenshots (before and after) and identify all visual differences.
-            
-            Focus on these aspects:
-            1. Layout changes (positioning, alignment, spacing)
-            2. Color changes (background, text, borders)
-            3. Missing or added elements
-            4. Text content changes
-            5. Responsive design issues
-            
-            For each change, determine if it's likely an unintentional regression or an intentional improvement.
-            Assign a severity level (Critical, High, Medium, Low) to each issue.
-            
-            Respond with a JSON object containing:
-            {
-                "layout_changes": [{"description": "...", "severity": "...", "likely_intentional": true/false}],
-                "color_changes": [{"description": "...", "severity": "...", "likely_intentional": true/false}],
-                "element_changes": [{"description": "...", "severity": "...", "likely_intentional": true/false}],
-                "text_changes": [{"description": "...", "severity": "...", "likely_intentional": true/false}],
-                "critical_issues": ["..."],
-                "comparison_confidence": 0-100
+        # Ensure all required fields exist
+        for field, default_value in required_fields.items():
+            if field not in analysis_json:
+                analysis_json[field] = default_value
+        
+        # Ensure arrays are properly initialized
+        array_fields = ["layout_changes", "color_changes", "element_changes", "text_changes", "critical_issues"]
+        for field in array_fields:
+            if not isinstance(analysis_json[field], list):
+                analysis_json[field] = []
+        
+        # Calculate comparison confidence based on the number and severity of changes
+        total_changes = sum(len(analysis_json[field]) for field in array_fields[:-1])  # Exclude critical_issues
+        
+        if total_changes == 0:
+            # No changes detected
+            if any(analysis_json[field] for field in array_fields):  # Check if any field has content
+                analysis_json["comparison_confidence"] = 85  # High confidence in finding no changes
+            else:
+                analysis_json["comparison_confidence"] = 50  # Medium confidence when no analysis is provided
+        else:
+            # Calculate weighted confidence based on severity of changes
+            severity_weights = {
+                "Critical": 1.0,
+                "High": 0.8,
+                "Medium": 0.6,
+                "Low": 0.4
             }
             
-            Severity levels:
-            - Critical: Breaks functionality or severely impacts usability
-            - High: Significantly impacts user experience but doesn't break functionality
-            - Medium: Noticeable but doesn't significantly impact user experience
-            - Low: Minor visual differences that most users wouldn't notice
+            weighted_sum = 0
+            total_weight = 0
             
-            Intentional vs. Unintentional:
-            - Intentional: Changes that appear to be deliberate improvements
-            - Unintentional: Changes that appear to be regressions or bugs
-            """
+            for field in array_fields[:-1]:  # Exclude critical_issues
+                for change in analysis_json[field]:
+                    if isinstance(change, dict):
+                        severity = change.get("severity", "Low")
+                        weight = severity_weights.get(severity, 0.4)
+                        weighted_sum += weight
+                        total_weight += 1
             
-            # Prepare request
-            messages = [
-                {
-                    "role": "system",
-                    "content": "You are a UI/UX analyst specializing in visual regression testing. Your task is to compare before and after screenshots of a web application and identify visual differences."
-                },
-                {
-                    "role": "user",
-                    "content": [
-                        {"type": "text", "text": prompt},
-                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{before_base64}", "detail": "high"}},
-                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{after_base64}", "detail": "high"}}
-                    ]
-                }
-            ]
-            
-            # Make API call
-            try:
-                logger.info("Calling ChatGPT Vision API for screenshot comparison")
-                response = openai.chat.completions.create(
-                    model="gpt-4-vision-preview",
-                    messages=messages,
-                    max_tokens=4096
-                )
-                logger.info("Screenshot comparison completed")
+            if total_weight > 0:
+                # Calculate confidence based on:
+                # 1. Number of changes (more changes = higher confidence)
+                # 2. Severity of changes (more severe changes = higher confidence)
+                # 3. Consistency of changes (similar severities = higher confidence)
+                base_confidence = 60  # Start with a base confidence
+                change_factor = min(20, total_changes * 2)  # More changes increase confidence
+                severity_factor = (weighted_sum / total_weight) * 20  # Higher severity increases confidence
                 
-                # Extract JSON from response
-                response_text = response.choices[0].message.content
-                
-                # Try to extract JSON using regex
-                json_match = re.search(r'({[\s\S]*})', response_text)
-                
-                if json_match:
-                    try:
-                        analysis_json = json.loads(json_match.group(1))
-                        logger.info("Successfully parsed analysis JSON")
-                    except json.JSONDecodeError as e:
-                        error_msg = f"Failed to parse JSON from response: {str(e)}"
-                        logger.warning(error_msg)
-                        logger.warning(f"Raw response: {response_text}")
-                        analysis_json = {"error": error_msg, "raw_text": response_text}
-                else:
-                    error_msg = "No JSON found in response"
-                    logger.warning(error_msg)
-                    analysis_json = {"error": error_msg, "raw_text": response_text}
-                
-                # Format the analysis for display
-                formatted_analysis = self._format_analysis(analysis_json)
-                
-                return {
-                    "before_image": before_image,
-                    "after_image": after_image,
-                    "analysis_json": analysis_json,
-                    "formatted_analysis": formatted_analysis,
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-            except openai.OpenAIError as e:
-                error_msg = f"ChatGPT Vision API failed: {str(e)}"
-                logger.error(error_msg)
-                
-                # Determine the specific type of error for a more user-friendly message
-                user_friendly_msg = "❌ Error: UI validation could not be completed. Please check your API connection."
-                
-                if "authentication" in str(e).lower() or "api key" in str(e).lower():
-                    user_friendly_msg = "❌ Error: Authentication failed. Please check your OpenAI API key."
-                elif "rate limit" in str(e).lower() or "quota" in str(e).lower():
-                    user_friendly_msg = "❌ Error: API rate limit exceeded. Please try again later or check your OpenAI usage limits."
-                elif "timeout" in str(e).lower() or "timed out" in str(e).lower():
-                    user_friendly_msg = "❌ Error: API request timed out. Please check your network connection and try again."
-                elif "server" in str(e).lower() or "5xx" in str(e).lower():
-                    user_friendly_msg = "❌ Error: OpenAI server error. Please try again later."
-                elif "model" in str(e).lower() and "not found" in str(e).lower():
-                    user_friendly_msg = "❌ Error: The GPT-4 Vision model is not available. Please check your OpenAI account access."
-                
-                # Add technical details for debugging
-                technical_details = f"\n\nTechnical details (for debugging): {str(e)}"
-                
-                return {
-                    "before_image": before_image,
-                    "after_image": after_image,
-                    "analysis_json": {"error": error_msg},
-                    "formatted_analysis": user_friendly_msg + technical_details,
-                    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                }
-        except Exception as e:
-            error_msg = f"Unexpected error during screenshot comparison: {str(e)}"
-            logger.error(error_msg)
-            logger.error(traceback.format_exc())  # Log the full traceback for debugging
-            
-            # Create a user-friendly error message
-            user_friendly_msg = "❌ Error: UI validation encountered an unexpected problem."
-            
-            # Categorize common errors for better user feedback
-            if isinstance(e, (IOError, OSError)):
-                user_friendly_msg = "❌ Error: File system error during UI validation. Please check file permissions and disk space."
-            elif isinstance(e, json.JSONDecodeError):
-                user_friendly_msg = "❌ Error: Failed to parse JSON response from the API."
-            elif "memory" in str(e).lower():
-                user_friendly_msg = "❌ Error: System ran out of memory during UI validation."
-            elif "network" in str(e).lower() or "connection" in str(e).lower():
-                user_friendly_msg = "❌ Error: Network error during UI validation. Please check your internet connection."
-            
-            # Add technical details for debugging
-            technical_details = f"\n\nTechnical details (for debugging): {str(e)}"
-            
-            return {
-                "before_image": before_image,
-                "after_image": after_image,
-                "analysis_json": {"error": error_msg},
-                "formatted_analysis": user_friendly_msg + technical_details,
-                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
+                confidence = base_confidence + change_factor + severity_factor
+                analysis_json["comparison_confidence"] = max(50, min(95, round(confidence)))
+            else:
+                analysis_json["comparison_confidence"] = 50
+        
+        # Validate and normalize each change entry
+        for field in array_fields[:-1]:  # Exclude critical_issues
+            normalized_changes = []
+            for change in analysis_json[field]:
+                if isinstance(change, dict):
+                    normalized_change = {
+                        "description": change.get("description", "No description provided"),
+                        "severity": change.get("severity", "Low"),
+                        "likely_intentional": change.get("likely_intentional", True)
+                    }
+                    
+                    # Normalize severity
+                    severity = normalized_change["severity"].capitalize()
+                    if severity not in ["Critical", "High", "Medium", "Low"]:
+                        severity = "Low"
+                    normalized_change["severity"] = severity
+                    
+                    # Determine if the change is likely intentional based on description
+                    if "likely_intentional" not in change:
+                        description = normalized_change["description"].lower()
+                        normalized_change["likely_intentional"] = not any(word in description for word in [
+                            "issue", "problem", "error", "bug", "regression", "unintended", "broken"
+                        ])
+                    
+                    normalized_changes.append(normalized_change)
+            analysis_json[field] = normalized_changes
+        
+        # Normalize critical issues
+        if isinstance(analysis_json["critical_issues"], list):
+            normalized_issues = []
+            for issue in analysis_json["critical_issues"]:
+                if isinstance(issue, str):
+                    normalized_issues.append(issue)
+                elif isinstance(issue, dict) and "description" in issue:
+                    normalized_issues.append(issue["description"])
+            analysis_json["critical_issues"] = normalized_issues
+        
+        return analysis_json
 
     def _format_analysis(self, analysis: Dict[str, Any]) -> str:
         """
@@ -507,20 +672,36 @@ class UIValidator:
         else:
             return "✔️"
 
-    def generate_report(self, analysis: Dict[str, Any], format_type: str = "markdown", output_dir: str = "logs/ui_reports") -> Dict[str, str]:
+    def generate_report(self, analysis: Dict[str, Any], format_type: str = "markdown", output_dir: Optional[str] = None) -> Dict[str, str]:
         """
-        Generate a formatted report from the analysis.
+        Generate a report from the analysis.
         
         Args:
-            analysis: Analysis results from compare_screenshots
-            format_type: Report format (markdown, json, or both)
-            output_dir: Directory to save the report
+            analysis: Analysis results
+            format_type: Format for the report (markdown, json, or both)
+            output_dir: Directory to save the report (defaults to project UI reports directory)
             
         Returns:
-            Dictionary with report paths
+            Dictionary with paths to the generated reports
         """
-        logger.info(f"Generating UI validation report in {format_type} format")
+        # Use the provided output_dir or get it from the project config
+        if output_dir is None:
+            if config_manager.current_project:
+                project = config_manager.get_project(config_manager.current_project)
+                if project:
+                    # Use project-specific UI reports directory
+                    output_dir = get_project_ui_reports_dir(project["path"])
+                    logger.info(f"Using project UI reports directory: {output_dir}")
+                else:
+                    logger.warning("Current project not found in config, using default UI reports directory")
+                    output_dir = UI_REPORTS_DIR
+            else:
+                logger.warning("No current project set, using default UI reports directory")
+                output_dir = UI_REPORTS_DIR
         
+        os.makedirs(output_dir, exist_ok=True)
+        logger.info(f"Reports will be saved to: {output_dir}")
+
         # Validate format_type
         valid_formats = ["markdown", "json", "both"]
         if format_type not in valid_formats:
@@ -528,16 +709,6 @@ class UIValidator:
             # Default to markdown if invalid format is provided
             format_type = "markdown"
             logger.info(f"Defaulting to {format_type} format")
-        
-        # Create output directory if it doesn't exist
-        try:
-            os.makedirs(output_dir, exist_ok=True)
-        except OSError as e:
-            logger.error(f"Failed to create output directory {output_dir}: {str(e)}")
-            # Use a fallback directory
-            output_dir = "logs"
-            os.makedirs(output_dir, exist_ok=True)
-            logger.info(f"Using fallback directory: {output_dir}")
         
         # Generate timestamp for filenames
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -592,18 +763,129 @@ After: {analysis.get("after_image", "N/A")}
         
         return report_paths
 
+    def _extract_analysis_from_text(self, text: str) -> Dict[str, Any]:
+        """
+        Extract structured analysis from text response when JSON parsing fails.
+        
+        Args:
+            text: Raw text response from the API
+            
+        Returns:
+            Dictionary containing structured analysis
+        """
+        analysis = {
+            "layout_changes": [],
+            "color_changes": [],
+            "element_changes": [],
+            "text_changes": [],
+            "critical_issues": [],
+            "comparison_confidence": 50  # Default to medium confidence for text-based analysis
+        }
+        
+        # Define patterns to match different types of changes
+        patterns = {
+            "layout": [r"(?i)layout.*?(?:change|difference|moved|shifted|resized)",
+                      r"(?i)(?:position|alignment|spacing).*?(?:change|difference|modified)"],
+            "color": [r"(?i)color.*?(?:change|difference|modified)",
+                     r"(?i)(?:background|foreground|text).*?color.*?(?:change|difference)"],
+            "element": [r"(?i)(?:element|component|button|input|form).*?(?:added|removed|changed|modified)",
+                       r"(?i)(?:new|missing).*?(?:element|component|button|input|form)"],
+            "text": [r"(?i)text.*?(?:change|difference|modified|updated)",
+                    r"(?i)(?:content|label|heading).*?(?:change|difference|modified)"]
+        }
+        
+        # Extract severity levels
+        severity_patterns = {
+            "critical": r"(?i)critical|severe|major|significant",
+            "high": r"(?i)high|important|notable",
+            "medium": r"(?i)medium|moderate|noticeable",
+            "low": r"(?i)low|minor|subtle"
+        }
+        
+        # Process each line of the text
+        lines = text.split('\n')
+        current_section = None
+        
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            
+            # Determine if this line starts a new section
+            if any(section in line.lower() for section in ["layout", "color", "element", "text"]):
+                for section in ["layout", "color", "element", "text"]:
+                    if section in line.lower():
+                        current_section = section
+                        break
+                continue
+            
+            # Process the line based on patterns
+            for change_type, pattern_list in patterns.items():
+                for pattern in pattern_list:
+                    if re.search(pattern, line):
+                        # Determine severity
+                        severity = "low"  # Default severity
+                        for sev, sev_pattern in severity_patterns.items():
+                            if re.search(sev_pattern, line):
+                                severity = sev
+                                break
+                        
+                        # Determine if change is likely intentional
+                        likely_intentional = not any(word in line.lower() for word in 
+                            ["issue", "problem", "error", "bug", "regression", "unintended"])
+                        
+                        # Add the change to the appropriate category
+                        change = {
+                            "description": line,
+                            "severity": severity.capitalize(),
+                            "likely_intentional": likely_intentional
+                        }
+                        
+                        if change_type == "layout":
+                            analysis["layout_changes"].append(change)
+                        elif change_type == "color":
+                            analysis["color_changes"].append(change)
+                        elif change_type == "element":
+                            analysis["element_changes"].append(change)
+                        elif change_type == "text":
+                            analysis["text_changes"].append(change)
+                        
+                        break  # Stop checking patterns once we've found a match
+        
+        # Extract critical issues
+        critical_pattern = r"(?i)(?:critical|severe).*?(?:issue|problem|error)"
+        critical_issues = re.findall(critical_pattern, text)
+        analysis["critical_issues"].extend(critical_issues)
+        
+        # Calculate comparison confidence based on the quality of the analysis
+        total_changes = sum(len(changes) for changes in [
+            analysis["layout_changes"],
+            analysis["color_changes"],
+            analysis["element_changes"],
+            analysis["text_changes"]
+        ])
+        
+        if total_changes > 0:
+            # More changes detected = higher confidence in the analysis
+            analysis["comparison_confidence"] = min(85, 50 + (total_changes * 5))
+        else:
+            # No changes detected = lower confidence
+            analysis["comparison_confidence"] = 50
+        
+        return analysis
 
-def validate_ui(url: str, api_key: Optional[str] = None, output_dir: str = "logs/screenshots", 
-               report_format: str = "markdown", report_dir: str = "logs/ui_reports") -> Dict[str, Any]:
+
+def validate_ui(url: str, api_key: Optional[str] = None, output_dir: Optional[str] = None, 
+               report_format: str = "markdown", report_dir: Optional[str] = None) -> Dict[str, Any]:
     """
     Capture screenshots and validate UI changes.
     
     Args:
         url: URL of the web page to validate
         api_key: OpenAI API key
-        output_dir: Directory to save screenshots
+        output_dir: Directory to save screenshots (defaults to SCREENSHOTS_DIR from constants)
         report_format: Format for the report (markdown, json, or both)
-        report_dir: Directory to save reports
+        report_dir: Directory to save reports (defaults to UI_REPORTS_DIR from constants)
         
     Returns:
         Dictionary containing validation results
@@ -628,11 +910,7 @@ def validate_ui(url: str, api_key: Optional[str] = None, output_dir: str = "logs
     
     screen_capture = None
     try:
-        # Create output directories
-        os.makedirs(output_dir, exist_ok=True)
-        os.makedirs(report_dir, exist_ok=True)
-        
-        # Initialize screen capture
+        # Initialize screen capture with the appropriate output directory
         screen_capture = UIScreenCapture(url, output_dir)
         
         # Capture before screenshot
@@ -650,7 +928,7 @@ def validate_ui(url: str, api_key: Optional[str] = None, output_dir: str = "logs
         screen_capture.close()
         
         # Initialize UI validator
-        ui_validator = UIValidator(api_key)
+        ui_validator = UIValidator(url, api_key)
         
         # Compare screenshots
         analysis = ui_validator.compare_screenshots(before_image, after_image)

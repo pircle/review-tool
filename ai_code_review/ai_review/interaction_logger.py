@@ -8,9 +8,9 @@ import logging
 import datetime
 from pathlib import Path
 
+from .logger import logger
 from .config_manager import config_manager
-
-logger = logging.getLogger(__name__)
+from .constants import LOGS_DIR, VALIDATION_LOG_PATH
 
 class InteractionLogger:
     """
@@ -37,10 +37,10 @@ class InteractionLogger:
                 self.log_file = os.path.join(logs_dir, "validation_log.md")
                 logger.debug(f"Using project-specific log file: {self.log_file}")
             else:
-                self.log_file = self.log_file or os.path.join("logs", "validation_log.md")
+                self.log_file = self.log_file or VALIDATION_LOG_PATH
                 logger.debug(f"Using default log file: {self.log_file}")
         else:
-            self.log_file = self.log_file or os.path.join("logs", "validation_log.md")
+            self.log_file = self.log_file or VALIDATION_LOG_PATH
             logger.debug(f"Using default log file: {self.log_file}")
         
         # Create logs directory if it doesn't exist

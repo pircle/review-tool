@@ -12,6 +12,8 @@ import datetime
 import platform
 from typing import Dict, List, Any, Optional
 import logging
+import click
+from pathlib import Path
 
 from .analyzer import CodeAnalyzer, analyze_file, analyze_directory
 from .suggestions import SuggestionGenerator, generate_ai_review
@@ -25,6 +27,11 @@ from .dependency_scanner import DependencyScanner
 from .ui_validator import UIValidator
 from .config_manager import config_manager
 from .interaction_logger import InteractionLogger
+from .constants import (
+    LOGS_DIR, SCREENSHOTS_DIR, UI_REPORTS_DIR, REPORTS_DIR,
+    CLI_LOG_PATH
+)
+from .models import ReviewResults, FileReviewResult
 
 # Initialize the interaction logger
 interaction_logger = InteractionLogger()
@@ -60,12 +67,20 @@ def parse_args():
                               help="URL of the web app for UI validation")
     review_parser.add_argument("--ui-report-format", choices=["json", "markdown", "both"], default="markdown",
                               help="Format for the UI validation report (default: markdown)")
+    review_parser.add_argument("--skip-code-review", action="store_true",
+                              help="Skip code review and only perform UI validation")
     review_parser.add_argument("--project", "-p", help="Project name to use for configuration and logs (default: directory name)")
     review_parser.add_argument("--create-project", action="store_true", 
                               help="Create a new project if it doesn't exist")
     review_parser.add_argument("--list-projects", action="store_true",
                               help="List all available projects")
     review_parser.add_argument("--debug", action="store_true", help="Enable debug mode")
+    
+    # Dashboard command
+    dashboard_parser = subparsers.add_parser("dashboard", help="Start the web dashboard")
+    dashboard_parser.add_argument("--host", default="localhost", help="Host to bind the dashboard server to")
+    dashboard_parser.add_argument("--port", type=int, default=5000, help="Port to run the dashboard server on")
+    dashboard_parser.add_argument("--debug", action="store_true", help="Run the server in debug mode")
     
     # Plugin command
     plugin_parser = subparsers.add_parser("plugin", help="Manage plugins")
@@ -765,419 +780,166 @@ def print_directory_results(results: List[Dict[str, Any]], complexity_threshold:
                 print(f"    - {cls.get('name', 'Unknown')}")
 
 
-def review_code(path: str, verbose: bool = False, output: Optional[str] = None,
-               complexity_threshold: int = 5, ai: bool = False, 
-               api_key: Optional[str] = None, model: str = "gpt-4o",
-               apply_fixes: bool = False, security_scan: bool = False, 
-               dependency_scan: bool = False, generate_report: bool = False,
-               report_format: str = "json", ui_validate: bool = False,
-               url: Optional[str] = None, ui_report_format: str = "markdown",
-               debug: bool = False, project: Optional[str] = None) -> None:
-    """
-    Review code at the specified path.
+def review_code(
+    path: str,
+    verbose: bool = False,
+    output: Optional[str] = None,
+    complexity_threshold: int = 10,
+    ai: bool = True,
+    api_key: Optional[str] = None,
+    model: str = "gpt-4",
+    apply_fixes: bool = False,
+    security_scan: bool = False,
+    dependency_scan: bool = False,
+    generate_report: bool = True,
+    report_format: str = "markdown",
+    ui_validate: bool = False,
+    url: Optional[str] = None,
+    ui_report_format: str = "markdown",
+    debug: bool = False
+) -> Dict[str, Any]:
+    """Review code and generate analysis."""
     
-    Args:
-        path: Path to the file or directory to review
-        verbose: Whether to show detailed output
-        output: Path to the output file (JSON format)
-        complexity_threshold: Threshold for highlighting complex functions
-        ai: Whether to use AI-powered code review
-        api_key: OpenAI API key
-        model: OpenAI model to use
-        apply_fixes: Whether to apply AI-suggested fixes
-        security_scan: Whether to perform security scanning
-        dependency_scan: Whether to scan dependencies for vulnerabilities
-        generate_report: Whether to generate a unified report
-        report_format: Format for the generated report ("json" or "markdown")
-        ui_validate: Whether to validate UI changes
-        url: URL of the web app for UI validation
-        ui_report_format: Format for the UI validation report ("json", "markdown", or "both")
-        debug: Whether to enable debug mode
-        project: Project name to use for configuration and logs
-    """
-    # Configure logging based on debug flag
-    log_level = logging.DEBUG if debug else logging.INFO
-    logging.basicConfig(level=log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # Set up logging
+    if debug:
+        logger.setLevel(logging.DEBUG)
     
-    # Log the configuration settings
-    logger.info("Starting code review with the following settings:")
-    logger.info(f"  Path: {path}")
-    logger.info(f"  Complexity threshold: {complexity_threshold}")
-    logger.info(f"  AI-powered review: {ai}")
-    logger.info(f"  Apply fixes: {apply_fixes}")
-    logger.info(f"  Security scan: {security_scan}")
-    logger.info(f"  Dependency scan: {dependency_scan}")
-    logger.info(f"  Generate report: {generate_report}")
-    if generate_report:
-        logger.info(f"  Report format: {report_format}")
-    logger.info(f"  UI validate: {ui_validate}")
-    if ui_validate:
-        logger.info(f"  URL: {url}")
-        logger.info(f"  UI report format: {ui_report_format}")
-    if project:
-        logger.info(f"  Project: {project}")
+    # Validate inputs
+    if not path:
+        logger.error("No path provided")
+        return {"error": "No path provided"}
     
-    # Validate report formats
-    valid_report_formats = ["json", "markdown"]
-    if report_format not in valid_report_formats:
-        logger.warning(f"Invalid report format: {report_format}. Must be one of {valid_report_formats}")
-        report_format = "json"
-        logger.info(f"Defaulting to {report_format} format")
-    
-    valid_ui_report_formats = ["json", "markdown", "both"]
-    if ui_report_format not in valid_ui_report_formats:
-        logger.warning(f"Invalid UI report format: {ui_report_format}. Must be one of {valid_ui_report_formats}")
-        ui_report_format = "markdown"
-        logger.info(f"Defaulting to {ui_report_format} format")
-    
-    # Validate UI validation parameters
     if ui_validate and not url:
         logger.error("URL is required for UI validation")
-        print("Error: URL is required for UI validation. Please provide a URL using the --url option.")
-        return
+        return {"error": "URL is required for UI validation"}
     
-    logger.info(f"Reviewing code at {path}")
-    print(f"Reviewing code at {path}")
+    # Initialize results
+    project_name = Path(path).name
+    log_dir = Path(LOGS_DIR) / project_name
+    log_dir.mkdir(parents=True, exist_ok=True)
+    review_log_path = log_dir / "review_log.json"
+    
+    results = ReviewResults()
     
     try:
-        # Check if path exists
-        if not os.path.exists(path):
-            logger.error(f"Path does not exist: {path}")
-            print(f"Error: Path does not exist: {path}")
-            return
-        
-        # Load plugins to get supported extensions
-        plugin_loader = PluginLoader()
-        plugin_loader.load_all_plugins()
-        supported_extensions = list(plugin_loader.language_analyzers.keys())
-        logger.debug(f"Supported extensions: {supported_extensions}")
-        
-        # Check if the path is a directory
+        # Analyze code
         if os.path.isdir(path):
             logger.info(f"Analyzing directory: {path}")
-            
             try:
-                # Log file filtering configuration
-                logger.info("File filtering configuration:")
-                logger.info(f"  Excluded directories: {', '.join(config_manager.config['file_filters']['exclude_dirs'])}")
-                logger.info(f"  Included directories: {', '.join(config_manager.config['file_filters']['include_dirs'])}")
-                logger.info(f"  Excluded file patterns: {', '.join(config_manager.config['file_filters']['exclude_files'])}")
-                
-                # Analyze all supported files in the directory
-                results = analyze_directory(path)
-                
-                # Create output data structure
-                output_data = {
-                    "directory": path,
-                    "files": results,
-                    "metadata": {
-                        "file_count": len(results),
-                        "excluded_directories": list(config_manager.config["file_filters"]["exclude_dirs"]),
-                        "included_directories": list(config_manager.config["file_filters"]["include_dirs"]),
-                        "excluded_file_patterns": list(config_manager.config["file_filters"]["exclude_files"])
-                    }
-                }
-                
-                # Print results
-                print_directory_results(results, complexity_threshold)
-                
-                # Generate XML log for transparency
-                xml_log = f"""<log>
-    <excluded_directories>
-        {chr(10).join([f'        <directory>{dir}</directory>' for dir in config_manager.config["file_filters"]["exclude_dirs"]])}
-    </excluded_directories>
-    <scanned_files_count>{len(results)}</scanned_files_count>
-</log>"""
-                logger.info(f"Analysis log:\n{xml_log}")
-                
-                # Save results to file if requested
-                if output:
-                    # If using a project, save to project directory
-                    if project and config_manager.current_project:
-                        project_output = os.path.join(config_manager.get_project_logs_dir(), os.path.basename(output))
-                        if save_json(output_data, project_output):
-                            logger.info(f"Results saved to {project_output}")
-                            print(f"Results saved to {project_output}")
-                        else:
-                            logger.error(f"Failed to save results to {project_output}")
-                            print(f"Error: Failed to save results to {project_output}")
-                    else:
-                        if save_json(output_data, output):
-                            logger.info(f"Results saved to {output}")
-                            print(f"Results saved to {output}")
-                        else:
-                            logger.error(f"Failed to save results to {output}")
-                            print(f"Error: Failed to save results to {output}")
-                
-                return
+                files = analyze_directory(path)
+                for file_path, analysis in files.items():
+                    file_result = FileReviewResult(
+                        path=file_path,
+                        issues=len(analysis.get("issues", [])),
+                        status="pending",
+                        details=analysis
+                    )
+                    results.files.append(file_result)
+                    results.total_reviews += 1
+                    if analysis.get("issues"):
+                        results.pending_fixes += len(analysis["issues"])
             except Exception as e:
                 logger.error(f"Error analyzing directory: {str(e)}")
-                logger.debug(traceback.format_exc())
-                print(f"Error analyzing directory: {str(e)}")
                 if debug:
-                    print(traceback.format_exc())
-                return
-        
-        # Analyze a single file
-        logger.info(f"Analyzing file: {path}")
-        
-        try:
-            # Read the file
-            with open(path, 'r', encoding='utf-8') as f:
-                code = f.read()
-            
-            # Create analyzer
-            analyzer = CodeAnalyzer(path)
-            
-            # Analyze the code
-            result = analyzer.analyze()
-            
-            # Set complexity threshold
-            result["complexity_threshold"] = complexity_threshold
-            
-            # Print results
-            print_analysis_results(result, complexity_threshold)
-            
-            # Perform security scan if requested
-            scan_results = {}
-            if security_scan:
-                logger.info(f"Performing security scan for {path}")
-                print(f"\nPerforming security scan for {path}...")
-                
-                try:
-                    # Scan the code
-                    scan_results = scan_code(code, path)
-                    
-                    # Print scan results
-                    print_security_scan_results(scan_results)
-                except Exception as e:
-                    logger.error(f"Error performing security scan: {str(e)}")
-                    logger.debug(traceback.format_exc())
-                    print(f"Error performing security scan: {str(e)}")
-                    if debug:
-                        print(traceback.format_exc())
-                
-                # Add security scan results to the output
-                if "security_scan" not in result:
-                    result["security_scan"] = scan_results
-        except Exception as e:
-            logger.error(f"Error reading file {path}: {e}")
-            print(f"Error reading file {path}: {e}")
-            return
-        
-        # Perform dependency scanning if requested
-        if dependency_scan:
+                    logger.error(traceback.format_exc())
+                return {"error": f"Failed to analyze directory: {str(e)}"}
+        else:
+            logger.info(f"Analyzing file: {path}")
             try:
-                logger.info(f"Performing dependency scan for project containing {path}")
-                from .dependency_scanner import DependencyScanner
-                
-                # Use the directory containing the file as the project directory
-                project_dir = os.path.dirname(os.path.abspath(path))
-                scanner = DependencyScanner(project_dir)
-                scan_results = scanner.run_scan()
-                print_dependency_scan_results(scan_results)
-                
-                # Add dependency scan results to the output
-                if "dependency_scan" not in result:
-                    result["dependency_scan"] = scan_results
-            except Exception as e:
-                logger.error(f"Error during dependency scan: {e}")
-                print(f"Error during dependency scan: {e}")
-        
-        # Perform AI-powered code review if requested
-        if ai:
-            # Check if API key is provided
-            if not api_key:
-                api_key = os.environ.get("OPENAI_API_KEY")
-                if not api_key:
-                    logger.error("OpenAI API key is required for AI-powered code review")
-                    print("Error: OpenAI API key is required for AI-powered code review.")
-                    print("Please provide it with --api-key or set the OPENAI_API_KEY environment variable.")
-                    return
-            
-            logger.info("Generating AI-powered code review")
-            print("\nGenerating AI-powered code review...")
-            
-            try:
-                # Generate AI review
-                ai_review = generate_ai_review(code, path, api_key, model)
-                
-                # Print the AI review
-                print_ai_review(ai_review)
-                
-                # Add AI review to the result
-                result["ai_review"] = ai_review
-                
-                # Apply fixes if requested
-                if apply_fixes:
-                    try:
-                        # Log that we're applying fixes
-                        interaction_logger.log_interaction(
-                            interaction_type="apply_fixes",
-                            description=f"Applying AI-suggested fixes to {path}"
-                        )
-                        
-                        fix_results = apply_ai_fixes(path, ai_review, api_key, model)
-                        
-                        # Log the results of applying fixes
-                        for file_path, file_result in fix_results.items():
-                            if file_result.get("success", False):
-                                interaction_logger.log_approval(
-                                    file=file_path,
-                                    description=f"Applied fix to {file_path}",
-                                    details={
-                                        "changes": file_result.get("changes", []),
-                                        "original": file_result.get("original", ""),
-                                        "modified": file_result.get("modified", "")
-                                    }
-                                )
-                            else:
-                                interaction_logger.log_rejection(
-                                    file=file_path,
-                                    reason=file_result.get("error", "Unknown error"),
-                                    description=f"Failed to apply fix to {file_path}"
-                                )
-                        
-                        print_fix_results(fix_results)
-                        result["fix_results"] = fix_results
-                    except Exception as e:
-                        logger.error(f"Error applying AI fixes: {e}")
-                        print(f"Error applying AI fixes: {e}")
-            except Exception as e:
-                logger.error(f"Error generating AI review: {e}")
-                print(f"Error generating AI review: {e}")
-        
-        # Generate unified report if requested
-        if generate_report:
-            try:
-                logger.info(f"Generating unified report for {path}")
-                print(f"\nGenerating unified report for {path}...")
-                
-                # Import here to avoid circular imports
-                from .report_generator import ReportGenerator
-                
-                # Create report generator
-                report_generator = ReportGenerator(
-                    code_analysis=result,
-                    ai_review=result.get("ai_review", {}),
-                    security_scan=result.get("security_scan", {}),
-                    dependency_scan=result.get("dependency_scan", {})
+                with open(path) as f:
+                    code = f.read()
+                analyzer = CodeAnalyzer()
+                analysis = analyzer.analyze(code, path)
+                file_result = FileReviewResult(
+                    path=path,
+                    issues=len(analysis.get("issues", [])),
+                    status="pending",
+                    details=analysis
                 )
-                
-                # Generate report
-                report = report_generator.generate_report(report_format, path)
-                
-                # Save report to file
-                if project and config_manager.current_project:
-                    # Save to project reports directory
-                    reports_dir = config_manager.get_project_reports_dir()
-                    if reports_dir:
-                        report_filename = f"{os.path.basename(path)}_report.{report_format}"
-                        report_path = os.path.join(reports_dir, report_filename)
-                        success = report_generator.save_report_to_file(report_path, report_format)
-                        if success:
-                            logger.info(f"Unified report saved to {report_path}")
-                            print(f"Unified report saved to {report_path}")
-                        else:
-                            logger.error(f"Error saving unified report to {report_path}")
-                            print(f"Error saving unified report to {report_path}")
-                else:
-                    # Save to output file if specified
-                    if output:
-                        report_path = f"{os.path.splitext(output)[0]}_report.{report_format}"
-                        success = report_generator.save_report_to_file(report_path, report_format)
-                        if success:
-                            logger.info(f"Unified report saved to {report_path}")
-                            print(f"Unified report saved to {report_path}")
-                        else:
-                            logger.error(f"Error saving unified report to {report_path}")
-                            print(f"Error saving unified report to {report_path}")
-                    else:
-                        # Print report to console if no output file is specified
-                        print("\n" + "=" * 80)
-                        print(f"UNIFIED REPORT ({report_format.upper()})")
-                        print("=" * 80)
-                        print(report)
-                        print("=" * 80)
-                
-                # Add report to the result
-                result["unified_report"] = {
-                    "format": report_format,
-                    "content": report
-                }
+                results.files.append(file_result)
+                results.total_reviews += 1
+                if analysis.get("issues"):
+                    results.pending_fixes += len(analysis["issues"])
             except Exception as e:
-                logger.error(f"Error generating unified report: {e}")
-                print(f"Error generating unified report: {e}")
+                logger.error(f"Error analyzing file: {str(e)}")
                 if debug:
-                    print(traceback.format_exc())
+                    logger.error(traceback.format_exc())
+                return {"error": f"Failed to analyze file: {str(e)}"}
+        
+        # Apply fixes if requested
+        if apply_fixes and results.pending_fixes > 0:
+            logger.info("Applying fixes...")
+            fixer = CodeFixer(project_name)
+            fix_results = fixer.apply_fixes(auto_fix=True)
+            results.applied_fixes = len(fix_results.get("applied", []))
+            results.pending_fixes -= results.applied_fixes
+            
+            # Update file statuses
+            for file_result in results.files:
+                applied_fixes = [f for f in fix_results.get("applied", []) if f["file"] == file_result.path]
+                if applied_fixes:
+                    file_result.status = "fixed"
+        
+        # Perform security scan if requested
+        if security_scan:
+            logger.info("Performing security scan...")
+            try:
+                security_results = perform_security_scan(path)
+                if "error" not in security_results:
+                    # Add security results to output
+                    if "security_scan" not in results.dict():
+                        results.dict()["security_scan"] = security_results
+            except Exception as e:
+                logger.error(f"Error during security scan: {str(e)}")
+                if debug:
+                    logger.error(traceback.format_exc())
+        
+        # Perform dependency scan if requested
+        if dependency_scan:
+            logger.info("Performing dependency scan...")
+            try:
+                dependency_results = scan_dependencies(path)
+                if "error" not in dependency_results:
+                    # Add dependency results to output
+                    if "dependency_scan" not in results.dict():
+                        results.dict()["dependency_scan"] = dependency_results
+            except Exception as e:
+                logger.error(f"Error during dependency scan: {str(e)}")
+                if debug:
+                    logger.error(traceback.format_exc())
         
         # Perform UI validation if requested
-        if ui_validate:
+        if ui_validate and url:
+            logger.info("Performing UI validation...")
             try:
-                logger.info(f"Validating UI changes for {url}")
-                print(f"\nValidating UI changes for {url}...")
-                
-                # Import here to avoid circular imports
-                from .ui_validator import validate_ui
-                
-                # Create report directory
-                if project and config_manager.current_project:
-                    # Use project reports directory
-                    report_dir = config_manager.get_project_reports_dir()
-                    if not report_dir:
-                        report_dir = "logs/ui_reports"
-                        os.makedirs(report_dir, exist_ok=True)
-                else:
-                    report_dir = "logs/ui_reports"
-                    os.makedirs(report_dir, exist_ok=True)
-                
-                # Validate the UI
-                results = validate_ui(
-                    url=url, 
-                    api_key=api_key,
-                    report_format=ui_report_format,
-                    report_dir=report_dir
-                )
-                
-                # Print UI validation results
-                print_ui_validation_results(results)
-                
-                # Add UI validation results to the overall result
-                result["ui_validation"] = {
-                    "success": results.get("success", False),
-                    "report_paths": results.get("report_paths", {}),
-                    "before_image": results.get("before_image", ""),
-                    "after_image": results.get("after_image", "")
-                }
+                validator = UIValidator(project_name, api_key)
+                validation_results = validator.get_results()
+                results.dict()["ui_validation"] = validation_results.dict()
             except Exception as e:
-                logger.error(f"Error performing UI validation: {str(e)}")
-                print(f"Error performing UI validation: {str(e)}")
+                logger.error(f"Error during UI validation: {str(e)}")
                 if debug:
-                    print(traceback.format_exc())
+                    logger.error(traceback.format_exc())
         
-        # Save results to file if requested
-        if output:
-            if project and config_manager.current_project:
-                # Save to project logs directory
-                project_output = os.path.join(config_manager.get_project_logs_dir(), os.path.basename(output))
-                if save_json(result, project_output):
-                    logger.info(f"Results saved to {project_output}")
-                    print(f"Results saved to {project_output}")
-                else:
-                    logger.error(f"Failed to save results to {project_output}")
-                    print(f"Error: Failed to save results to {project_output}")
-            else:
-                if save_json(result, output):
-                    logger.info(f"Results saved to {output}")
-                    print(f"Results saved to {output}")
-                else:
-                    logger.error(f"Failed to save results to {output}")
-                    print(f"Error: Failed to save results to {output}")
+        # Save results
+        try:
+            data = results.dict()
+            data["timestamp"] = data["timestamp"].isoformat()
+            with open(review_log_path, "w") as f:
+                json.dump(data, f, indent=2)
+            logger.info(f"Results saved to {review_log_path}")
+        except Exception as e:
+            logger.error(f"Error saving results: {str(e)}")
+            if debug:
+                logger.error(traceback.format_exc())
+        
+        return results.dict()
+        
     except Exception as e:
-        logger.error(f"Unexpected error: {str(e)}")
-        logger.debug(traceback.format_exc())
-        print(f"Unexpected error: {str(e)}")
-        sys.exit(1)
+        error_msg = f"Unexpected error during code review: {str(e)}"
+        logger.error(error_msg)
+        if debug:
+            logger.error(traceback.format_exc())
+        return {"error": error_msg}
 
 
 def handle_config_command(args):
@@ -1252,16 +1014,10 @@ def handle_review_command(args):
     Args:
         args: Command line arguments
     """
-    # Configure logging based on debug flag
-    log_level = logging.DEBUG if args.debug else logging.INFO
-    logging.basicConfig(level=log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    # Set up logging
+    cli_log_path = CLI_LOG_PATH
+    os.makedirs(os.path.dirname(cli_log_path), exist_ok=True)
     
-    # Create logs directory if it doesn't exist
-    logs_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
-    os.makedirs(logs_dir, exist_ok=True)
-    
-    # Create CLI log file if it doesn't exist
-    cli_log_path = os.path.join(logs_dir, "cli_log.md")
     if not os.path.exists(cli_log_path):
         with open(cli_log_path, "w") as log_file:
             log_file.write("# AI Code Review Tool - CLI Operation Log\n\n")
@@ -1297,70 +1053,86 @@ def handle_review_command(args):
             
         return
     
-    # Check if path is provided
-    if not hasattr(args, 'path') or args.path is None:
-        print("Error: Path is required for code review.")
-        print("Use --list-projects to list available projects.")
+    # Check if path is provided when not skipping code review
+    if not hasattr(args, 'skip_code_review') or not args.skip_code_review:
+        if not hasattr(args, 'path') or args.path is None:
+            print("Error: Path is required for code review.")
+            print("Use --list-projects to list available projects.")
+            return
+    elif not hasattr(args, 'ui_validate') or not args.ui_validate:
+        print("Error: When using --skip-code-review, you must specify --ui-validate.")
+        return
+    elif not hasattr(args, 'url') or args.url is None:
+        print("Error: URL is required for UI validation.")
         return
     
     # Handle project selection or creation
-    if not hasattr(args, 'project') or args.project is None:
-        # Use current directory name as project name
-        project_name = os.path.basename(os.path.abspath(args.path))
-        print(f"⚠ Warning: No project name provided. Using '{project_name}' as project name.")
-        args.project = project_name
-        # Set create_project flag to True to create the project if it doesn't exist
-        if not hasattr(args, 'create_project') or not args.create_project:
-            print(f"⚠ Warning: Setting --create-project flag to create project if it doesn't exist.")
-            args.create_project = True
-    
-    if args.project:
-        project_name = args.project
-        project_path = os.path.abspath(args.path)
+    if hasattr(args, 'path') and args.path is not None:
+        if not hasattr(args, 'project') or args.project is None:
+            # Use current directory name as project name
+            project_name = os.path.basename(os.path.abspath(args.path))
+            print(f"⚠ Warning: No project name provided. Using '{project_name}' as project name.")
+            args.project = project_name
+            # Set create_project flag to True to create the project if it doesn't exist
+            if not hasattr(args, 'create_project') or not args.create_project:
+                print(f"⚠ Warning: Setting --create-project flag to create project if it doesn't exist.")
+                args.create_project = True
         
-        # Check if project exists
-        project = config_manager.get_project(project_name)
-        project_exists_by_path = False
-        
-        # Also check if a project with this path already exists
-        for existing_project in config_manager.get_projects():
-            if os.path.abspath(existing_project["path"]) == project_path:
-                project_exists_by_path = True
-                # If project exists by path but with a different name, use that project
-                if not project:
-                    project = existing_project
-                    project_name = existing_project["name"]
-                    print(f"✅ Found existing project '{project_name}' at path '{project_path}'")
-                    args.project = project_name
-                break
-        
-        if project:
-            print(f"✅ Using existing project: {project_name}")
-            # Continue with existing project
-        elif project_exists_by_path:
-            # This case is handled above
-            pass
-        elif args.create_project:
-            # Continue with project creation
+        if args.project:
+            project_name = args.project
+            project_path = os.path.abspath(args.path)
+            
+            # Check if project exists
+            project = config_manager.get_project(project_name)
+            project_exists_by_path = False
+            
+            # Also check if a project with this path already exists
+            for existing_project in config_manager.get_projects():
+                if os.path.abspath(existing_project["path"]) == project_path:
+                    project_exists_by_path = True
+                    # If project exists by path but with a different name, use that project
+                    if not project:
+                        project = existing_project
+                        project_name = existing_project["name"]
+                        print(f"✅ Found existing project '{project_name}' at path '{project_path}'")
+                        args.project = project_name
+                    break
+            
+            if project:
+                print(f"✅ Using existing project: {project_name}")
+                # Continue with existing project
+            elif project_exists_by_path:
+                # This case is handled above
+                pass
+            elif args.create_project:
+                # Continue with project creation
+                print(f"🔄 Creating new project: {project_name}")
+                # Add code here to create the project
+                if config_manager.add_project(project_name, project_path):
+                    print(f"✅ Project '{project_name}' created successfully")
+                else:
+                    print(f"❌ Failed to create project '{project_name}'")
     
     # Log the review command
     interaction_logger.log_command(
         command="review",
-        description=f"Reviewing code at path: {args.path}",
+        description=f"Reviewing {'UI only' if hasattr(args, 'skip_code_review') and args.skip_code_review else f'code at path: {args.path}'}",
         additional_details={
-            "path": args.path,
+            "path": args.path if hasattr(args, 'path') and args.path is not None else "None",
             "ai": args.ai,
             "apply_fixes": args.apply_fixes,
             "security_scan": args.security_scan,
             "dependency_scan": args.dependency_scan,
             "generate_report": args.generate_report,
-            "project": args.project if args.project else "None"
+            "project": args.project if args.project else "None",
+            "ui_validate": args.ui_validate if hasattr(args, 'ui_validate') else False,
+            "skip_code_review": args.skip_code_review if hasattr(args, 'skip_code_review') else False
         }
     )
     
     # Call the review_code function with the arguments from the command line
     result = review_code(
-        path=args.path,
+        path=args.path if hasattr(args, 'path') else None,
         verbose=True,
         output=args.output,
         complexity_threshold=args.complexity_threshold,
@@ -1375,6 +1147,7 @@ def handle_review_command(args):
         ui_validate=args.ui_validate,
         url=args.url,
         ui_report_format=args.ui_report_format,
+        skip_code_review=args.skip_code_review if hasattr(args, 'skip_code_review') else False,
         debug=args.debug,
         project=args.project
     )
@@ -1510,24 +1283,32 @@ def scan_security(code: str, file_path: str) -> Dict[str, Any]:
     return scan_code(code, file_path)
 
 
+@click.group()
+def cli():
+    """AI Code Review Tool CLI."""
+    pass
+
+@cli.command()
+@click.option('--host', default='localhost', help='Host to bind the dashboard server to')
+@click.option('--port', default=5000, type=int, help='Port to run the dashboard server on')
+@click.option('--debug', is_flag=True, help='Run the server in debug mode')
+def dashboard(host, port, debug):
+    """Start the web dashboard to view code review results."""
+    click.echo(f"Starting dashboard server on http://{host}:{port}")
+    from .dashboard import serve_dashboard  # Lazy import to avoid circular dependency
+    serve_dashboard(host=host, port=port, debug=debug)
+
+cli.add_command(dashboard)
+
 def main():
     """Main entry point for the CLI."""
-    args = parse_args()
-    
-    # Configure logging based on debug flag
-    log_level = logging.DEBUG if args.debug else logging.INFO
-    logging.basicConfig(level=log_level, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    
-    # Handle commands
-    if args.command == "review":
-        handle_review_command(args)
-    elif args.command == "plugin":
-        handle_plugin_command(args)
-    elif args.command == "config":
-        handle_config_command(args)
-    else:
-        logger.error(f"Unknown command: {args.command}")
-
+    try:
+        cli()
+    except Exception as e:
+        logger.error(f"Error: {str(e)}")
+        if "--debug" in sys.argv:
+            logger.error(traceback.format_exc())
+        sys.exit(1)
 
 if __name__ == "__main__":
     main() 

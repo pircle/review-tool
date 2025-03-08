@@ -7,6 +7,7 @@ import sys
 import logging
 from typing import Optional
 from datetime import datetime
+from .constants import get_project_logs_dir
 
 
 def setup_logger(
@@ -75,7 +76,7 @@ def get_default_log_file() -> str:
     project_root = os.path.dirname(script_dir)
     
     # Create logs directory if it doesn't exist
-    logs_dir = os.path.join(project_root, "logs")
+    logs_dir = get_project_logs_dir(project_root)
     os.makedirs(logs_dir, exist_ok=True)
     
     # Create a log file with the current date
@@ -136,3 +137,16 @@ def get_logger() -> logging.Logger:
         Default logger
     """
     return logger 
+
+
+def setup_file_handler(project_root=None):
+    """Set up a file handler for logging."""
+    date_str = datetime.now().strftime("%Y%m%d")
+    
+    if project_root:
+        logs_dir = get_project_logs_dir(project_root)
+    else:
+        logs_dir = get_project_logs_dir(os.path.dirname(os.path.dirname(__file__)))
+    
+    os.makedirs(logs_dir, exist_ok=True)
+    log_file = os.path.join(logs_dir, f"system_{date_str}.log") 

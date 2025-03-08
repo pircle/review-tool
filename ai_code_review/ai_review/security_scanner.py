@@ -8,9 +8,7 @@ import shutil
 from typing import Dict, List, Any, Optional
 import os
 
-from .logger import get_logger
-
-logger = get_logger()
+from .logger import logger
 
 def check_dependency_tools() -> Dict[str, bool]:
     """

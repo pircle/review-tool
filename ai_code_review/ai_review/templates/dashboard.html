@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <h1 class="text-xl font-bold text-gray-800">AI Code Review Dashboard</h1>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <select id="projectSelect" class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        <option value="">Select Project</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Overview Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Reviews</dt>
+                                <dd class="text-3xl font-semibold text-gray-900" id="totalReviews">0</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Applied Fixes</dt>
+                                <dd class="text-3xl font-semibold text-gray-900" id="appliedFixes">0</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="p-5">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Pending Fixes</dt>
+                                <dd class="text-3xl font-semibold text-gray-900" id="pendingFixes">0</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Code Review Results -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Code Review Results</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Issues</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200" id="reviewResults">
+                                <!-- Review results will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI Validation Results -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">UI Validation Results</h3>
+                    <div class="space-y-4" id="uiResults">
+                        <!-- UI validation results will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applied Fixes -->
+            <div class="bg-white shadow rounded-lg col-span-1 lg:col-span-2">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">Applied Fixes</h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200" id="appliedFixesTable">
+                                <!-- Applied fixes will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fetch projects and populate select
+        async function fetchProjects() {
+            try {
+                const response = await fetch('/api/projects');
+                const projects = await response.json();
+                const select = document.getElementById('projectSelect');
+                projects.forEach(project => {
+                    const option = document.createElement('option');
+                    option.value = project.name;
+                    option.textContent = project.name;
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        }
+
+        // Fetch and display project status
+        async function fetchProjectStatus(projectName) {
+            try {
+                const response = await fetch(`/api/status/${projectName}`);
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+                console.error('Error fetching project status:', error);
+            }
+        }
+
+        // Update dashboard with project data
+        function updateDashboard(data) {
+            // Update overview cards
+            document.getElementById('totalReviews').textContent = data.review_results.total_reviews || 0;
+            document.getElementById('appliedFixes').textContent = data.review_results.applied_fixes || 0;
+            document.getElementById('pendingFixes').textContent = data.review_results.pending_fixes || 0;
+
+            // Update review results table
+            const reviewResults = document.getElementById('reviewResults');
+            reviewResults.innerHTML = '';
+            if (data.review_results.files) {
+                data.review_results.files.forEach(file => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${file.path}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${file.issues}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                file.status === 'fixed' ? 'bg-green-100 text-green-800' :
+                                file.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                                'bg-red-100 text-red-800'
+                            }">
+                                ${file.status}
+                            </span>
+                        </td>
+                    `;
+                    reviewResults.appendChild(row);
+                });
+            }
+
+            // Update UI validation results
+            const uiResults = document.getElementById('uiResults');
+            uiResults.innerHTML = '';
+            if (data.ui_validation_results.validations) {
+                data.ui_validation_results.validations.forEach(validation => {
+                    const div = document.createElement('div');
+                    div.className = 'bg-gray-50 p-4 rounded-lg';
+                    div.innerHTML = `
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="text-sm font-medium text-gray-900">${validation.url}</h4>
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                validation.status === 'passed' ? 'bg-green-100 text-green-800' :
+                                'bg-red-100 text-red-800'
+                            }">
+                                ${validation.status}
+                            </span>
+                        </div>
+                        <p class="text-sm text-gray-500">${validation.summary}</p>
+                    `;
+                    uiResults.appendChild(div);
+                });
+            }
+
+            // Update applied fixes table
+            const appliedFixesTable = document.getElementById('appliedFixesTable');
+            appliedFixesTable.innerHTML = '';
+            if (data.review_results.applied_fixes_details) {
+                data.review_results.applied_fixes_details.forEach(fix => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${fix.file}</td>
+                        <td class="px-6 py-4 text-sm text-gray-500">${fix.description}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${fix.category}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                Applied
+                            </span>
+                        </td>
+                    `;
+                    appliedFixesTable.appendChild(row);
+                });
+            }
+        }
+
+        // Event listener for project selection
+        document.getElementById('projectSelect').addEventListener('change', (e) => {
+            if (e.target.value) {
+                fetchProjectStatus(e.target.value);
+            }
+        });
+
+        // Initialize dashboard
+        fetchProjects();
+    </script>
+</body>
+</html> 

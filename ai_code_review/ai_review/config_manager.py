@@ -2,6 +2,7 @@ import os
 import json
 import logging
 from pathlib import Path
+import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -88,7 +89,25 @@ class ConfigManager:
         if os.path.exists(self.projects_file):
             try:
                 with open(self.projects_file, 'r') as f:
-                    return json.load(f)
+                    projects_data = json.load(f)
+                    
+                    # Ensure all projects have timestamps
+                    if "projects" in projects_data:
+                        current_time = datetime.datetime.now().isoformat()
+                        for project in projects_data["projects"]:
+                            if not project.get("created_at"):
+                                project["created_at"] = current_time
+                            if not project.get("updated_at"):
+                                project["updated_at"] = current_time
+                            if not project.get("last_review"):
+                                project["last_review"] = current_time
+                                logger.warning(f"Missing last_review for project {project.get('name')}, adding default")
+                        
+                        # Save any added timestamps
+                        with open(self.projects_file, 'w') as f:
+                            json.dump(projects_data, f, indent=2)
+                        
+                    return projects_data
             except Exception as e:
                 logger.error(f"Error loading projects file: {str(e)}")
         
@@ -126,10 +145,15 @@ class ConfigManager:
                 logger.warning(f"Project at path '{project_path}' already exists with name '{project['name']}'")
                 return False
         
-        # Add new project
+        # Get current timestamp
+        current_time = datetime.datetime.now().isoformat()
+        
+        # Add new project with timestamps
         projects.append({
             "name": project_name,
-            "path": project_path
+            "path": project_path,
+            "created_at": current_time,
+            "updated_at": current_time
         })
         
         self.projects["projects"] = projects
@@ -371,6 +395,60 @@ class ConfigManager:
                 logger.debug(f"Excluding path (not in included dirs): {path}")
                 return True
         
+        return False
+
+    def update_project(self, project_name, **kwargs):
+        """Update a project's information."""
+        projects = self.get_projects()
+        
+        for project in projects:
+            if project["name"] == project_name:
+                # Update provided fields
+                for key, value in kwargs.items():
+                    project[key] = value
+                
+                # Always update the updated_at timestamp
+                current_time = datetime.datetime.now().isoformat()
+                project["updated_at"] = current_time
+                
+                # Ensure last_review exists
+                if "last_review" not in project:
+                    project["last_review"] = current_time
+                    logger.warning(f"Added missing last_review for project {project_name}")
+                
+                # Save changes
+                self.projects["projects"] = projects
+                if self._save_projects():
+                    logger.info(f"Project '{project_name}' updated successfully")
+                    return True
+                
+                logger.error(f"Failed to save project updates for '{project_name}'")
+                return False
+        
+        logger.warning(f"Project '{project_name}' not found")
+        return False
+
+    def update_project_review(self, project_name):
+        """Update a project's last review timestamp."""
+        projects = self.get_projects()
+        
+        for project in projects:
+            if project["name"] == project_name:
+                # Update last_review timestamp
+                current_time = datetime.datetime.now().isoformat()
+                project["last_review"] = current_time
+                project["updated_at"] = current_time
+                
+                # Save changes
+                self.projects["projects"] = projects
+                if self._save_projects():
+                    logger.info(f"Updated last review timestamp for project '{project_name}'")
+                    return True
+                
+                logger.error(f"Failed to save review timestamp for '{project_name}'")
+                return False
+        
+        logger.warning(f"Project '{project_name}' not found")
         return False
 
 # Create a singleton instance

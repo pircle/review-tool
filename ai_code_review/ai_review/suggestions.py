@@ -9,8 +9,7 @@ from typing import Dict, List, Any, Optional
 from openai import OpenAI
 
 # Get logger
-from .logger import get_logger
-logger = get_logger()
+from .logger import logger
 
 # Define system prompts as constants
 SYSTEM_PROMPT_REVIEW = """

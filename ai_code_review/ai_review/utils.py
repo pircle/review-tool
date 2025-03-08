@@ -8,6 +8,7 @@ import logging
 import pathlib
 from typing import Dict, List, Any, Optional
 from datetime import datetime
+from .constants import LOGS_DIR
 
 
 def setup_logging(log_dir: str = None) -> logging.Logger:
@@ -266,4 +267,11 @@ def format_suggestion(suggestion: Dict[str, Any]) -> str:
         suggestion_text = suggestion.get("suggestion", "")
         return f"General suggestion:\n{suggestion_text}"
     else:
-        return f"Unknown suggestion type: {suggestion_type}" 
+        return f"Unknown suggestion type: {suggestion_type}"
+
+
+def ensure_log_dir():
+    """Ensure the logs directory exists."""
+    if not os.path.exists(LOGS_DIR):
+        os.makedirs(LOGS_DIR)
+    return LOGS_DIR 

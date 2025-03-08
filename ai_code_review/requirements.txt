@@ -3,5 +3,9 @@ astroid
 pylint
 pytest
 pytest-cov
-unittest-mock
-selenium>=4.10.0 
+selenium>=4.10.0
+webdriver-manager
+click
+fastapi
+uvicorn
+flask
