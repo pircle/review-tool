@@ -1347,6 +1347,138 @@ def dashboard():
         logger.error(f"Error starting dashboard: {str(e)}")
         raise click.ClickException(str(e))
 
+@cli.command()
+@click.argument('path', type=click.Path(exists=True))
+@click.option('--name', '-n', help='Project name (defaults to directory name)')
+@click.option('--languages', '-l', help='Comma-separated list of programming languages')
+@click.option('--exclude-dirs', help='Additional directories to exclude (comma-separated)')
+@click.option('--exclude-files', help='Additional file patterns to exclude (comma-separated)')
+@click.option('--include-dirs', help='Directories to include (comma-separated, overrides defaults)')
+@click.option('--standards', help='Code review standards to follow (comma-separated)')
+@click.option('--non-interactive', is_flag=True, help='Run in non-interactive mode')
+def init(path, name, languages, exclude_dirs, exclude_files, include_dirs, standards, non_interactive):
+    """Initialize a new project with AI Code Review configuration."""
+    try:
+        # Convert path to absolute path
+        abs_path = os.path.abspath(path)
+        logger.debug(f"Initializing project at path: {abs_path}")
+        
+        # Get project name (either from option or directory name)
+        project_name = name or os.path.basename(abs_path)
+        
+        # Check if project already exists
+        existing_project = config_manager.get_project(project_name)
+        if existing_project:
+            if not click.confirm(f"Project '{project_name}' already exists. Do you want to update its configuration?"):
+                logger.info("Project initialization cancelled by user")
+                return
+        
+        # Interactive mode
+        if not non_interactive:
+            # Confirm project name
+            project_name = click.prompt("Project name", default=project_name)
+            
+            # Get programming languages
+            if not languages:
+                languages = click.prompt(
+                    "Programming languages (comma-separated)",
+                    default="python,javascript,typescript"
+                )
+            
+            # Get directories to exclude
+            default_excludes = ",".join(config_manager.DEFAULT_CONFIG["file_filters"]["exclude_dirs"])
+            if not exclude_dirs:
+                exclude_dirs = click.prompt(
+                    "Additional directories to exclude (comma-separated)",
+                    default=""
+                )
+            
+            # Get file patterns to exclude
+            default_exclude_files = ",".join(config_manager.DEFAULT_CONFIG["file_filters"]["exclude_files"])
+            if not exclude_files:
+                exclude_files = click.prompt(
+                    "Additional file patterns to exclude (comma-separated)",
+                    default=""
+                )
+            
+            # Get directories to include
+            default_includes = ",".join(config_manager.DEFAULT_CONFIG["file_filters"]["include_dirs"])
+            if not include_dirs:
+                include_dirs = click.prompt(
+                    "Directories to include (comma-separated, leave empty for defaults)",
+                    default=""
+                )
+            
+            # Get code review standards
+            if not standards:
+                standards = click.prompt(
+                    "Code review standards to follow (comma-separated)",
+                    default="pep8,eslint"
+                )
+        
+        # Create project configuration
+        project_config = config_manager.DEFAULT_CONFIG.copy()
+        
+        # Update file filters
+        if exclude_dirs:
+            project_config["file_filters"]["exclude_dirs"].extend(
+                [d.strip() for d in exclude_dirs.split(",") if d.strip()]
+            )
+        
+        if exclude_files:
+            project_config["file_filters"]["exclude_files"].extend(
+                [f.strip() for f in exclude_files.split(",") if f.strip()]
+            )
+        
+        if include_dirs:
+            project_config["file_filters"]["include_dirs"] = [
+                d.strip() for d in include_dirs.split(",") if d.strip()
+            ]
+        
+        # Add project-specific settings
+        project_config.update({
+            "project": {
+                "name": project_name,
+                "path": abs_path,
+                "languages": [lang.strip() for lang in (languages or "").split(",") if lang.strip()],
+                "standards": [std.strip() for std in (standards or "").split(",") if std.strip()]
+            }
+        })
+        
+        # Create or update project
+        if existing_project:
+            config_manager.set_current_project(project_name)
+            config_manager.config = project_config
+            if config_manager.save_project_config():
+                click.echo(f"✅ Updated configuration for project '{project_name}'")
+            else:
+                click.echo(f"❌ Failed to update project configuration")
+        else:
+            if config_manager.add_project(project_name, abs_path):
+                config_manager.set_current_project(project_name)
+                config_manager.config = project_config
+                if config_manager.save_project_config():
+                    click.echo(f"✅ Created and configured project '{project_name}'")
+                else:
+                    click.echo(f"❌ Failed to save project configuration")
+            else:
+                click.echo(f"❌ Failed to create project")
+        
+        # Create project structure
+        logs_dir = os.path.join(abs_path, "logs")
+        reports_dir = os.path.join(abs_path, "reports")
+        os.makedirs(logs_dir, exist_ok=True)
+        os.makedirs(reports_dir, exist_ok=True)
+        
+        # Log the initialization
+        logger.info(f"Project '{project_name}' initialized at {abs_path}")
+        
+    except Exception as e:
+        logger.error(f"Error during project initialization: {str(e)}")
+        if logger.getEffectiveLevel() == logging.DEBUG:
+            logger.error(traceback.format_exc())
+        raise click.ClickException(str(e))
+
 def main():
     """Main entry point for the CLI."""
     try:

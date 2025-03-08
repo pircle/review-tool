@@ -75,6 +75,19 @@ class ConfigManager:
                 "*.dll",
                 "*.exe"
             ]
+        },
+        "project": {
+            "name": "",
+            "path": "",
+            "languages": [],
+            "standards": [],
+            "review_settings": {
+                "max_line_length": 100,
+                "max_function_length": 50,
+                "max_complexity": 10,
+                "enforce_docstrings": True,
+                "enforce_type_hints": True
+            }
         }
     }
     
@@ -113,6 +126,12 @@ class ConfigManager:
             logger.error(f"Missing required configuration fields: {', '.join(missing_fields)}")
             logger.error(f"Please update your configuration file at {self.config_file}")
             self._create_example_config()
+            
+            # Don't raise error if only openai_api_key is missing during initialization
+            if len(missing_fields) == 1 and missing_fields[0] == "openai_api_key":
+                logger.warning("OpenAI API key is missing but will be required for AI features")
+                return
+            
             raise ValueError(f"Missing required configuration fields: {', '.join(missing_fields)}")
     
     def _create_example_config(self):
