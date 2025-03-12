@@ -1,0 +1,1143 @@
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmps6zuydun/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph7tuk9ne/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe8o_4hr2/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgwpu0aqc/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp6hrjikd3/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 12:12:33 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 12:12:33 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpb8lg93u_/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkovn0qrp/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdsikri85/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.file_watcher - INFO - Logged created event for /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdsikri85/src/test.py
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvsp677dw/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.file_watcher - INFO - Logged created event for /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvsp677dw/src/test1.py
+2025-03-09 12:12:33 - ai_review.file_watcher - INFO - Logged modified event for /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvsp677dw/src/test1.py
+2025-03-09 12:12:33 - ai_review.file_watcher - INFO - Logged created event for /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvsp677dw/src/test2.py
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmphmqlqrlj
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmp3jor2fqf
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmpnefqvqlx
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: project1
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmp07jd3ydr
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmpufv8f7zc
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - WARNING - Project not found: tmp7_hhu7nv
+2025-03-09 12:12:33 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Initialized CodeChangeHandler with monitored extensions: {'.json', '.md', '.yaml', '.py', '.yml'}
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Initialized CodeChangeHandler with monitored extensions: {'.json', '.md', '.yaml', '.py', '.yml'}
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Processing file creation: /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.py
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.py', 'event_type': 'created', 'timestamp': '2025-03-09T12:12:33.728286'}
+2025-03-09 12:12:33 - ai_review.validator - WARNING - Requirements file not found: docs/Kalkal_Requirements.md
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Processing file modification: /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.json
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.json', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:33.728598'}
+2025-03-09 12:12:33 - ai_review.validator - WARNING - Requirements file not found: docs/Kalkal_Requirements.md
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Processing file deletion: /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.py
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpicbhmptc/test.py', 'event_type': 'deleted', 'timestamp': '2025-03-09T12:12:33.728871'}
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Initialized CodeChangeHandler with monitored extensions: {'.json', '.md', '.yaml', '.py', '.yml'}
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'event_type': 'created', 'timestamp': '2025-03-09T12:12:33.732113'}
+2025-03-09 12:12:33 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'timestamp': '2025-03-09T12:12:33.732542', 'requirements': ['Use consistent indentation', 'Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Use consistent indentation', 'type': 'edit', 'description': 'Fix for: Use consistent indentation', 'cursor_instructions': {'action': 'edit', 'file': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'changes': [{'type': 'format', 'description': 'Fix inconsistent indentation', 'style': 'spaces', 'size': 4}]}}, {'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'changes': [{'type': 'insert', 'line': 3, 'content': '    """Add docstring for inner."""\n'}]}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9mmgb8mq/test.py', 'changes': []}}]}
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Use consistent indentation
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/.ai-code-review/projects.json
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Initialized CodeChangeHandler with monitored extensions: {'.json', '.md', '.yaml', '.py', '.yml'}
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Setting up monitoring for directory: /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Successfully scheduled monitoring for directory: /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Starting observer...
+2025-03-09 12:12:33 - ai_review.review_coordinator - INFO - Observer started successfully
+2025-03-09 12:12:33 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file creation: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'created', 'timestamp': '2025-03-09T12:12:34.257598'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.260495', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.262438'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.263122', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.271218'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.273583', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.284213'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.285949', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.297125'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.298565', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.330634'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.332861', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.342919'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.345019', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.354839'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.355994', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.366835'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.406065', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.413050'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.433315', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.441064'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.448453', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.463720'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.464869', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.475727'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.477247', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.486906'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.488399', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.500357'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.501593', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.512478'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.513542', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.523791'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.524814', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.535420'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.536483', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.547275'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.548414', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.559142'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.560575', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.574895'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.578084', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.592606'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.600069', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.607865'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.609511', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.620489'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.622185', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.632360'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.633955', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.653524'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.657896', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.665227'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.666392', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.679129'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.680681', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.711692'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.718612', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.735199'}
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.737658', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Processing file modification: /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Handling change: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'event_type': 'modified', 'timestamp': '2025-03-09T12:12:34.750910'}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Validation failed, generating correction
+2025-03-09 12:12:34 - ai_review.review_coordinator - INFO - Applying correction: {'file_path': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'timestamp': '2025-03-09T12:12:34.754483', 'requirements': ['Add docstrings to all functions', 'Implement file watching', 'Support multiple projects', 'Enable local validation'], 'fixes': [{'requirement': 'Add docstrings to all functions', 'type': 'edit', 'description': 'Fix for: Add docstrings to all functions', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Implement file watching', 'type': 'edit', 'description': 'Fix for: Implement file watching', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Support multiple projects', 'type': 'edit', 'description': 'Fix for: Support multiple projects', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}, {'requirement': 'Enable local validation', 'type': 'edit', 'description': 'Fix for: Enable local validation', 'cursor_instructions': {'action': 'edit', 'file': '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r736s50/ai_code_review/test.py', 'changes': []}}]}
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Add docstrings to all functions
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Implement file watching
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Support multiple projects
+2025-03-09 12:12:34 - ai_review.apply_corrections - INFO - Applied fix: Fix for: Enable local validation
+2025-03-09 12:12:35 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:36 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:37 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:38 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:39 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9r5lt0w2/.ai-code-review/projects.json
+2025-03-09 12:12:39 - ai_review.apply_corrections - INFO - No pending corrections found
+2025-03-09 12:12:39 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp722pgz6c/.ai-code-review/projects.json
+2025-03-09 12:12:39 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpn_tetwxr/.ai-code-review/projects.json
+2025-03-09 12:12:39 - ai_review.validator - WARNING - Requirements file not found: docs/Kalkal_Requirements.md
+2025-03-09 12:12:39 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpabu2ra70/.ai-code-review/projects.json
+2025-03-09 12:12:39 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 12:12:39 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyr0mwixq/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpqf8xd7pm/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpecx6ovvn/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:29:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzh4i3zc2/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5696i05a/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:29:00 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:29:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpq4f3yixy/.ai-code-review/projects.json
+2025-03-09 22:29:00 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:29:00 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:29:00 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmppeipav96
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmp3phwrr3t
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmp22ymkibm
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: project1
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmprh2lu06b
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmpea6uu6jx
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:29:00 - ai_review.config_manager - WARNING - Project not found: tmpntuur6ky
+2025-03-09 22:29:00 - ai_review.cli - ERROR - Error during project initialization: 'ConfigManager' object has no attribute 'DEFAULT_CONFIG'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4uuwe2x6/.ai-code-review/projects.json
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmps_3t0_g5/.ai-code-review/projects.json
+2025-03-09 22:30:23 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmprxt503cv/.ai-code-review/projects.json
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpcep1oubm/.ai-code-review/projects.json
+2025-03-09 22:30:23 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:30:23 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp60dyxpwn/.ai-code-review/projects.json
+2025-03-09 22:30:23 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:30:23 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:30:23 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmpbn80vuhr
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmpbn80vuhr
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'tmpbn80vuhr' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbn80vuhr'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'tmpbn80vuhr'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'tmpbn80vuhr' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbn80vuhr/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'tmpbn80vuhr' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbn80vuhr
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: test-project
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'test-project' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmpma2vt76i
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpma2vt76i
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9c9g7y5r
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp0jwd4p8b
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp0jwd4p8b
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'tmp0jwd4p8b' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0jwd4p8b'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'tmp0jwd4p8b'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'tmp0jwd4p8b' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0jwd4p8b/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'tmp0jwd4p8b' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0jwd4p8b
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: project1
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: project1
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'project1' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpr7_fr67v
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmpl0zulnww
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl0zulnww
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp4xh0qgg6
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp4xh0qgg6
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'tmp4xh0qgg6' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4xh0qgg6'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'tmp4xh0qgg6'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'tmp4xh0qgg6' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4xh0qgg6/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'tmp4xh0qgg6' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4xh0qgg6
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp3yn62d47
+2025-03-09 22:30:23 - ai_review.config_manager - WARNING - Project not found: tmp3yn62d47
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Added project 'tmp3yn62d47' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3yn62d47'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Current project set to 'tmp3yn62d47'
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Project 'tmp3yn62d47' updated successfully
+2025-03-09 22:30:23 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3yn62d47/config.json
+2025-03-09 22:30:23 - ai_review.cli - INFO - Project 'tmp3yn62d47' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3yn62d47
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl_phhk79/.ai-code-review/projects.json
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiq_bs_88/.ai-code-review/projects.json
+2025-03-09 22:31:10 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp31jd3ybt/.ai-code-review/projects.json
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1ijbua11/.ai-code-review/projects.json
+2025-03-09 22:31:10 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:31:10 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp19s2lyu2/.ai-code-review/projects.json
+2025-03-09 22:31:10 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:31:10 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:31:10 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpiwgvblyf
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpiwgvblyf
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Added project 'tmpiwgvblyf' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiwgvblyf'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'tmpiwgvblyf'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'tmpiwgvblyf' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiwgvblyf/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'tmpiwgvblyf' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiwgvblyf
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvci7n23n
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpewhg9zvl
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbcrkdm5w
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmp3gpco3ae
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmp3gpco3ae
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Added project 'tmp3gpco3ae' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3gpco3ae'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'tmp3gpco3ae'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'tmp3gpco3ae' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3gpco3ae/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'tmp3gpco3ae' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3gpco3ae
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_hpojwno
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpm_o_6yft
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpuitmkqnx
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpofmapcw3
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpofmapcw3
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Added project 'tmpofmapcw3' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpofmapcw3'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'tmpofmapcw3'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'tmpofmapcw3' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpofmapcw3/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'tmpofmapcw3' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpofmapcw3
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpdllua29j
+2025-03-09 22:31:10 - ai_review.config_manager - WARNING - Project not found: tmpdllua29j
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Added project 'tmpdllua29j' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdllua29j'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Current project set to 'tmpdllua29j'
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Project 'tmpdllua29j' updated successfully
+2025-03-09 22:31:10 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdllua29j/config.json
+2025-03-09 22:31:10 - ai_review.cli - INFO - Project 'tmpdllua29j' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdllua29j
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpi3sa6408/.ai-code-review/projects.json
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoo2sd3u9/.ai-code-review/projects.json
+2025-03-09 22:32:11 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpwjpqzhha/.ai-code-review/projects.json
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5hp2wh8a/.ai-code-review/projects.json
+2025-03-09 22:32:11 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:32:11 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp8izhu5yn/.ai-code-review/projects.json
+2025-03-09 22:32:11 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:32:11 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:32:11 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:32:11 - ai_review.config_manager - WARNING - Project not found: tmph1ls0ygj
+2025-03-09 22:32:11 - ai_review.config_manager - WARNING - Project not found: tmph1ls0ygj
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Added project 'tmph1ls0ygj' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph1ls0ygj'
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Current project set to 'tmph1ls0ygj'
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Project 'tmph1ls0ygj' updated successfully
+2025-03-09 22:32:11 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph1ls0ygj/config.json
+2025-03-09 22:32:11 - ai_review.cli - INFO - Project 'tmph1ls0ygj' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph1ls0ygj
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbfsx985d
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpaz083quv
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoxwxk2i2
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpuk7vcjq4
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpuk7vcjq4
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Added project 'tmpuk7vcjq4' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuk7vcjq4'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'tmpuk7vcjq4'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'tmpuk7vcjq4' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuk7vcjq4/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'tmpuk7vcjq4' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuk7vcjq4
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpehuq0b7v
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfogtkfz1
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmprzql9e1t
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpiz8sf67t
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpiz8sf67t
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Added project 'tmpiz8sf67t' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiz8sf67t'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'tmpiz8sf67t'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'tmpiz8sf67t' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiz8sf67t/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'tmpiz8sf67t' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiz8sf67t
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpywo66xyv
+2025-03-09 22:32:12 - ai_review.config_manager - WARNING - Project not found: tmpywo66xyv
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Added project 'tmpywo66xyv' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpywo66xyv'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Current project set to 'tmpywo66xyv'
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Project 'tmpywo66xyv' updated successfully
+2025-03-09 22:32:12 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpywo66xyv/config.json
+2025-03-09 22:32:12 - ai_review.cli - INFO - Project 'tmpywo66xyv' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpywo66xyv
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpz6534aam/.ai-code-review/projects.json
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3voupdhx/.ai-code-review/projects.json
+2025-03-09 22:34:03 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpsn7cpzfq/.ai-code-review/projects.json
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp6kg0dd_q/.ai-code-review/projects.json
+2025-03-09 22:34:03 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:34:03 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpxeetf9ln/.ai-code-review/projects.json
+2025-03-09 22:34:03 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:34:03 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:34:03 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmpc16y2_of
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmpc16y2_of
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Added project 'tmpc16y2_of' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpc16y2_of'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'tmpc16y2_of'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'tmpc16y2_of' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpc16y2_of/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'tmpc16y2_of' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpc16y2_of
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1fc54e9l
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmpf9n2wttg
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp10v1emb5
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptm9nq6hs
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmp_57p8zl2
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmp0vx3w46w
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmp0vx3w46w
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Added project 'tmp0vx3w46w' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0vx3w46w'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'tmp0vx3w46w'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'tmp0vx3w46w' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0vx3w46w/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'tmp0vx3w46w' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0vx3w46w
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmplgecj8eo
+2025-03-09 22:34:03 - ai_review.config_manager - WARNING - Project not found: tmplgecj8eo
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Added project 'tmplgecj8eo' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmplgecj8eo'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Current project set to 'tmplgecj8eo'
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Project 'tmplgecj8eo' updated successfully
+2025-03-09 22:34:03 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmplgecj8eo/config.json
+2025-03-09 22:34:03 - ai_review.cli - INFO - Project 'tmplgecj8eo' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmplgecj8eo
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpj_blj5m0/.ai-code-review/projects.json
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpsi2sss7t/.ai-code-review/projects.json
+2025-03-09 22:45:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp05_x6kyr/.ai-code-review/projects.json
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpol1f5oc8/.ai-code-review/projects.json
+2025-03-09 22:45:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:45:46 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyxsdd1_3/.ai-code-review/projects.json
+2025-03-09 22:45:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:45:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:45:46 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpl7bsi72d
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpl7bsi72d
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Added project 'tmpl7bsi72d' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl7bsi72d'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'tmpl7bsi72d'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'tmpl7bsi72d' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl7bsi72d/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'tmpl7bsi72d' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl7bsi72d
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzuicjwau
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpvjyf324s
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2tumx5g4
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuhrdjq6e/project1
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiy2uba8o
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpsuhy8jtn
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpfq_6u5uq
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpfq_6u5uq
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Added project 'tmpfq_6u5uq' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfq_6u5uq'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'tmpfq_6u5uq'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'tmpfq_6u5uq' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfq_6u5uq/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'tmpfq_6u5uq' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfq_6u5uq
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpj2gdbgah
+2025-03-09 22:45:46 - ai_review.config_manager - WARNING - Project not found: tmpj2gdbgah
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Added project 'tmpj2gdbgah' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpj2gdbgah'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Current project set to 'tmpj2gdbgah'
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Project 'tmpj2gdbgah' updated successfully
+2025-03-09 22:45:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpj2gdbgah/config.json
+2025-03-09 22:45:46 - ai_review.cli - INFO - Project 'tmpj2gdbgah' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpj2gdbgah
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvfbjqvhz/.ai-code-review/projects.json
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpffyiz1sw/.ai-code-review/projects.json
+2025-03-09 22:46:50 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp82xef8dw/.ai-code-review/projects.json
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpz6mn9y7l/.ai-code-review/projects.json
+2025-03-09 22:46:50 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:46:50 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpu1wh5nin/.ai-code-review/projects.json
+2025-03-09 22:46:50 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:46:50 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:46:50 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpurl10ceg
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpurl10ceg
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Added project 'tmpurl10ceg' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpurl10ceg'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'tmpurl10ceg'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'tmpurl10ceg' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpurl10ceg/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'tmpurl10ceg' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpurl10ceg
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3ns0tke0
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpobsrxva2
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe9je2t0_
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp48zjtqie/project1
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpr3echf_8
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpww0odogq
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpe6olx4ll
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmpe6olx4ll
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Added project 'tmpe6olx4ll' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe6olx4ll'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'tmpe6olx4ll'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'tmpe6olx4ll' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe6olx4ll/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'tmpe6olx4ll' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe6olx4ll
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmph_90reao
+2025-03-09 22:46:50 - ai_review.config_manager - WARNING - Project not found: tmph_90reao
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Added project 'tmph_90reao' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph_90reao'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Current project set to 'tmph_90reao'
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Project 'tmph_90reao' updated successfully
+2025-03-09 22:46:50 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph_90reao/config.json
+2025-03-09 22:46:50 - ai_review.cli - INFO - Project 'tmph_90reao' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph_90reao
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp0ymocp6q/.ai-code-review/projects.json
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp6x1530lo/.ai-code-review/projects.json
+2025-03-09 22:48:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9aj9rck_/.ai-code-review/projects.json
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpn0abhnt_/.ai-code-review/projects.json
+2025-03-09 22:48:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:48:46 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4dglecrb/.ai-code-review/projects.json
+2025-03-09 22:48:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:48:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:48:46 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmp1cslzq3q
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmp1cslzq3q
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Added project 'tmp1cslzq3q' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1cslzq3q'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'tmp1cslzq3q'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'tmp1cslzq3q' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1cslzq3q/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'tmp1cslzq3q' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1cslzq3q
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdjj6ceu7
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmpez1jb4ms
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvjtuogxb
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpmb92idam/project1
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdkl4rp7w
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmp2w3mt73v
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmpuxb5rx47
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmpuxb5rx47
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Added project 'tmpuxb5rx47' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuxb5rx47'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'tmpuxb5rx47'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'tmpuxb5rx47' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuxb5rx47/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'tmpuxb5rx47' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpuxb5rx47
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmp_3b111dn
+2025-03-09 22:48:46 - ai_review.config_manager - WARNING - Project not found: tmp_3b111dn
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Added project 'tmp_3b111dn' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_3b111dn'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Current project set to 'tmp_3b111dn'
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Project 'tmp_3b111dn' updated successfully
+2025-03-09 22:48:46 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_3b111dn/config.json
+2025-03-09 22:48:46 - ai_review.cli - INFO - Project 'tmp_3b111dn' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_3b111dn
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptjyol6w4/.ai-code-review/projects.json
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpxcvql_xr/.ai-code-review/projects.json
+2025-03-09 22:50:38 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpmr9imn5a/.ai-code-review/projects.json
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpb1gyu7u1/.ai-code-review/projects.json
+2025-03-09 22:50:38 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:50:38 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpc4xrvzsv/.ai-code-review/projects.json
+2025-03-09 22:50:38 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:50:38 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:50:38 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmpoxd0maki
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmpoxd0maki
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Added project 'tmpoxd0maki' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoxd0maki'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'tmpoxd0maki'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'tmpoxd0maki' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoxd0maki/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'tmpoxd0maki' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoxd0maki
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpa44gageg
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmpzjnvkjb2
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyj4f6w7c
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'project1' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzmkqq3bk/project1
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'test-project' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpwve9er0s
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmp6d4u492j
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project 'test-project' already exists
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmptwl1t5wd
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmptwl1t5wd
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Added project 'tmptwl1t5wd' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptwl1t5wd'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'tmptwl1t5wd'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'tmptwl1t5wd' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptwl1t5wd/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'tmptwl1t5wd' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptwl1t5wd
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmpvckotf4p
+2025-03-09 22:50:38 - ai_review.config_manager - WARNING - Project not found: tmpvckotf4p
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Added project 'tmpvckotf4p' at path '/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvckotf4p'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Current project set to 'tmpvckotf4p'
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Project 'tmpvckotf4p' updated successfully
+2025-03-09 22:50:38 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvckotf4p/config.json
+2025-03-09 22:50:38 - ai_review.cli - INFO - Project 'tmpvckotf4p' initialized at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpvckotf4p
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe7703hwo/.ai-code-review/projects.json
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpt8higoy6/.ai-code-review/projects.json
+2025-03-09 22:51:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptzx99ckx/.ai-code-review/projects.json
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpinw89yyw/.ai-code-review/projects.json
+2025-03-09 22:51:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:51:58 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpearz7qul/.ai-code-review/projects.json
+2025-03-09 22:51:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:51:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:51:58 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_basic_initialization0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_basic_initialization0
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'test_basic_initialization0' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_basic_initialization0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'test_basic_initialization0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'test_basic_initialization0' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_basic_initialization0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'test_basic_initialization0' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_basic_initialization0
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'test-project' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_custom_options0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_interactive_mode0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: custom-project
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'custom-project' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_interactive_mode0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'custom-project'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'custom-project' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_interactive_mode0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'custom-project' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_interactive_mode0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: update-test
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: update-test
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'update-test' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'update-test'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'update-test' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'update-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update0
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'project1' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_multiple_projects0/project1
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: cancel-test
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: cancel-test
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'cancel-test' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update_cancel0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'cancel-test'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'cancel-test' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update_cancel0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'cancel-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update_cancel0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: review-test
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: review-test
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'review-test' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_review_settings0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'review-test'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'review-test' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_review_settings0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'review-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_review_settings0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_project_logs_creation0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_project_logs_creation0
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'test_project_logs_creation0' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_logs_creation0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'test_project_logs_creation0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'test_project_logs_creation0' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_logs_creation0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'test_project_logs_creation0' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_logs_creation0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_project_reports_creation0
+2025-03-09 22:51:58 - ai_review.config_manager - WARNING - Project not found: test_project_reports_creation0
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Added project 'test_project_reports_creation0' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_reports_creation0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Current project set to 'test_project_reports_creation0'
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Project 'test_project_reports_creation0' updated successfully
+2025-03-09 22:51:58 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_reports_creation0/config.json
+2025-03-09 22:51:58 - ai_review.cli - INFO - Project 'test_project_reports_creation0' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_reports_creation0
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3catl6sf/.ai-code-review/projects.json
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl6qw8tab/.ai-code-review/projects.json
+2025-03-09 22:53:21 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpk5s_y831/.ai-code-review/projects.json
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp27lnx2if/.ai-code-review/projects.json
+2025-03-09 22:53:21 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:53:21 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpoeiu_zlp/.ai-code-review/projects.json
+2025-03-09 22:53:21 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:53:21 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:53:21 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:53:21 - ai_review.config_manager - WARNING - Project not found: tmpybdo0wbw
+2025-03-09 22:53:21 - ai_review.config_manager - WARNING - Project not found: tmpybdo0wbw
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Added project 'tmpybdo0wbw' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_basic_initialization0/tmpybdo0wbw'
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Current project set to 'tmpybdo0wbw'
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Project 'tmpybdo0wbw' updated successfully
+2025-03-09 22:53:21 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_basic_initialization0/tmpybdo0wbw/config.json
+2025-03-09 22:53:21 - ai_review.cli - INFO - Project 'tmpybdo0wbw' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_basic_initialization0/tmpybdo0wbw
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'test-project'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'test-project' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgqm96q7e/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'test-project' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_custom_options0/tmpmngk1z9l
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project not found: tmp5fckpq_o
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project 'custom-project' already exists
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'update-test'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'update-test' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update0/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'update-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_update0/tmp11h0dk9t
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'project1'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'project1' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkg2iqmhw/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'project1' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_multiple_projects0/tmp3vhdz59m/project1
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'cancel-test'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'cancel-test' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_project_update_cancel0/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'cancel-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_update_cancel0/tmpimwv4yvc
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'review-test'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'review-test' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-0/test_review_settings0/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'review-test' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_review_settings0/tmpei7q2hze
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project not found: tmp68pw9we9
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project not found: tmp68pw9we9
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Added project 'tmp68pw9we9' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_logs_creation0/tmp68pw9we9'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'tmp68pw9we9'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'tmp68pw9we9' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_logs_creation0/tmp68pw9we9/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'tmp68pw9we9' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_logs_creation0/tmp68pw9we9
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project not found: tmpny22okzt
+2025-03-09 22:53:22 - ai_review.config_manager - WARNING - Project not found: tmpny22okzt
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Added project 'tmpny22okzt' at path '/private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_reports_creation0/tmpny22okzt'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Current project set to 'tmpny22okzt'
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Project 'tmpny22okzt' updated successfully
+2025-03-09 22:53:22 - ai_review.config_manager - INFO - Saved project configuration to /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_reports_creation0/tmpny22okzt/config.json
+2025-03-09 22:53:22 - ai_review.cli - INFO - Project 'tmpny22okzt' initialized at /private/var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/pytest-of-ali/pytest-1/test_project_reports_creation0/tmpny22okzt
+2025-03-09 22:55:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdm1vijaz/.ai-code-review/projects.json
+2025-03-09 22:55:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfrtpwzlf/.ai-code-review/projects.json
+2025-03-09 22:55:01 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:55:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmplildrzl_/.ai-code-review/projects.json
+2025-03-09 22:55:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp92kuaapc/.ai-code-review/projects.json
+2025-03-09 22:55:01 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:55:01 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:55:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmphfr3qyub/.ai-code-review/projects.json
+2025-03-09 22:55:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:55:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:55:01 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:55:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpa2fgz_ck/.ai-code-review/projects.json
+2025-03-09 22:55:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpk58crp39/.ai-code-review/projects.json
+2025-03-09 22:55:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:55:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp6_30csqm/.ai-code-review/projects.json
+2025-03-09 22:55:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpr9qnfgo5/.ai-code-review/projects.json
+2025-03-09 22:55:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:55:58 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:55:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyexpncfw/.ai-code-review/projects.json
+2025-03-09 22:55:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:55:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:55:58 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 22:56:55 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5uh5vf90/.ai-code-review/projects.json
+2025-03-09 22:56:55 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp7b6y6wui/.ai-code-review/projects.json
+2025-03-09 22:56:55 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:56:55 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp56bxfgwa/.ai-code-review/projects.json
+2025-03-09 22:56:55 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpwl81oapp/.ai-code-review/projects.json
+2025-03-09 22:56:55 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 22:56:55 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 22:56:55 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp39vb_z4y/.ai-code-review/projects.json
+2025-03-09 22:56:55 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:56:55 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 22:56:55 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:19:06 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzhhrk2k0/.ai-code-review/projects.json
+2025-03-09 23:19:06 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpye6s4qvh/.ai-code-review/projects.json
+2025-03-09 23:19:06 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:19:06 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpsy9qw9mj/.ai-code-review/projects.json
+2025-03-09 23:19:06 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpegmrtb4g/.ai-code-review/projects.json
+2025-03-09 23:19:06 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:19:06 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:19:06 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmphl6wtuqv/.ai-code-review/projects.json
+2025-03-09 23:19:06 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:19:06 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:19:06 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:20:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgb20twxn/.ai-code-review/projects.json
+2025-03-09 23:20:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpx1l421ey/.ai-code-review/projects.json
+2025-03-09 23:20:33 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:20:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpx7ai3zod/.ai-code-review/projects.json
+2025-03-09 23:20:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp7tkclojm/.ai-code-review/projects.json
+2025-03-09 23:20:33 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:20:33 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:20:33 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpcbabod0b/.ai-code-review/projects.json
+2025-03-09 23:20:33 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:20:33 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:20:33 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:22:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpfsmregv3/.ai-code-review/projects.json
+2025-03-09 23:22:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_h8ctfvq/.ai-code-review/projects.json
+2025-03-09 23:22:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:22:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpqjvtxedk/.ai-code-review/projects.json
+2025-03-09 23:22:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1fomf4s3/.ai-code-review/projects.json
+2025-03-09 23:22:46 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:22:46 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:22:46 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp7rpx6i7g/.ai-code-review/projects.json
+2025-03-09 23:22:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:22:46 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:22:46 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:24:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpbyx2xmfy/.ai-code-review/projects.json
+2025-03-09 23:24:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmphkzznbcz/.ai-code-review/projects.json
+2025-03-09 23:24:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:24:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2sn8a83v/.ai-code-review/projects.json
+2025-03-09 23:24:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpjl0t0c69/.ai-code-review/projects.json
+2025-03-09 23:24:58 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:24:58 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:24:58 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2eh4ej9y/.ai-code-review/projects.json
+2025-03-09 23:24:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:24:58 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:24:58 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:26:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmphnhc7z4y/.ai-code-review/projects.json
+2025-03-09 23:26:00 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp652nykk0/.ai-code-review/projects.json
+2025-03-09 23:26:00 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:26:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpjdz9_iwn/.ai-code-review/projects.json
+2025-03-09 23:26:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgm1i5w2j/.ai-code-review/projects.json
+2025-03-09 23:26:01 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:26:01 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:26:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmproa2bo9s/.ai-code-review/projects.json
+2025-03-09 23:26:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:26:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:26:01 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:27:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpcp93n_9m/.ai-code-review/projects.json
+2025-03-09 23:27:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp7y91xxb1/.ai-code-review/projects.json
+2025-03-09 23:27:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:27:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyvm8g8w_/.ai-code-review/projects.json
+2025-03-09 23:27:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpsezg26zd/.ai-code-review/projects.json
+2025-03-09 23:27:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:27:27 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:27:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2dpx6jb9/.ai-code-review/projects.json
+2025-03-09 23:27:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:27:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:27:27 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:28:34 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpsuudpyrj/.ai-code-review/projects.json
+2025-03-09 23:28:34 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmph7dnppfv/.ai-code-review/projects.json
+2025-03-09 23:28:34 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:28:34 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpue350m_y/.ai-code-review/projects.json
+2025-03-09 23:28:34 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpihf3lkq6/.ai-code-review/projects.json
+2025-03-09 23:28:34 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:28:34 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:28:34 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpe_icrqrm/.ai-code-review/projects.json
+2025-03-09 23:28:34 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:28:34 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:28:34 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:29:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpobqwecea/.ai-code-review/projects.json
+2025-03-09 23:29:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpq3lu81gw/.ai-code-review/projects.json
+2025-03-09 23:29:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:29:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdebnej40/.ai-code-review/projects.json
+2025-03-09 23:29:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpjp2x8q35/.ai-code-review/projects.json
+2025-03-09 23:29:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:29:27 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:29:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpze5tygbb/.ai-code-review/projects.json
+2025-03-09 23:29:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:29:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:29:27 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:30:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpmi3j1yrt/.ai-code-review/projects.json
+2025-03-09 23:30:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp7jj92at1/.ai-code-review/projects.json
+2025-03-09 23:30:22 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:30:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzyfzfzbz/.ai-code-review/projects.json
+2025-03-09 23:30:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp83nj0dam/.ai-code-review/projects.json
+2025-03-09 23:30:22 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:30:22 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:30:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp19ojpyh5/.ai-code-review/projects.json
+2025-03-09 23:30:22 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:30:22 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:30:22 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:31:25 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpakcm5290/.ai-code-review/projects.json
+2025-03-09 23:31:25 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpgn5wr6ih/.ai-code-review/projects.json
+2025-03-09 23:31:25 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:31:25 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpa8br_ydt/.ai-code-review/projects.json
+2025-03-09 23:31:25 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpdzcieiv9/.ai-code-review/projects.json
+2025-03-09 23:31:25 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:31:25 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:31:25 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpasn7vjvt/.ai-code-review/projects.json
+2025-03-09 23:31:25 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:31:25 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:31:25 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:51:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpwpsyu76o/.ai-code-review/projects.json
+2025-03-09 23:51:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpxi40xv5t/.ai-code-review/projects.json
+2025-03-09 23:51:01 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:51:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4ndvlqzp/.ai-code-review/projects.json
+2025-03-09 23:51:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpzkyuzl10/.ai-code-review/projects.json
+2025-03-09 23:51:01 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:51:01 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:51:01 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpkp7xscmz/.ai-code-review/projects.json
+2025-03-09 23:51:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:51:01 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:51:01 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:52:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5xjg9r1q/.ai-code-review/projects.json
+2025-03-09 23:52:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpqati1wgv/.ai-code-review/projects.json
+2025-03-09 23:52:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:52:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2m0obb1z/.ai-code-review/projects.json
+2025-03-09 23:52:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_o0jui3c/.ai-code-review/projects.json
+2025-03-09 23:52:27 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:52:27 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:52:27 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpum47f9c4/.ai-code-review/projects.json
+2025-03-09 23:52:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:52:27 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:52:27 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:53:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpp_9ofbza/.ai-code-review/projects.json
+2025-03-09 23:53:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpc8zhczbm/.ai-code-review/projects.json
+2025-03-09 23:53:22 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:53:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmps4g0vlod/.ai-code-review/projects.json
+2025-03-09 23:53:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpiyur6mwg/.ai-code-review/projects.json
+2025-03-09 23:53:22 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:53:22 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:53:22 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp9l_ibesw/.ai-code-review/projects.json
+2025-03-09 23:53:22 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:53:22 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:53:22 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:54:16 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp4x8yj6n7/.ai-code-review/projects.json
+2025-03-09 23:54:16 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpyv5to6c5/.ai-code-review/projects.json
+2025-03-09 23:54:16 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:54:16 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpf847lk47/.ai-code-review/projects.json
+2025-03-09 23:54:16 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp_qlfefea/.ai-code-review/projects.json
+2025-03-09 23:54:16 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:54:16 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:54:16 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpma_16dgv/.ai-code-review/projects.json
+2025-03-09 23:54:16 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:54:16 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:54:16 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:55:32 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp2kgabzeh/.ai-code-review/projects.json
+2025-03-09 23:55:32 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp6z3nt0de/.ai-code-review/projects.json
+2025-03-09 23:55:32 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:55:32 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp1kvhd1v5/.ai-code-review/projects.json
+2025-03-09 23:55:32 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp3ys6cld3/.ai-code-review/projects.json
+2025-03-09 23:55:32 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:55:32 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:55:32 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpl9egzx2z/.ai-code-review/projects.json
+2025-03-09 23:55:32 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:55:32 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:55:32 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:58:36 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpknzjncrh/.ai-code-review/projects.json
+2025-03-09 23:58:36 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpge47jc77/.ai-code-review/projects.json
+2025-03-09 23:58:36 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:58:36 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5ov0_vws/.ai-code-review/projects.json
+2025-03-09 23:58:36 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpexyvjfz3/.ai-code-review/projects.json
+2025-03-09 23:58:36 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:58:36 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:58:36 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmptvk_u7nt/.ai-code-review/projects.json
+2025-03-09 23:58:36 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:58:36 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:58:36 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}
+2025-03-09 23:59:30 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpmhhn4m6v/.ai-code-review/projects.json
+2025-03-09 23:59:30 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmp5hf_rrum/.ai-code-review/projects.json
+2025-03-09 23:59:30 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:59:30 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmprz7xrk02/.ai-code-review/projects.json
+2025-03-09 23:59:30 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpn7wlkon8/.ai-code-review/projects.json
+2025-03-09 23:59:30 - ai_review.validator - WARNING - Inconsistent indentation found: mixing different types or sizes
+2025-03-09 23:59:30 - ai_review.apply_corrections - INFO - Applied fix: Fix inconsistent indentation
+2025-03-09 23:59:30 - ai_review.config_manager - INFO - Created default projects file at /var/folders/rp/8kvzw9q55f91t6hs2rtwmfvm0000gn/T/tmpm651ljgs/.ai-code-review/projects.json
+2025-03-09 23:59:30 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:59:30 - ai_review.correction_manager - INFO - Fixed requirements: {'Use consistent indentation'}
+2025-03-09 23:59:30 - ai_review.correction_manager - WARNING - Remaining issues: {'Add docstrings to all functions'}

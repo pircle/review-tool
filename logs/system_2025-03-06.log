@@ -1,0 +1,629 @@
+2025-03-06 00:05:18 - ai_review - INFO - Reviewing code at ai_review/interaction_logger.py
+2025-03-06 00:05:18 - ai_review - INFO - Analyzing file: ai_review/interaction_logger.py
+2025-03-06 00:05:18 - ai_review - INFO - Analyzing file: ai_review/interaction_logger.py
+2025-03-06 00:05:18 - ai_review - INFO - Analysis complete: 6 functions, 1 classes
+2025-03-06 00:15:36 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 00:15:36 - ai_review - INFO -   Path: .
+2025-03-06 00:15:36 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 00:15:36 - ai_review - INFO -   AI-powered review: True
+2025-03-06 00:15:36 - ai_review - INFO -   Apply fixes: False
+2025-03-06 00:15:36 - ai_review - INFO -   Security scan: True
+2025-03-06 00:15:36 - ai_review - INFO -   Dependency scan: True
+2025-03-06 00:15:36 - ai_review - INFO -   Generate report: True
+2025-03-06 00:15:36 - ai_review - INFO -   Report format: json
+2025-03-06 00:15:36 - ai_review - INFO -   UI validate: False
+2025-03-06 00:15:36 - ai_review - INFO - Reviewing code at .
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing directory: .
+2025-03-06 00:15:36 - ai_review - INFO - File filtering configuration:
+2025-03-06 00:15:36 - ai_review - INFO -   Excluded directories: node_modules/, .git/, __pycache__/, venv/, env/, .venv/, dist/, build/, .next/, out/, coverage/, logs/
+2025-03-06 00:15:36 - ai_review - INFO -   Included directories: src/, app/, backend/, frontend/, lib/, utils/, components/, services/, api/, tests/, pages/, server/, config/
+2025-03-06 00:15:36 - ai_review - INFO -   Excluded file patterns: *.min.js, *.bundle.js, *.map, *.lock, package-lock.json, yarn.lock, *.pyc, *.pyo, *.pyd, *.so, *.dll, *.exe
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing directory: .
+2025-03-06 00:15:36 - ai_review - INFO - Found standard project directories: src
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./next-env.d.ts
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./next.config.ts
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./src/app/layout.tsx
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./src/app/page.tsx
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./src/components/TeamList.tsx
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 3 functions, 1 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./src/components/GameList.tsx
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 6 functions, 2 classes
+2025-03-06 00:15:36 - ai_review - INFO - Analyzing file: ./src/store/useStore.ts
+2025-03-06 00:15:36 - ai_review - INFO - Analysis complete: 2 functions, 3 classes
+2025-03-06 00:15:36 - ai_review - INFO - Excluded directories: .git, .next, logs, node_modules, src
+2025-03-06 00:15:36 - ai_review - INFO - Analyzed 7 files in directory: .
+2025-03-06 00:15:36 - ai_review - INFO - Skipped 6 files based on configuration filters
+2025-03-06 00:15:36 - ai_review - INFO - Analysis log:
+<log>
+    <excluded_directories>
+                <directory>node_modules/</directory>
+        <directory>.git/</directory>
+        <directory>__pycache__/</directory>
+        <directory>venv/</directory>
+        <directory>env/</directory>
+        <directory>.venv/</directory>
+        <directory>dist/</directory>
+        <directory>build/</directory>
+        <directory>.next/</directory>
+        <directory>out/</directory>
+        <directory>coverage/</directory>
+        <directory>logs/</directory>
+    </excluded_directories>
+    <scanned_files_count>7</scanned_files_count>
+</log>
+2025-03-06 00:16:03 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 00:16:03 - ai_review - INFO -   Path: .
+2025-03-06 00:16:03 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 00:16:03 - ai_review - INFO -   AI-powered review: True
+2025-03-06 00:16:03 - ai_review - INFO -   Apply fixes: True
+2025-03-06 00:16:03 - ai_review - INFO -   Security scan: False
+2025-03-06 00:16:03 - ai_review - INFO -   Dependency scan: False
+2025-03-06 00:16:03 - ai_review - INFO -   Generate report: False
+2025-03-06 00:16:03 - ai_review - INFO -   UI validate: False
+2025-03-06 00:16:03 - ai_review - INFO - Reviewing code at .
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing directory: .
+2025-03-06 00:16:03 - ai_review - INFO - File filtering configuration:
+2025-03-06 00:16:03 - ai_review - INFO -   Excluded directories: node_modules/, .git/, __pycache__/, venv/, env/, .venv/, dist/, build/, .next/, out/, coverage/, logs/
+2025-03-06 00:16:03 - ai_review - INFO -   Included directories: src/, app/, backend/, frontend/, lib/, utils/, components/, services/, api/, tests/, pages/, server/, config/
+2025-03-06 00:16:03 - ai_review - INFO -   Excluded file patterns: *.min.js, *.bundle.js, *.map, *.lock, package-lock.json, yarn.lock, *.pyc, *.pyo, *.pyd, *.so, *.dll, *.exe
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing directory: .
+2025-03-06 00:16:03 - ai_review - INFO - Found standard project directories: src
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./next-env.d.ts
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./next.config.ts
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./src/app/layout.tsx
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./src/app/page.tsx
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./src/components/TeamList.tsx
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 3 functions, 1 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./src/components/GameList.tsx
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 6 functions, 2 classes
+2025-03-06 00:16:03 - ai_review - INFO - Analyzing file: ./src/store/useStore.ts
+2025-03-06 00:16:03 - ai_review - INFO - Analysis complete: 2 functions, 3 classes
+2025-03-06 00:16:03 - ai_review - INFO - Excluded directories: .git, .next, logs, node_modules, src
+2025-03-06 00:16:03 - ai_review - INFO - Analyzed 7 files in directory: .
+2025-03-06 00:16:03 - ai_review - INFO - Skipped 6 files based on configuration filters
+2025-03-06 00:16:03 - ai_review - INFO - Analysis log:
+<log>
+    <excluded_directories>
+                <directory>node_modules/</directory>
+        <directory>.git/</directory>
+        <directory>__pycache__/</directory>
+        <directory>venv/</directory>
+        <directory>env/</directory>
+        <directory>.venv/</directory>
+        <directory>dist/</directory>
+        <directory>build/</directory>
+        <directory>.next/</directory>
+        <directory>out/</directory>
+        <directory>coverage/</directory>
+        <directory>logs/</directory>
+    </excluded_directories>
+    <scanned_files_count>7</scanned_files_count>
+</log>
+2025-03-06 16:58:10 - ai_review.config_manager - INFO - Project 'sport-management' added successfully
+2025-03-06 16:58:10 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 16:58:10 - ai_review - INFO -   Path: .
+2025-03-06 16:58:10 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 16:58:10 - ai_review - INFO -   AI-powered review: True
+2025-03-06 16:58:10 - ai_review - INFO -   Apply fixes: False
+2025-03-06 16:58:10 - ai_review - INFO -   Security scan: True
+2025-03-06 16:58:10 - ai_review - INFO -   Dependency scan: True
+2025-03-06 16:58:10 - ai_review - INFO -   Generate report: True
+2025-03-06 16:58:10 - ai_review - INFO -   Report format: json
+2025-03-06 16:58:10 - ai_review - INFO -   UI validate: False
+2025-03-06 16:58:10 - ai_review - INFO -   Project: sport-management
+2025-03-06 16:58:10 - ai_review - INFO - Reviewing code at .
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing directory: .
+2025-03-06 16:58:10 - ai_review - INFO - File filtering configuration:
+2025-03-06 16:58:10 - ai_review - INFO -   Excluded directories: node_modules/, .git/, __pycache__/, venv/, env/, .venv/, dist/, build/, .next/, out/, coverage/, logs/
+2025-03-06 16:58:10 - ai_review - INFO -   Included directories: src/, app/, backend/, frontend/, lib/, utils/, components/, services/, api/, tests/, pages/, server/, config/
+2025-03-06 16:58:10 - ai_review - INFO -   Excluded file patterns: *.min.js, *.bundle.js, *.map, *.lock, package-lock.json, yarn.lock, *.pyc, *.pyo, *.pyd, *.so, *.dll, *.exe
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing directory: .
+2025-03-06 16:58:10 - ai_review - INFO - Found standard project directories: src
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./next-env.d.ts
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./next.config.ts
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./src/app/layout.tsx
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./src/app/page.tsx
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./src/components/TeamList.tsx
+2025-03-06 16:58:10 - ai_review - INFO - TypeScript types detected in ./src/components/TeamList.tsx
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 3 functions, 1 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./src/components/GameList.tsx
+2025-03-06 16:58:10 - ai_review - INFO - TypeScript types detected in ./src/components/GameList.tsx
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 6 functions, 2 classes
+2025-03-06 16:58:10 - ai_review - INFO - Analyzing file: ./src/store/useStore.ts
+2025-03-06 16:58:10 - ai_review - INFO - Zustand state management detected in ./src/store/useStore.ts
+2025-03-06 16:58:10 - ai_review - INFO - TypeScript types detected in ./src/store/useStore.ts
+2025-03-06 16:58:10 - ai_review - INFO - Analysis complete: 2 functions, 3 classes
+2025-03-06 16:58:10 - ai_review - INFO - Excluded directories: .git, .next, logs, node_modules, src
+2025-03-06 16:58:10 - ai_review - INFO - Analyzed 7 files in directory: .
+2025-03-06 16:58:10 - ai_review - INFO - Skipped 6 files based on configuration filters
+2025-03-06 16:58:10 - ai_review - INFO - Analysis log:
+<log>
+    <excluded_directories>
+                <directory>node_modules/</directory>
+        <directory>.git/</directory>
+        <directory>__pycache__/</directory>
+        <directory>venv/</directory>
+        <directory>env/</directory>
+        <directory>.venv/</directory>
+        <directory>dist/</directory>
+        <directory>build/</directory>
+        <directory>.next/</directory>
+        <directory>out/</directory>
+        <directory>coverage/</directory>
+        <directory>logs/</directory>
+    </excluded_directories>
+    <scanned_files_count>7</scanned_files_count>
+</log>
+2025-03-06 16:58:52 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 16:58:52 - ai_review - INFO -   Path: .
+2025-03-06 16:58:52 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 16:58:52 - ai_review - INFO -   AI-powered review: False
+2025-03-06 16:58:52 - ai_review - INFO -   Apply fixes: False
+2025-03-06 16:58:52 - ai_review - INFO -   Security scan: False
+2025-03-06 16:58:52 - ai_review - INFO -   Dependency scan: False
+2025-03-06 16:58:52 - ai_review - INFO -   Generate report: False
+2025-03-06 16:58:52 - ai_review - INFO -   UI validate: True
+2025-03-06 16:58:52 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 16:58:52 - ai_review - INFO -   UI report format: markdown
+2025-03-06 16:58:52 - ai_review - INFO -   Project: sport-management
+2025-03-06 16:58:52 - ai_review - INFO - Reviewing code at .
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing directory: .
+2025-03-06 16:58:52 - ai_review - INFO - File filtering configuration:
+2025-03-06 16:58:52 - ai_review - INFO -   Excluded directories: node_modules/, .git/, __pycache__/, venv/, env/, .venv/, dist/, build/, .next/, out/, coverage/, logs/
+2025-03-06 16:58:52 - ai_review - INFO -   Included directories: src/, app/, backend/, frontend/, lib/, utils/, components/, services/, api/, tests/, pages/, server/, config/
+2025-03-06 16:58:52 - ai_review - INFO -   Excluded file patterns: *.min.js, *.bundle.js, *.map, *.lock, package-lock.json, yarn.lock, *.pyc, *.pyo, *.pyd, *.so, *.dll, *.exe
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing directory: .
+2025-03-06 16:58:52 - ai_review - INFO - Found standard project directories: src
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./next-env.d.ts
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./next.config.ts
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 0 functions, 0 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./src/app/layout.tsx
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./src/app/page.tsx
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 2 functions, 0 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./src/components/TeamList.tsx
+2025-03-06 16:58:52 - ai_review - INFO - TypeScript types detected in ./src/components/TeamList.tsx
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 3 functions, 1 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./src/components/GameList.tsx
+2025-03-06 16:58:52 - ai_review - INFO - TypeScript types detected in ./src/components/GameList.tsx
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 6 functions, 2 classes
+2025-03-06 16:58:52 - ai_review - INFO - Analyzing file: ./src/store/useStore.ts
+2025-03-06 16:58:52 - ai_review - INFO - Zustand state management detected in ./src/store/useStore.ts
+2025-03-06 16:58:52 - ai_review - INFO - TypeScript types detected in ./src/store/useStore.ts
+2025-03-06 16:58:52 - ai_review - INFO - Analysis complete: 2 functions, 3 classes
+2025-03-06 16:58:52 - ai_review - INFO - Excluded directories: .git, .next, logs, node_modules, src
+2025-03-06 16:58:52 - ai_review - INFO - Analyzed 7 files in directory: .
+2025-03-06 16:58:52 - ai_review - INFO - Skipped 6 files based on configuration filters
+2025-03-06 16:58:52 - ai_review - INFO - Analysis log:
+<log>
+    <excluded_directories>
+                <directory>node_modules/</directory>
+        <directory>.git/</directory>
+        <directory>__pycache__/</directory>
+        <directory>venv/</directory>
+        <directory>env/</directory>
+        <directory>.venv/</directory>
+        <directory>dist/</directory>
+        <directory>build/</directory>
+        <directory>.next/</directory>
+        <directory>out/</directory>
+        <directory>coverage/</directory>
+        <directory>logs/</directory>
+    </excluded_directories>
+    <scanned_files_count>7</scanned_files_count>
+</log>
+2025-03-06 16:59:16 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 16:59:16 - ai_review - INFO -   Path: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/Kalkal-test/sport-management
+2025-03-06 16:59:16 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 16:59:16 - ai_review - INFO -   AI-powered review: False
+2025-03-06 16:59:16 - ai_review - INFO -   Apply fixes: False
+2025-03-06 16:59:16 - ai_review - INFO -   Security scan: False
+2025-03-06 16:59:16 - ai_review - INFO -   Dependency scan: False
+2025-03-06 16:59:16 - ai_review - INFO -   Generate report: False
+2025-03-06 16:59:16 - ai_review - INFO -   UI validate: True
+2025-03-06 16:59:16 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 16:59:16 - ai_review - INFO -   UI report format: markdown
+2025-03-06 16:59:16 - ai_review - INFO -   Project: sport-management
+2025-03-06 16:59:16 - ai_review - INFO - Reviewing code at /Users/ali/Dropbox/Pircle.US PPP/_GitHub/Kalkal-test/sport-management
+2025-03-06 16:59:16 - ai_review - INFO - Analyzing directory: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/Kalkal-test/sport-management
+2025-03-06 16:59:16 - ai_review - INFO - File filtering configuration:
+2025-03-06 16:59:16 - ai_review - INFO -   Excluded directories: node_modules/, .git/, __pycache__/, venv/, env/, .venv/, dist/, build/, .next/, out/, coverage/, logs/
+2025-03-06 16:59:16 - ai_review - INFO -   Included directories: src/, app/, backend/, frontend/, lib/, utils/, components/, services/, api/, tests/, pages/, server/, config/
+2025-03-06 16:59:16 - ai_review - INFO -   Excluded file patterns: *.min.js, *.bundle.js, *.map, *.lock, package-lock.json, yarn.lock, *.pyc, *.pyo, *.pyd, *.so, *.dll, *.exe
+2025-03-06 16:59:16 - ai_review - INFO - Analyzing directory: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/Kalkal-test/sport-management
+2025-03-06 16:59:16 - ai_review - INFO - Found standard project directories: src
+2025-03-06 16:59:16 - ai_review - INFO - Excluded directories: .git, .next, logs, node_modules, public, reports, sport-management, src
+2025-03-06 16:59:16 - ai_review - INFO - Analyzed 0 files in directory: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/Kalkal-test/sport-management
+2025-03-06 16:59:16 - ai_review - INFO - Skipped 10 files based on configuration filters
+2025-03-06 16:59:16 - ai_review - INFO - Analysis log:
+<log>
+    <excluded_directories>
+                <directory>node_modules/</directory>
+        <directory>.git/</directory>
+        <directory>__pycache__/</directory>
+        <directory>venv/</directory>
+        <directory>env/</directory>
+        <directory>.venv/</directory>
+        <directory>dist/</directory>
+        <directory>build/</directory>
+        <directory>.next/</directory>
+        <directory>out/</directory>
+        <directory>coverage/</directory>
+        <directory>logs/</directory>
+    </excluded_directories>
+    <scanned_files_count>0</scanned_files_count>
+</log>
+2025-03-06 17:07:06 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:07:06 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:07:06 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:07:06 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:07:06 - ai_review - INFO -   Security scan: False
+2025-03-06 17:07:06 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:07:06 - ai_review - INFO -   Generate report: False
+2025-03-06 17:07:06 - ai_review - INFO -   UI validate: True
+2025-03-06 17:07:06 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:07:06 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:07:06 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:07:06 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:07:06 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:07:06 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:07:15 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:07:15 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:07:16 - ai_review - ERROR - Failed to capture screenshot: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+0   chromedriver                        0x00000001052682d4 cxxbridge1$str$ptr + 2739836
+1   chromedriver                        0x0000000105260934 cxxbridge1$str$ptr + 2708700
+2   chromedriver                        0x0000000104dc1f90 cxxbridge1$string$len + 93360
+3   chromedriver                        0x0000000104dba5f4 cxxbridge1$string$len + 62228
+4   chromedriver                        0x0000000104dac55c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000104dadf3c cxxbridge1$string$len + 11356
+6   chromedriver                        0x0000000104dac9c4 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000104dac338 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000104dac084 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000104da9d9c chromedriver + 187804
+10  chromedriver                        0x0000000104daa8c0 chromedriver + 190656
+11  chromedriver                        0x0000000104dc4f40 cxxbridge1$string$len + 105568
+12  chromedriver                        0x0000000104e4a9b4 cxxbridge1$string$len + 653012
+13  chromedriver                        0x0000000104e49e80 cxxbridge1$string$len + 650144
+14  chromedriver                        0x0000000104dfd060 cxxbridge1$string$len + 335232
+15  chromedriver                        0x0000000105230c38 cxxbridge1$str$ptr + 2512864
+16  chromedriver                        0x0000000105233f58 cxxbridge1$str$ptr + 2525952
+17  chromedriver                        0x0000000105216578 cxxbridge1$str$ptr + 2404640
+18  chromedriver                        0x0000000105234818 cxxbridge1$str$ptr + 2528192
+19  chromedriver                        0x0000000105206f2c cxxbridge1$str$ptr + 2341588
+20  chromedriver                        0x0000000105250a60 cxxbridge1$str$ptr + 2643464
+21  chromedriver                        0x0000000105250be8 cxxbridge1$str$ptr + 2643856
+22  chromedriver                        0x00000001052605a8 cxxbridge1$str$ptr + 2707792
+23  libsystem_pthread.dylib             0x0000000185bf6f94 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000185bf1d34 thread_start + 8
+
+2025-03-06 17:07:16 - ai_review - ERROR - UI validation failed: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=133.0.6943.143)
+Stacktrace:
+0   chromedriver                        0x00000001052682d4 cxxbridge1$str$ptr + 2739836
+1   chromedriver                        0x0000000105260934 cxxbridge1$str$ptr + 2708700
+2   chromedriver                        0x0000000104dc1f90 cxxbridge1$string$len + 93360
+3   chromedriver                        0x0000000104dba5f4 cxxbridge1$string$len + 62228
+4   chromedriver                        0x0000000104dac55c cxxbridge1$string$len + 4732
+5   chromedriver                        0x0000000104dadf3c cxxbridge1$string$len + 11356
+6   chromedriver                        0x0000000104dac9c4 cxxbridge1$string$len + 5860
+7   chromedriver                        0x0000000104dac338 cxxbridge1$string$len + 4184
+8   chromedriver                        0x0000000104dac084 cxxbridge1$string$len + 3492
+9   chromedriver                        0x0000000104da9d9c chromedriver + 187804
+10  chromedriver                        0x0000000104daa8c0 chromedriver + 190656
+11  chromedriver                        0x0000000104dc4f40 cxxbridge1$string$len + 105568
+12  chromedriver                        0x0000000104e4a9b4 cxxbridge1$string$len + 653012
+13  chromedriver                        0x0000000104e49e80 cxxbridge1$string$len + 650144
+14  chromedriver                        0x0000000104dfd060 cxxbridge1$string$len + 335232
+15  chromedriver                        0x0000000105230c38 cxxbridge1$str$ptr + 2512864
+16  chromedriver                        0x0000000105233f58 cxxbridge1$str$ptr + 2525952
+17  chromedriver                        0x0000000105216578 cxxbridge1$str$ptr + 2404640
+18  chromedriver                        0x0000000105234818 cxxbridge1$str$ptr + 2528192
+19  chromedriver                        0x0000000105206f2c cxxbridge1$str$ptr + 2341588
+20  chromedriver                        0x0000000105250a60 cxxbridge1$str$ptr + 2643464
+21  chromedriver                        0x0000000105250be8 cxxbridge1$str$ptr + 2643856
+22  chromedriver                        0x00000001052605a8 cxxbridge1$str$ptr + 2707792
+23  libsystem_pthread.dylib             0x0000000185bf6f94 _pthread_start + 136
+24  libsystem_pthread.dylib             0x0000000185bf1d34 thread_start + 8
+
+2025-03-06 17:07:16 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:08:11 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:08:11 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:08:11 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:08:11 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:08:11 - ai_review - INFO -   Security scan: False
+2025-03-06 17:08:11 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:08:11 - ai_review - INFO -   Generate report: False
+2025-03-06 17:08:11 - ai_review - INFO -   UI validate: True
+2025-03-06 17:08:11 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:08:11 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:08:11 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:08:11 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:08:11 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:08:11 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:08:12 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:08:12 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:08:14 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_170811_before.png
+2025-03-06 17:08:14 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_170811_before.png
+2025-03-06 17:08:14 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_170811_before.png
+2025-03-06 17:08:37 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:08:39 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_170811_after.png
+2025-03-06 17:08:39 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_170811_after.png
+2025-03-06 17:08:39 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_170811_after.png
+2025-03-06 17:08:39 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:08:39 - ai_review - ERROR - No OpenAI API key provided
+2025-03-06 17:08:39 - ai_review - ERROR - UI validation failed: OpenAI API key is required for UI validation
+2025-03-06 17:08:39 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:24:08 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:24:08 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:24:08 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:24:08 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:24:08 - ai_review - INFO -   Security scan: False
+2025-03-06 17:24:08 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:24:08 - ai_review - INFO -   Generate report: False
+2025-03-06 17:24:08 - ai_review - INFO -   UI validate: True
+2025-03-06 17:24:08 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:24:08 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:24:08 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:24:08 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:24:08 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:24:08 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:24:09 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:24:09 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:24:11 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_172408_before.png
+2025-03-06 17:24:12 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_172408_before.png
+2025-03-06 17:24:12 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_172408_before.png
+2025-03-06 17:24:27 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:24:30 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_172408_after.png
+2025-03-06 17:24:30 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_172408_after.png
+2025-03-06 17:24:30 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_172408_after.png
+2025-03-06 17:24:30 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:24:30 - ai_review - INFO - UIValidator initialized
+2025-03-06 17:24:30 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_172408_before.png and logs/screenshots/20250306_172408_after.png
+2025-03-06 17:24:30 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 17:24:31 - ai_review - ERROR - ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 17:24:31 - ai_review - ERROR - Error in screenshot comparison: ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 17:28:41 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:28:41 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:28:41 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:28:41 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:28:41 - ai_review - INFO -   Security scan: False
+2025-03-06 17:28:41 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:28:41 - ai_review - INFO -   Generate report: False
+2025-03-06 17:28:41 - ai_review - INFO -   UI validate: True
+2025-03-06 17:28:41 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:28:41 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:28:41 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:28:41 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:28:41 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:28:41 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:28:41 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:28:41 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:28:44 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_172841_before.png
+2025-03-06 17:28:44 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_172841_before.png
+2025-03-06 17:28:44 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_172841_before.png
+2025-03-06 17:28:47 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:28:49 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_172841_after.png
+2025-03-06 17:28:49 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_172841_after.png
+2025-03-06 17:28:49 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_172841_after.png
+2025-03-06 17:28:49 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:28:49 - ai_review - INFO - UIValidator initialized
+2025-03-06 17:28:49 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_172841_before.png and logs/screenshots/20250306_172841_after.png
+2025-03-06 17:28:49 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 17:28:50 - ai_review - ERROR - ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-vision` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 17:28:50 - ai_review - ERROR - Error in screenshot comparison: ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-turbo-vision` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 17:48:02 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:48:02 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:48:02 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:48:02 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:48:02 - ai_review - INFO -   Security scan: False
+2025-03-06 17:48:02 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:48:02 - ai_review - INFO -   Generate report: False
+2025-03-06 17:48:02 - ai_review - INFO -   UI validate: True
+2025-03-06 17:48:02 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:48:02 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:48:02 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:48:02 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:48:02 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:48:02 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:48:03 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:48:03 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:48:05 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_174802_before.png
+2025-03-06 17:48:06 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_174802_before.png
+2025-03-06 17:48:06 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_174802_before.png
+2025-03-06 17:48:08 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:48:10 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_174802_after.png
+2025-03-06 17:48:10 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_174802_after.png
+2025-03-06 17:48:10 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_174802_after.png
+2025-03-06 17:48:10 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:48:10 - ai_review - INFO - UIValidator initialized
+2025-03-06 17:48:10 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_174802_before.png and logs/screenshots/20250306_174802_after.png
+2025-03-06 17:48:10 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 17:48:10 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 17:48:11 - ai_review - INFO - Found 36 available models
+2025-03-06 17:48:11 - ai_review - INFO - Using vision model: gpt-4.5-preview
+2025-03-06 17:48:13 - ai_review - ERROR - ChatGPT Vision API failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-03-06 17:48:13 - ai_review - ERROR - Error in screenshot comparison: ChatGPT Vision API failed: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-03-06 17:53:55 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 17:53:55 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 17:53:55 - ai_review - INFO -   AI-powered review: False
+2025-03-06 17:53:55 - ai_review - INFO -   Apply fixes: False
+2025-03-06 17:53:55 - ai_review - INFO -   Security scan: False
+2025-03-06 17:53:55 - ai_review - INFO -   Dependency scan: False
+2025-03-06 17:53:55 - ai_review - INFO -   Generate report: False
+2025-03-06 17:53:55 - ai_review - INFO -   UI validate: True
+2025-03-06 17:53:55 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 17:53:55 - ai_review - INFO -   UI report format: markdown
+2025-03-06 17:53:55 - ai_review - INFO -   Skip code review: True
+2025-03-06 17:53:55 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 17:53:55 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 17:53:55 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 17:53:56 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 17:53:56 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:53:58 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_175355_before.png
+2025-03-06 17:53:58 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_175355_before.png
+2025-03-06 17:53:58 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_175355_before.png
+2025-03-06 17:54:05 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 17:54:07 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_175355_after.png
+2025-03-06 17:54:07 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_175355_after.png
+2025-03-06 17:54:07 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_175355_after.png
+2025-03-06 17:54:07 - ai_review - INFO - Closing WebDriver
+2025-03-06 17:54:07 - ai_review - INFO - UIValidator initialized
+2025-03-06 17:54:07 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_175355_before.png and logs/screenshots/20250306_175355_after.png
+2025-03-06 17:54:07 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 17:54:07 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 17:54:08 - ai_review - INFO - Found 50 available models
+2025-03-06 17:54:08 - ai_review - INFO - Using vision model: gpt-4.5-preview
+2025-03-06 17:54:19 - ai_review - INFO - Screenshot comparison completed using model: gpt-4.5-preview
+2025-03-06 17:54:19 - ai_review - INFO - Successfully parsed analysis JSON
+2025-03-06 17:54:19 - ai_review - INFO - Generating UI validation report in markdown format
+2025-03-06 17:54:19 - ai_review - INFO - Markdown report saved to logs/ui_reports/ui_report_20250306_175419.md
+2025-03-06 18:23:40 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 18:23:40 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 18:23:40 - ai_review - INFO -   AI-powered review: False
+2025-03-06 18:23:40 - ai_review - INFO -   Apply fixes: False
+2025-03-06 18:23:40 - ai_review - INFO -   Security scan: False
+2025-03-06 18:23:40 - ai_review - INFO -   Dependency scan: False
+2025-03-06 18:23:40 - ai_review - INFO -   Generate report: False
+2025-03-06 18:23:40 - ai_review - INFO -   UI validate: True
+2025-03-06 18:23:40 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 18:23:40 - ai_review - INFO -   UI report format: markdown
+2025-03-06 18:23:40 - ai_review - INFO -   Skip code review: True
+2025-03-06 18:23:40 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 18:23:40 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 18:23:40 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 18:23:42 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 18:23:42 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 18:23:45 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_182340_before.png
+2025-03-06 18:23:45 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_182340_before.png
+2025-03-06 18:23:45 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_182340_before.png
+2025-03-06 18:24:07 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 18:24:09 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_182340_after.png
+2025-03-06 18:24:09 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_182340_after.png
+2025-03-06 18:24:09 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_182340_after.png
+2025-03-06 18:24:09 - ai_review - INFO - Closing WebDriver
+2025-03-06 18:24:09 - ai_review - INFO - UIValidator initialized
+2025-03-06 18:24:09 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_182340_before.png and logs/screenshots/20250306_182340_after.png
+2025-03-06 18:24:09 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 18:24:09 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 18:24:10 - ai_review - INFO - Found 50 available models
+2025-03-06 18:24:10 - ai_review - INFO - Using vision model: gpt-4.5-preview
+2025-03-06 18:24:21 - ai_review - INFO - Screenshot comparison completed using model: gpt-4.5-preview
+2025-03-06 18:24:21 - ai_review - INFO - Successfully parsed analysis JSON
+2025-03-06 18:24:21 - ai_review - INFO - Generating UI validation report in markdown format
+2025-03-06 18:24:21 - ai_review - INFO - Markdown report saved to logs/ui_reports/ui_report_20250306_182421.md
+2025-03-06 18:26:17 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 18:26:17 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 18:26:17 - ai_review - INFO -   AI-powered review: False
+2025-03-06 18:26:17 - ai_review - INFO -   Apply fixes: False
+2025-03-06 18:26:17 - ai_review - INFO -   Security scan: False
+2025-03-06 18:26:17 - ai_review - INFO -   Dependency scan: False
+2025-03-06 18:26:17 - ai_review - INFO -   Generate report: False
+2025-03-06 18:26:17 - ai_review - INFO -   UI validate: True
+2025-03-06 18:26:17 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 18:26:17 - ai_review - INFO -   UI report format: markdown
+2025-03-06 18:26:17 - ai_review - INFO -   Skip code review: True
+2025-03-06 18:26:17 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 18:26:17 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 18:26:17 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 18:26:18 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 18:26:18 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 18:26:20 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_182617_before.png
+2025-03-06 18:26:20 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_182617_before.png
+2025-03-06 18:26:20 - ai_review - INFO - Before screenshot captured: logs/screenshots/20250306_182617_before.png
+2025-03-06 18:26:37 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 18:26:39 - ai_review - INFO - Capturing screenshot: logs/screenshots/20250306_182617_after.png
+2025-03-06 18:26:39 - ai_review - INFO - Screenshot saved: logs/screenshots/20250306_182617_after.png
+2025-03-06 18:26:39 - ai_review - INFO - After screenshot captured: logs/screenshots/20250306_182617_after.png
+2025-03-06 18:26:39 - ai_review - INFO - Closing WebDriver
+2025-03-06 18:26:39 - ai_review - INFO - UIValidator initialized
+2025-03-06 18:26:39 - ai_review - INFO - Comparing screenshots: logs/screenshots/20250306_182617_before.png and logs/screenshots/20250306_182617_after.png
+2025-03-06 18:26:39 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 18:26:39 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 18:26:40 - ai_review - INFO - Found 50 available models
+2025-03-06 18:26:40 - ai_review - INFO - Using vision model: gpt-4.5-preview
+2025-03-06 18:26:50 - ai_review - INFO - Screenshot comparison completed using model: gpt-4.5-preview
+2025-03-06 18:26:50 - ai_review - INFO - Successfully parsed analysis JSON
+2025-03-06 18:26:50 - ai_review - INFO - Generating UI validation report in markdown format
+2025-03-06 18:26:50 - ai_review - INFO - Markdown report saved to logs/ui_reports/ui_report_20250306_182650.md
+2025-03-06 21:45:15 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 21:45:15 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 21:45:15 - ai_review - INFO -   AI-powered review: False
+2025-03-06 21:45:15 - ai_review - INFO -   Apply fixes: False
+2025-03-06 21:45:15 - ai_review - INFO -   Security scan: False
+2025-03-06 21:45:15 - ai_review - INFO -   Dependency scan: False
+2025-03-06 21:45:15 - ai_review - INFO -   Generate report: False
+2025-03-06 21:45:15 - ai_review - INFO -   UI validate: True
+2025-03-06 21:45:15 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 21:45:15 - ai_review - INFO -   UI report format: markdown
+2025-03-06 21:45:15 - ai_review - INFO -   Skip code review: True
+2025-03-06 21:45:15 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 21:45:15 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 21:45:15 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 21:45:15 - ai_review - INFO - Screenshots will be saved to: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots
+2025-03-06 21:45:17 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 21:45:17 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 21:45:19 - ai_review - INFO - Capturing screenshot: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_before.png
+2025-03-06 21:45:19 - ai_review - INFO - Screenshot saved: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_before.png
+2025-03-06 21:45:19 - ai_review - INFO - Before screenshot captured: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_before.png
+2025-03-06 21:45:37 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 21:45:39 - ai_review - INFO - Capturing screenshot: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_after.png
+2025-03-06 21:45:39 - ai_review - INFO - Screenshot saved: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_after.png
+2025-03-06 21:45:39 - ai_review - INFO - After screenshot captured: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_after.png
+2025-03-06 21:45:39 - ai_review - INFO - Closing WebDriver
+2025-03-06 21:45:39 - ai_review - INFO - UIValidator initialized
+2025-03-06 21:45:39 - ai_review - INFO - Comparing screenshots: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_before.png and /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_214515_after.png
+2025-03-06 21:45:39 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 21:45:39 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 21:45:40 - ai_review - INFO - Found 50 available models
+2025-03-06 21:45:40 - ai_review - WARNING - No preferred vision models available, using gpt-4-vision-preview as fallback
+2025-03-06 21:45:41 - ai_review - ERROR - ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 21:45:41 - ai_review - ERROR - Error in screenshot comparison: ChatGPT Vision API failed: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-03-06 21:54:56 - ai_review - INFO - Starting code review with the following settings:
+2025-03-06 21:54:56 - ai_review - INFO -   Complexity threshold: 5
+2025-03-06 21:54:56 - ai_review - INFO -   AI-powered review: False
+2025-03-06 21:54:56 - ai_review - INFO -   Apply fixes: False
+2025-03-06 21:54:56 - ai_review - INFO -   Security scan: False
+2025-03-06 21:54:56 - ai_review - INFO -   Dependency scan: False
+2025-03-06 21:54:56 - ai_review - INFO -   Generate report: False
+2025-03-06 21:54:56 - ai_review - INFO -   UI validate: True
+2025-03-06 21:54:56 - ai_review - INFO -   URL: http://localhost:3000
+2025-03-06 21:54:56 - ai_review - INFO -   UI report format: markdown
+2025-03-06 21:54:56 - ai_review - INFO -   Skip code review: True
+2025-03-06 21:54:56 - ai_review - INFO - Skipping code review and only performing UI validation
+2025-03-06 21:54:56 - ai_review - INFO - Validating UI changes for http://localhost:3000
+2025-03-06 21:54:56 - ai_review - INFO - Starting UI validation for http://localhost:3000
+2025-03-06 21:54:56 - ai_review - INFO - Screenshots will be saved to: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots
+2025-03-06 21:54:57 - ai_review - INFO - WebDriver initialized for URL: http://localhost:3000
+2025-03-06 21:54:57 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 21:54:59 - ai_review - INFO - Capturing screenshot: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_before.png
+2025-03-06 21:54:59 - ai_review - INFO - Screenshot saved: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_before.png
+2025-03-06 21:54:59 - ai_review - INFO - Before screenshot captured: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_before.png
+2025-03-06 21:55:28 - ai_review - INFO - Navigating to http://localhost:3000
+2025-03-06 21:55:30 - ai_review - INFO - Capturing screenshot: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_after.png
+2025-03-06 21:55:30 - ai_review - INFO - Screenshot saved: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_after.png
+2025-03-06 21:55:30 - ai_review - INFO - After screenshot captured: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_after.png
+2025-03-06 21:55:30 - ai_review - INFO - Closing WebDriver
+2025-03-06 21:55:30 - ai_review - INFO - UIValidator initialized
+2025-03-06 21:55:30 - ai_review - INFO - Comparing screenshots: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_before.png and /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/screenshots/20250306_215456_after.png
+2025-03-06 21:55:30 - ai_review - INFO - Calling ChatGPT Vision API for screenshot comparison
+2025-03-06 21:55:30 - ai_review - INFO - Fetching available models from OpenAI
+2025-03-06 21:55:31 - ai_review - INFO - Using preferred vision model: gpt-4o
+2025-03-06 21:55:35 - ai_review - INFO - Screenshot comparison completed using model: gpt-4o
+2025-03-06 21:55:35 - ai_review - INFO - Successfully parsed analysis JSON
+2025-03-06 21:55:35 - ai_review - INFO - Reports will be saved to: /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/ui_reports
+2025-03-06 21:55:35 - ai_review - INFO - Markdown report saved to /Users/ali/Dropbox/Pircle.US PPP/_GitHub/kalkal-tool/ai_code_review/logs/ui_reports/ui_report_20250306_215535.md
